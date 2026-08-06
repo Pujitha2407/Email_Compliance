@@ -1,0 +1,3 @@
+Company confidential information must never be shared with unauthorized people.
+
+Employees should not leak customer information.
