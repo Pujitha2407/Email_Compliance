@@ -1,0 +1,11 @@
+{
+    "categories": {
+        "Secrecy": 50,
+        "Market Manipulation/Misconduct": 70,
+        "Market Bribery": 90,
+        "Change in communication": 10,
+        "Complaints": 20,
+        "Employee ethics": 30
+    },
+    "threshold" : 50
+}

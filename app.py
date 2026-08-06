@@ -1,29 +1,30 @@
-from fastapi import FastAPI
-
-from models import Email
-
+import json
 from services.email_ingestion import EmailIngestionService
 from services.preprocessing import PreprocessingService
-from services.rag_retrieval import RAGRetrievalService
-
-app = FastAPI()
-
-ingestion_service = EmailIngestionService()
-preprocessing_service = PreprocessingService()
-rag_service = RAGRetrievalService()
+from services.compliance_analysis import ComplianceAnalysisService
+from services.compliance_score import ComplainceScore
 
 
-@app.post("/email")
-def receive_email(email: Email):
+def run():
+    # read user config json file 
+    user_config = json.load(open("user_config/categories.json"))
+    # update risk categories in email ingestion service
+    risk_categories = list(user_config["categories"].keys())
 
-    ingestion_result = ingestion_service.execute(email)
+    # Initialize services
+    email_ingestion = EmailIngestionService()
+    preprocessing = PreprocessingService()
+    compliance = ComplianceAnalysisService()
+    compliance_score = ComplainceScore(user_config)
 
-    preprocessing_result = preprocessing_service.execute(
-        ingestion_result
+    # Execute services
+    email_ingestion.execute("uploads/sample_email_compliance_dataset.xlsx")
+    preprocessing.execute(email_ingestion.get_emails())
+    compliance.execute(email_ingestion.get_emails(), risk_categories)
+    compliance_score.execute(
+        email_ingestion.get_emails(),
+        compliance.get_results()
     )
 
-    rag_result = rag_service.execute(
-        preprocessing_result
-    )
-
-    return rag_result
+if __name__ == "__main__":
+    run()
