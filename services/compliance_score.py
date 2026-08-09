@@ -6,6 +6,7 @@ class ComplainceScore:
         self.threshold = user_config.get("threshold", 50)  # Default threshold is 50 if not specified
 
     def calculate_score(self, emails_results):
+        print("Calculating Score...")
         self.scores = {}
         for mail_id, result in emails_results.items():
             if "error" in result:
@@ -18,12 +19,13 @@ class ComplainceScore:
                     if self.risk_categories[value["category"]] > high_risk:
                         high_risk = self.risk_categories[value["category"]]
                     score += self.risk_categories[value["category"]]
-            score = high_risk + 0.2(score - high_risk)
+            score = high_risk + 0.2*(score - high_risk)
             score = min(score, 100)  # Ensure score does not exceed 100
             status = "Non Compliant" if score >= self.threshold else "Compliant"
             self.scores[mail_id] = {"score": score, "status": status}
 
     def generate_report(self, emails, emails_results):
+        print("Generating Report...")
         # generate a report in json format combining mail, mail result, and score
         # and, output the report to a json file
         report = {}
@@ -35,7 +37,9 @@ class ComplainceScore:
             }
         with open("report.json", "w") as f:
             json.dump(report, f, indent=4)
+        print("Generate Report Finished.")
 
     def execute(self, emails, emails_results):
+        print("Running Compliance Scoring...")
         self.calculate_score(emails_results)
         self.generate_report(emails, emails_results)

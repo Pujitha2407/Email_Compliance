@@ -9,6 +9,7 @@ class EmailIngestionService:
         self.emails_db = {}
 
     def execute(self, file_path):
+        print("Starting Email Ingestion...")
         df = pd.read_excel(file_path)
         df.columns = df.columns.str.strip()
         df['Category'] = df['Category'].str.split().str.join(' ')
@@ -35,6 +36,7 @@ class EmailIngestionService:
             }
             self.emails_db[mail_id] = email
             mail_id += 1
+        print("Email Ingestion Finished.")
 
     def get_emails(self):
         return self.emails_db

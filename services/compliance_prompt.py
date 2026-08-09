@@ -4,10 +4,10 @@ def build_compliance_prompt(email: dict, risk_categories: list[str]) -> str:
 
     Args:
         email: Dictionary containing:
-            - From
-            - To
-            - Subject
-            - Body
+            - from
+            - to
+            - subject
+            - body
         risk_categories: List of compliance risk category names.
 
     Returns:
@@ -25,16 +25,16 @@ You are an experienced Enterprise Compliance Officer responsible for reviewing e
 ## Email
 
 From:
-{email['From']}
+{email['from']}
 
 To:
-{email['To']}
+{email['to']}
 
 Subject:
-{email['Subject']}
+{email['subject']}
 
 Body:
-{email['Body']}
+{email['body']}
 
 ## Compliance Risk Categories
 
@@ -60,17 +60,17 @@ The email may belong to one or more of the following compliance risk categories:
 
 Return ONLY valid JSON.
 
-{
-    "violation": true,
-    "categories": [
-        {
-            "category": "<Risk Category>",
-            "reason": "<Why this category applies>",
-            "evidence": [
-                "<Exact quote from the email>",
-                "<Another supporting quote>"
+{{
+    'violation': true,
+    'categories': [
+        {{
+            'category': 'Risk Category',
+            'reason': 'Why this category applies',
+            'evidence': [
+                'Exact quote from the email',
+                'Another supporting quote'
             ]
-        }
+        }}
     ]
-}
+}}
 """
