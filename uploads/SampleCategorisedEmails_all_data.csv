@@ -1,0 +1,107 @@
+﻿"Sample#","Email Sample","Category","Classification"
+"1","From : trey.comiskey@enron.com
+To: kenneth.cooper@am.sony.com
+Subject : Agreement of Confidentiality
+Body: Ken - Thanks again for your time yesterday.
+
+Here is the C.A. per our discussion, signature and faxing back to me at 713.853.0528.
+
+Pls do not disclose the C.A. until it is signed by the appropriate party here, we will have a fully-signed copy faxed to you for your records.
+
+Should you have questions or comments, please Mr. Comiskey.
+
+Thank you.","Secrecy","False Positive"
+"2","From : msagel@home.com
+To: jarnold@enron.com
+Subject : Agreement
+Body: John:
+
+Hope you did ok today.
+
+As I said yesterday, the poor close Monday should lead to additional market weakness, which we saw today.
+
+You indicated that you would mail the service agreement back to me. I don't know if you have the mailing address, so here it is:
+
+Psytech Analytics
+11604 Greenspring Ave.
+Lutherville, MD? 21093
+
+Speak to you over phone later during the day once I have decent set-up on my work for natural.
+
+Feel free to ding me on whatsapp anytime.
+
+Mark","Change in communication","True Positive"
+"3","From : outlook.team@enron.com
+To: aimee.shek@enron.com, albino.lopez@enron.com, andrea.williams@enron.com,
+anitha.mathis@enron.com, antonette.concepcion@enron.com,
+bernard.rhoden@enron.com, deborah.kallus@enron.com,
+diane.taylor@enron.com, gardenia.sullivan@enron.com,
+ginger.sinclair@enron.com, janice.priddy@enron.com,
+jeanne.seward@enron.com, lloyd.whiteurst@enron.com,
+monique.criswell@enron.com, monique.mcfarland@enron.com,
+pauline.sanchez@enron.com, rena.lo@enron.com, shawn.simon@enron.com,
+valley.confer@enron.com, cynthia.barrow@enron.com,
+deborah.guillory@enron.com, dinah.sultanik@enron.com,
+georgia.fogo@enron.com, ginger.mccain@enron.com,
+iris.jimenez@enron.com, jennifer.mendez@enron.com,
+john.cevilla@enron.com, joshua.wooten@enron.com,
+karla.dobbs@enron.com, kayla.ruiz@enron.com, lee.wright@enron.com,
+maria.mitchell@enron.com, mikie.rath@enron.com,
+robin.hosea@enron.com, sandy.huseman@enron.com,
+sheri.jordan@enron.com, tashia.hayes@enron.com,
+donna.greif@enron.com, eric.gonzales@enron.com,
+jared.kaiser@enron.com, jonathan.whitehead@enron.com,
+omar.aboudaher@enron.com, paul.omasits@enron.com,
+shahnaz.lakho@enron.com, troy.denetsosie@enron.com,
+william.giuliani@enron.com, zionette.vincent@enron.com,
+adrial.boals@enron.com, albert.escamilla@enron.com,
+amber.ebow@enron.com, avril.forster@enron.com,
+bernice.rodriguez@enron.com, bill.hare@enron.com,
+brian.heinrich@enron.com, cheryl.johnson@enron.com,
+christopher.hargett@enron.com, dejoun.windless@enron.com,
+donna.seamett@enron.com, donna.everett@enron.com,
+gloria.roberson@enron.com, james.scribner@enron.com,
+jason.moore@enron.com, jean.killough@enron.com,
+jeff.klotz@enron.com, jenny.helton@enron.com,
+john.harrison@enron.com, julissa.marron@enron.com,
+karen.lambert@enron.com, kathryn.pallian@enron.com,
+kelly.lombardi@enron.com
+Subject: Not visible in screenshot
+Body: Not visible in screenshot","Complaints","False Positive"
+"4","From : sarah-joy.hunter@enron.com
+To: jeffrey.shankman@enron.com
+Subject : Continental Briefing for Enron/Continental meeting December 12th
+from 1:30-2:30/trading floor tour 2:30-3:00
+Body: Mr. Shankman:
+
+In preparation for the meeting on December 12th with Larry Kellner, CFO, Continental Airlines, I have noted below some background on the Enron/Continental relationship and the purpose for the meeting. Mr. Shankman, please advise if you would like me to distribute this to the attendees.
+
+EXECUTIVE SUMMARY:
+
+Over the past several years Enron has been hedging Continental's crude oil. The relationship has been beneficial to both sides. As a result, since 1999 Enron has earned over $9 million and Continental has saved over $45 million.
+
+The purpose for the December 12th meeting is to address three initiatives in order of economic value: (1) fuel management, (2) weather derivatives, and (3) plastics hedging - VaR analysis.
+
+Several new initiatives being proposed to Continental include the following:
+
+exchanging call options on crude oil for airline tickets (Craig Breslau, Originator)
+transacting financial swaps on-line (Larry Gagliani, Originator)
+creating a weather derivative product for the airline industry (Mark Tawney and Gary Taylor, Originators)
+outsourcing Continental's antifreeze and plastics risks by hedging these products with Enron (Alan Engberg, Originator)
+
+Meeting Attendees from Continental Airlines:
+
+Ron Howard, Vice President, Food Services
+Larry Kellner, Chief Financial Officer
+Greg Hartford, Vice President, Fuel Management Company
+Jeff Misner, Vice President and Treasurer (tentative)","Disclaimer","True Positive"
+"5","From : chris.gaskill@enron.com
+To: john.arnold@enron.com
+Subject : gas message board access
+Body: Boyd John, Is, access to the board on a password basis now? If so, when you get a chance could you authorise access for myself and Andrew Hill (a colleague in crude fundamentals) please? A similar board for crude and products should be ready within a couple of weeks. Thanks
+
+Chris","Secrecy","False Positive"
+"6","From : kim.ward@enron.com
+To: john.arnold@enron.com
+Subject : RE:
+Body: Boyd: So who are the drinks on until I do ?...","Employee ethics","True Positive"

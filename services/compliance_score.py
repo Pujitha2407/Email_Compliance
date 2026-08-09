@@ -4,6 +4,7 @@ class ComplainceScore:
     def __init__(self, user_config):
         self.risk_categories = user_config["categories"]
         self.threshold = user_config.get("threshold", 50)  # Default threshold is 50 if not specified
+        self.scores = {}
 
     def calculate_score(self, emails_results):
         print("Calculating Score...")
@@ -15,14 +16,23 @@ class ComplainceScore:
             score = 0
             high_risk = 0
             for value in result["categories"]:
-                if value["category"] in self.risk_categories:
-                    if self.risk_categories[value["category"]] > high_risk:
-                        high_risk = self.risk_categories[value["category"]]
-                    score += self.risk_categories[value["category"]]
-            score = high_risk + 0.2*(score - high_risk)
-            score = min(score, 100)  # Ensure score does not exceed 100
-            status = "Non Compliant" if score >= self.threshold else "Compliant"
-            self.scores[mail_id] = {"score": score, "status": status}
+                category = value["category"]
+                if category in self.risk_categories:
+                    category_score = self.risk_categories[category]
+                    if category_score > high_risk:
+                        high_risk = category_score
+                    score += category_score
+            score = high_risk + 0.2 * (score - high_risk)
+            score = min(score, 100)
+            status = (
+                "Non Compliant"
+                if score >= self.threshold
+                else "Compliant"
+            )
+            self.scores[mail_id] = {
+                "score": score,
+                "status": status
+            }
 
     def generate_report(self, emails, emails_results):
         print("Generating Report...")

@@ -18,7 +18,7 @@ def run():
     compliance_score = ComplainceScore(user_config)
 
     # Execute services
-    email_ingestion.execute("uploads/sample_email_compliance_dataset.xlsx")
+    email_ingestion.execute("uploads/SampleCategorisedEmails_all_data.csv")
     preprocessing.execute(email_ingestion.get_emails())
     compliance.execute(email_ingestion.get_emails(), risk_categories)
     compliance_score.execute(

@@ -1,10 +1,35 @@
 class PreprocessingService:
     def execute(self, emails):
         print("Starting PreProcessing...")
-        # loop over dictionary of mails with mail_id as key and email as value
         for mail_id, email in emails.items():
-            body = email["email"]["body"]
-            # Normalize spaces
-            body = " ".join(body.split())
-            email["email"]["body"] = body
+            email_text = email["email"]
+            lines = email_text.splitlines()
+
+            sender = ""
+            recipient = ""
+            subject = ""
+            body = []
+            body_started = False
+            for line in lines:
+                line = line.strip()
+                if line.lower().startswith("from"):
+                    sender = line.split(":", 1)[1].strip()
+                elif line.lower().startswith("to"):
+                    recipient = line.split(":", 1)[1].strip()
+                elif line.lower().startswith("subject"):
+                    subject = line.split(":", 1)[1].strip()
+                elif line.lower().startswith("body"):
+                    body_started = True
+                    body_text = line.split(":", 1)[1].strip()
+                    if body_text:
+                        body.append(body_text)
+                elif body_started:
+                    body.append(line)
+            # Store parsed email
+            email["email"] = {
+                "from": sender,
+                "to": recipient,
+                "subject": subject,
+                "body": " ".join(body)
+            }
         print("PreProcessing Finished")

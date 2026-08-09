@@ -14,12 +14,18 @@ model_deployment = "gpt-5.5"  # Replace with your model deployment name
 class ComplianceAnalysisService:
     def __init__(self):
         self.client = client
+        self.results = {}
 
     def execute(self, emails, risk_categories):
         print("Starting Compliance Analysis...")
         self.results = {}
         for mail_id, email in emails.items():
-            prompt = build_compliance_prompt(email['email'], risk_categories)
+            # email["email"] contains:
+            # from, to, subject, body
+            prompt = build_compliance_prompt(
+                email["email"],
+                risk_categories
+            )
             response = self.client.responses.create(
                 model=model_deployment,
                 input=prompt

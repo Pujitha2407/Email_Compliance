@@ -61,14 +61,14 @@ The email may belong to one or more of the following compliance risk categories:
 Return ONLY valid JSON.
 
 {{
-    'violation': true,
-    'categories': [
+    "violation": true,
+    "categories": [
         {{
-            'category': 'Risk Category',
-            'reason': 'Why this category applies',
-            'evidence': [
-                'Exact quote from the email',
-                'Another supporting quote'
+            "category": "Risk Category",
+            "reason": "Why this category applies",
+            "evidence": [
+                "Exact quote from the email",
+                "Another supporting quote"
             ]
         }}
     ]
