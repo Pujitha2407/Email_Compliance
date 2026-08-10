@@ -1,0 +1,154 @@
+{
+    "1": {
+        "email": {
+            "email": {
+                "from": "trey.comiskey@enron.com",
+                "to": "kenneth.cooper@am.sony.com",
+                "subject": "Agreement of Confidentiality",
+                "body": "Ken - Thanks again for your time yesterday.  Here is the C.A. per our discussion, signature and faxing back to me at 713.853.0528.  Pls do not disclose the C.A. until it is signed by the appropriate party here, we will have a fully-signed copy faxed to you for your records.  Should you have questions or comments, please Mr. Comiskey.  Thank you."
+            }
+        },
+        "result": {
+            "violation": true,
+            "categories": [
+                {
+                    "category": "Secrecy",
+                    "reason": "The email discusses non-disclosure of a document and specifies a request to maintain its confidentiality until signed.",
+                    "evidence": [
+                        "Pls do not disclose the C.A. until it is signed by the appropriate party here",
+                        "We will have a fully-signed copy faxed to you for your records."
+                    ]
+                }
+            ]
+        },
+        "score": {
+            "score": 50.0,
+            "status": "Non Compliant"
+        }
+    },
+    "2": {
+        "email": {
+            "email": {
+                "from": "msagel@home.com",
+                "to": "jarnold@enron.com",
+                "subject": "Agreement",
+                "body": "John:  Hope you did ok today.  As I said yesterday, the poor close Monday should lead to additional market weakness, which we saw today.  You indicated that you would mail the service agreement back to me. I don't know if you have the mailing address, so here it is:  Psytech Analytics 11604 Greenspring Ave. Lutherville, MD? 21093  Speak to you over phone later during the day once I have decent set-up on my work for natural.  Feel free to ding me on whatsapp anytime.  Mark"
+            }
+        },
+        "result": {
+            "violation": true,
+            "categories": [
+                {
+                    "category": "Change in communication",
+                    "reason": "The sender provides alternative communication methods outside of official company channels, such as WhatsApp, which could be used to bypass regulatory oversight.",
+                    "evidence": [
+                        "Feel free to ding me on whatsapp anytime."
+                    ]
+                },
+                {
+                    "category": "Secrecy",
+                    "reason": "The use of non-official communication channels and informal language may suggest an effort to avoid official channels that are monitored for compliance purposes.",
+                    "evidence": [
+                        "Feel free to ding me on whatsapp anytime.",
+                        "Speak to you over phone later during the day once I have decent set-up on my work for natural."
+                    ]
+                }
+            ]
+        },
+        "score": {
+            "score": 52.0,
+            "status": "Non Compliant"
+        }
+    },
+    "3": {
+        "email": {
+            "email": {
+                "from": "outlook.team@enron.com",
+                "to": "aimee.shek@enron.com, albino.lopez@enron.com, andrea.williams@enron.com,",
+                "subject": "Not visible in screenshot",
+                "body": "Not visible in screenshot"
+            }
+        },
+        "result": {
+            "violation": false,
+            "categories": [],
+            "evidence": []
+        },
+        "score": {
+            "score": 0.0,
+            "status": "Compliant"
+        }
+    },
+    "4": {
+        "email": {
+            "email": {
+                "from": "30-2:30/trading floor tour 2:30-3:00",
+                "to": "jeffrey.shankman@enron.com",
+                "subject": "Continental Briefing for Enron/Continental meeting December 12th",
+                "body": "Mr. Shankman:  In preparation for the meeting on December 12th with Larry Kellner, CFO, Continental Airlines, I have noted below some background on the Enron/Continental relationship and the purpose for the meeting. Mr. Shankman, please advise if you would like me to distribute this to the attendees.  EXECUTIVE SUMMARY:  Over the past several years Enron has been hedging Continental's crude oil. The relationship has been beneficial to both sides. As a result, since 1999 Enron has earned over $9 million and Continental has saved over $45 million.  The purpose for the December 12th meeting is to address three initiatives in order of economic value: (1) fuel management, (2) weather derivatives, and (3) plastics hedging - VaR analysis.  Several new initiatives being proposed to Continental include the following:  exchanging call options on crude oil for airline tickets (Craig Breslau, Originator) transacting financial swaps on-line (Larry Gagliani, Originator) creating a weather derivative product for the airline industry (Mark Tawney and Gary Taylor, Originators) outsourcing Continental's antifreeze and plastics risks by hedging these products with Enron (Alan Engberg, Originator)  Meeting Attendees from Continental Airlines:  Ron Howard, Vice President, Food Services Larry Kellner, Chief Financial Officer Greg Hartford, Vice President, Fuel Management Company Jeff Misner, Vice President and Treasurer (tentative)"
+            }
+        },
+        "result": {
+            "violation": true,
+            "categories": [
+                {
+                    "category": "Market Bribery",
+                    "reason": "The email suggests exchanging call options on crude oil for airline tickets, which may potentially constitute an inappropriate quid pro quo arrangement.",
+                    "evidence": [
+                        "exchanging call options on crude oil for airline tickets"
+                    ]
+                },
+                {
+                    "category": "Secrecy",
+                    "reason": "The email details a significant financial relationship between Enron and Continental Airlines and discusses proprietary activities, indicating the potential for an attempt to conceal sensitive information.",
+                    "evidence": [
+                        "Over the past several years Enron has been hedging Continental's crude oil.",
+                        "Enron has earned over $9 million and Continental has saved over $45 million."
+                    ]
+                }
+            ]
+        },
+        "score": {
+            "score": 100.0,
+            "status": "Non Compliant"
+        }
+    },
+    "5": {
+        "email": {
+            "email": {
+                "from": "chris.gaskill@enron.com",
+                "to": "john.arnold@enron.com",
+                "subject": "gas message board access",
+                "body": "Boyd John, Is, access to the board on a password basis now? If so, when you get a chance could you authorise access for myself and Andrew Hill (a colleague in crude fundamentals) please? A similar board for crude and products should be ready within a couple of weeks. Thanks  Chris"
+            }
+        },
+        "result": {
+            "violation": false,
+            "categories": [],
+            "evidence": []
+        },
+        "score": {
+            "score": 0.0,
+            "status": "Compliant"
+        }
+    },
+    "6": {
+        "email": {
+            "email": {
+                "from": "kim.ward@enron.com",
+                "to": "john.arnold@enron.com",
+                "subject": "RE:",
+                "body": "Boyd: So who are the drinks on until I do ?..."
+            }
+        },
+        "result": {
+            "violation": false,
+            "categories": [],
+            "evidence": []
+        },
+        "score": {
+            "score": 0.0,
+            "status": "Compliant"
+        }
+    }
+}
