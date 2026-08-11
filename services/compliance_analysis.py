@@ -23,7 +23,7 @@ class ComplianceAnalysisService:
             # email["email"] contains:
             # from, to, subject, body
             prompt = build_compliance_prompt(
-                email["email"],
+                email,
                 risk_categories
             )
             response = self.client.responses.create(
