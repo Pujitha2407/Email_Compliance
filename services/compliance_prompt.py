@@ -5,23 +5,6 @@ def build_compliance_prompt(
 ) -> str:
     """
     Builds the compliance analysis prompt for a single email.
-
-    Args:
-        email:
-            Dictionary containing:
-                - from
-                - to
-                - subject
-                - body
-
-        risk_categories:
-            List of compliance risk category names.
-
-        retrieved_policies:
-            Compliance policies retrieved by RAG.
-
-    Returns:
-        Formatted prompt string.
     """
 
     categories = "\n".join(
@@ -75,58 +58,58 @@ Body:
 
 ## Compliance Risk Categories
 
-The email may belong to one or more of the following compliance
-risk categories:
-
 {categories}
 
 ## Retrieved Compliance Policies
-
-The following policies were retrieved using the compliance
-policy knowledge base. Use these policies as the primary
-source for determining whether a violation exists.
 
 {policies}
 
 ## Instructions
 
-1. Carefully analyze the email.
+1. Analyze the email carefully.
 
-2. Determine whether any of the retrieved compliance policies
-   actually apply to the email.
+2. Compare the email against the retrieved policies.
 
-3. Do NOT classify an email as a violation simply because
-   it contains a word or phrase associated with a risk category.
+3. A category MUST NOT be classified as a violation merely
+   because the email contains a related keyword or phrase.
 
-4. Determine whether the email contains an actual behavior
-   that violates the applicable policy.
+4. Identify an actual action, behavior, request, or statement
+   in the email that satisfies the violation conditions of
+   the policy.
 
-5. Consider the policy definition, violations, exceptions,
-   and examples before making a decision.
+5. The policy definition, violations, and exceptions must all
+   be considered before deciding whether a violation exists.
 
-6. Legitimate business activity or legitimate confidentiality
-   instructions should NOT be classified as violations unless
-   the policy specifically indicates otherwise.
+6. An exception takes precedence when the email clearly
+   satisfies that exception.
 
-7. Do not infer information that is not present in the email.
+7. Do not treat an instruction to PREVENT disclosure as an
+   unauthorized disclosure.
 
-8. An email may belong to multiple risk categories.
+8. Do not infer facts, intent, authorization, or wrongdoing
+   that are not explicitly supported by the email.
 
-9. Every identified category must be supported by evidence
-   quoted directly from the email.
+9. If the email does not contain evidence of an actual
+   violation, classify it as non-violation.
 
-10. Evidence must be an exact quote from the email.
+10. An email may belong to multiple risk categories only when
+    each category has independent supporting evidence.
 
-11. If the evidence does not demonstrate an actual violation,
-    do not classify the category as a violation.
+11. Every identified category MUST contain exact evidence
+    copied from the email.
 
-12. If no compliance risk is found:
+12. The evidence must demonstrate the violation itself,
+    not merely mention a related topic.
+
+13. If no violation is supported by the email:
+
     - Set "violation" to false.
     - Return an empty list for "categories".
 
-13. Return ONLY valid JSON.
-    Do not add markdown code fences.
-    Do not add any text before or after the JSON.
+14. Return ONLY valid JSON.
+
+Do not add markdown code fences.
+Do not add any text before or after the JSON.
 
 ## Output
 

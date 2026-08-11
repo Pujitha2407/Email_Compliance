@@ -1,6 +1,5 @@
 import os
 import json
-import numpy as np
 
 from openai import AzureOpenAI
 from services.compliance_prompt import build_compliance_prompt
@@ -12,85 +11,28 @@ client = AzureOpenAI(
     api_version="2025-01-01-preview"
 )
 
-model_deployment = "gpt-5.5"
-
-# This must be the name of your Azure embedding deployment
-embedding_model = "text-embedding-3-small"
+model_deployment = "julbatch1-264a95fb-a4ce-458f-b0a5-87d9fdf7cd60"
 
 
 class ComplianceAnalysisService:
 
     def __init__(self):
+
         self.client = client
         self.results = {}
 
-        # Load policies from JSON
+        # Load policies from knowledge base
         with open(
             "data/policies.json",
             "r",
             encoding="utf-8"
         ) as file:
+
             self.policies = json.load(file)
 
-        # Store policy embeddings
-        self.policy_embeddings = []
-
-        self.create_policy_embeddings()
-
-    def create_policy_embeddings(self):
-
-        policy_texts = []
-
-        for policy in self.policies:
-
-            text = f"""
-Category:
-{policy["category"]}
-
-Title:
-{policy["title"]}
-
-Definition:
-{policy["definition"]}
-
-Violations:
-{policy["violations"]}
-
-Exceptions:
-{policy["exceptions"]}
-
-Examples:
-{policy["examples"]}
-"""
-
-            policy_texts.append(text)
-
-        response = self.client.embeddings.create(
-            model=embedding_model,
-            input=policy_texts
-        )
-
-        self.policy_embeddings = [
-            np.array(item.embedding)
-            for item in response.data
-        ]
-
-        print("Policy embeddings created.")
-
-    def cosine_similarity(self, vector1, vector2):
-
-        denominator = (
-            np.linalg.norm(vector1)
-            * np.linalg.norm(vector2)
-        )
-
-        if denominator == 0:
-            return 0
-
-        return np.dot(
-            vector1,
-            vector2
-        ) / denominator
+    # ---------------------------------------------
+    # Policy Retrieval
+    # ---------------------------------------------
 
     def retrieve_policies(
         self,
@@ -98,37 +40,49 @@ Examples:
         top_k=3
     ):
 
-        # Use the subject and body as the search query
-        query = f"""
-Subject:
-{email["subject"]}
+        email_text = (
+            email["subject"]
+            + " "
+            + email["body"]
+        ).lower()
 
-Body:
-{email["body"]}
-"""
+        results = []
 
-        response = self.client.embeddings.create(
-            model=embedding_model,
-            input=[query]
-        )
+        for policy in self.policies:
 
-        email_embedding = np.array(
-            response.data[0].embedding
-        )
+            score = 0
 
-        policy_results = []
-
-        for policy, policy_embedding in zip(
-            self.policies,
-            self.policy_embeddings
-        ):
-
-            similarity = self.cosine_similarity(
-                email_embedding,
-                policy_embedding
+            # Search definition
+            definition_words = (
+                policy["definition"]
+                .lower()
+                .split()
             )
 
-            policy_results.append({
+            for word in definition_words:
+
+                if len(word) > 3 and word in email_text:
+                    score += 1
+
+            # Search violations
+            for violation in policy["violations"]:
+
+                if violation.lower() in email_text:
+                    score += 3
+
+            # Search examples
+            for example in policy["examples"]:
+
+                if example.lower() in email_text:
+                    score += 2
+
+            # Search exceptions
+            for exception in policy["exceptions"]:
+
+                if exception.lower() in email_text:
+                    score += 2
+
+            results.append({
                 "policy_id": policy["policy_id"],
                 "category": policy["category"],
                 "title": policy["title"],
@@ -136,18 +90,34 @@ Body:
                 "violations": policy["violations"],
                 "exceptions": policy["exceptions"],
                 "examples": policy["examples"],
-                "similarity": float(similarity)
+                "retrieval_score": score
             })
 
-        # Highest similarity first
-        policy_results.sort(
-            key=lambda x: x["similarity"],
+        # Highest matching policy first
+        results.sort(
+            key=lambda x: x["retrieval_score"],
             reverse=True
         )
 
-        return policy_results[:top_k]
+        # If nothing matched, provide all policies
+        # because we only have six policies.
+        if all(
+            policy["retrieval_score"] == 0
+            for policy in results
+        ):
+            return results
 
-    def execute(self, emails, risk_categories):
+        return results[:top_k]
+
+    # ---------------------------------------------
+    # Compliance Analysis
+    # ---------------------------------------------
+
+    def execute(
+        self,
+        emails,
+        risk_categories
+    ):
 
         print("Starting Compliance Analysis...")
 
@@ -155,18 +125,17 @@ Body:
 
         for mail_id, email in emails.items():
 
-            # email["email"] contains:
-            # from, to, subject, body
-
             email_data = email["email"]
 
-            # --------------------------------
-            # RAG POLICY RETRIEVAL
-            # --------------------------------
+            # -------------------------------------
+            # Retrieve relevant policies
+            # -------------------------------------
 
-            retrieved_policies = self.retrieve_policies(
-                email_data,
-                top_k=3
+            retrieved_policies = (
+                self.retrieve_policies(
+                    email_data,
+                    top_k=3
+                )
             )
 
             print(
@@ -174,14 +143,15 @@ Body:
             )
 
             for policy in retrieved_policies:
+
                 print(
                     f"  {policy['category']} "
-                    f"score={policy['similarity']:.3f}"
+                    f"score={policy['retrieval_score']}"
                 )
 
-            # --------------------------------
-            # BUILD PROMPT
-            # --------------------------------
+            # -------------------------------------
+            # Build prompt
+            # -------------------------------------
 
             prompt = build_compliance_prompt(
                 email_data,
@@ -189,18 +159,18 @@ Body:
                 retrieved_policies
             )
 
-            # --------------------------------
-            # GPT-5.5
-            # --------------------------------
+            # -------------------------------------
+            # GPT-4o
+            # -------------------------------------
 
             response = self.client.responses.create(
                 model=model_deployment,
                 input=prompt
             )
 
-            # --------------------------------
-            # KEEPING YOUR EXISTING TRY/EXCEPT
-            # --------------------------------
+            # -------------------------------------
+            # YOUR EXISTING TRY/EXCEPT
+            # -------------------------------------
 
             try:
                 res = response.output_text.strip()
@@ -224,4 +194,5 @@ Body:
         print("Compliance Analysis Finished.")
 
     def get_results(self):
+
         return self.results
