@@ -1,0 +1,101 @@
+[
+    {
+        "policy_id": "SEC-001",
+        "category": "Secrecy",
+        "title": "Confidential Information",
+        "definition": "A secrecy violation occurs when confidential or restricted company information is disclosed, shared, or handled without proper authorization.",
+        "violations": [
+            "Unauthorized disclosure of confidential information",
+            "Sharing restricted information with an unauthorized person",
+            "Improper handling of confidential company information"
+        ],
+        "exceptions": [
+            "Legitimate confidentiality instructions",
+            "Preventing disclosure before an agreement is formally executed",
+            "Disclosure restrictions required by an authorized agreement"
+        ],
+        "examples": [
+            "Sending confidential documents to an unauthorized recipient",
+            "Sharing restricted company information with an external party without authorization"
+        ]
+    },
+    {
+        "policy_id": "MB-001",
+        "category": "Market bribery",
+        "title": "Market Bribery",
+        "definition": "Market bribery involves offering, promising, giving, requesting, or receiving an improper payment, gift, benefit, or advantage to influence a business or market-related decision.",
+        "violations": [
+            "Offering an improper payment to influence a decision",
+            "Requesting or receiving a bribe",
+            "Offering an improper benefit to a business partner"
+        ],
+        "exceptions": [],
+        "examples": [
+            "Offering money to influence a business decision",
+            "Offering an inappropriate gift in exchange for favorable treatment"
+        ]
+    },
+    {
+        "policy_id": "MM-001",
+        "category": "Market manipulation",
+        "title": "Market Manipulation",
+        "definition": "Market manipulation involves intentionally attempting to artificially influence the price, supply, demand, or trading activity of a financial instrument.",
+        "violations": [
+            "Artificially influencing market prices",
+            "Creating false or misleading market activity",
+            "Spreading misleading information to influence trading"
+        ],
+        "exceptions": [],
+        "examples": [
+            "Coordinating transactions to artificially influence a security price",
+            "Creating misleading information to influence market activity"
+        ]
+    },
+    {
+        "policy_id": "ETH-001",
+        "category": "Employee ethics",
+        "title": "Employee Ethics",
+        "definition": "Employee ethics violations involve dishonest, inappropriate, unethical, or improper conduct that conflicts with company standards.",
+        "violations": [
+            "Dishonest employee conduct",
+            "Improper or unethical behavior",
+            "Conflicts of interest that violate company requirements"
+        ],
+        "exceptions": [],
+        "examples": [
+            "Providing intentionally false information",
+            "Using a position for an improper personal benefit"
+        ]
+    },
+    {
+        "policy_id": "CMP-001",
+        "category": "Complaints",
+        "title": "Complaints",
+        "definition": "Complaints involve reports or concerns regarding inappropriate employee conduct, business practices, or company processes.",
+        "violations": [
+            "Improper handling of a formal complaint",
+            "Ignoring a complaint that requires appropriate handling"
+        ],
+        "exceptions": [],
+        "examples": [
+            "An employee reporting inappropriate workplace conduct",
+            "A customer raising a formal complaint about a business practice"
+        ]
+    },
+    {
+        "policy_id": "COM-001",
+        "category": "Change in communication",
+        "title": "Unauthorized Communication Channels",
+        "definition": "Change in communication involves moving business communication from approved company channels to unauthorized personal or external communication channels.",
+        "violations": [
+            "Moving business discussions to unauthorized messaging applications",
+            "Using personal communication channels for restricted business information",
+            "Moving business communication outside approved company systems"
+        ],
+        "exceptions": [],
+        "examples": [
+            "Moving a business discussion to a personal messaging application",
+            "Asking an employee to continue company business through a personal email account"
+        ]
+    }
+]
