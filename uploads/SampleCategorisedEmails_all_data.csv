@@ -1,4 +1,4 @@
-﻿"Sample#","Email Sample","Category","Classification"
+﻿"Sample#","Email Sample"
 "1","From : trey.comiskey@enron.com
 To: kenneth.cooper@am.sony.com
 Subject : Agreement of Confidentiality
@@ -10,7 +10,7 @@ Pls do not disclose the C.A. until it is signed by the appropriate party here, w
 
 Should you have questions or comments, please Mr. Comiskey.
 
-Thank you.","Secrecy","False Positive"
+Thank you."
 "2","From : msagel@home.com
 To: jarnold@enron.com
 Subject : Agreement
@@ -30,7 +30,7 @@ Speak to you over phone later during the day once I have decent set-up on my wor
 
 Feel free to ding me on whatsapp anytime.
 
-Mark","Change in communication","True Positive"
+Mark"
 "3","From : outlook.team@enron.com
 To: aimee.shek@enron.com, albino.lopez@enron.com, andrea.williams@enron.com,
 anitha.mathis@enron.com, antonette.concepcion@enron.com,
@@ -67,7 +67,7 @@ john.harrison@enron.com, julissa.marron@enron.com,
 karen.lambert@enron.com, kathryn.pallian@enron.com,
 kelly.lombardi@enron.com
 Subject: Not visible in screenshot
-Body: Not visible in screenshot","Complaints","False Positive"
+Body: Not visible in screenshot"
 "4","From : sarah-joy.hunter@enron.com
 To: jeffrey.shankman@enron.com
 Subject : Continental Briefing for Enron/Continental meeting December 12th
@@ -94,14 +94,14 @@ Meeting Attendees from Continental Airlines:
 Ron Howard, Vice President, Food Services
 Larry Kellner, Chief Financial Officer
 Greg Hartford, Vice President, Fuel Management Company
-Jeff Misner, Vice President and Treasurer (tentative)","Disclaimer","True Positive"
+Jeff Misner, Vice President and Treasurer (tentative)"
 "5","From : chris.gaskill@enron.com
 To: john.arnold@enron.com
 Subject : gas message board access
 Body: Boyd John, Is, access to the board on a password basis now? If so, when you get a chance could you authorise access for myself and Andrew Hill (a colleague in crude fundamentals) please? A similar board for crude and products should be ready within a couple of weeks. Thanks
 
-Chris","Secrecy","False Positive"
+Chris"
 "6","From : kim.ward@enron.com
 To: john.arnold@enron.com
 Subject : RE:
-Body: Boyd: So who are the drinks on until I do ?...","Employee ethics","True Positive"
+Body: Boyd: So who are the drinks on until I do ?..."

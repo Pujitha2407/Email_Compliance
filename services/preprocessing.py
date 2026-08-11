@@ -26,7 +26,7 @@ class PreprocessingService:
                 elif body_started:
                     body.append(line)
             # Store parsed email
-            email["email"] = {
+            emails[mail_id] = {
                 "from": sender,
                 "to": recipient,
                 "subject": subject,

@@ -59,6 +59,8 @@ The email may belong to one or more of the following compliance risk categories:
 ## Output
 
 Return ONLY valid JSON.
+Do not add markdown code fence. 
+Do not add any text before or after the JSON.
 
 {{
     "violation": true,

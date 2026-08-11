@@ -36,14 +36,15 @@ class ComplainceScore:
 
     def generate_report(self, emails, emails_results):
         print("Generating Report...")
-        # generate a report in json format combining mail, mail result, and score
-        # and, output the report to a json file
+        # generates a report in json format combining mail, mail result, and score
+        # and output the report to a json file
         report = {}
         for mail_id, email in emails.items():
             report[mail_id] = {
                 "email": email,
                 "result": emails_results.get(mail_id, {}),
-                "score": self.scores.get(mail_id, {})
+                "score": self.scores.get(mail_id, {}).get("score",0),
+                "status":self.scores.get(mail_id,{}).get("status","")
             }
         with open("report.json", "w") as f:
             json.dump(report, f, indent=4)
