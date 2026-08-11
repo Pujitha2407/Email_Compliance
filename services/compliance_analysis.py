@@ -24,7 +24,7 @@ class ComplianceAnalysisService:
 
         # Load policies from knowledge base
         with open(
-            "data/policies.json",
+            "uploadss/policies.json",
             "r",
             encoding="utf-8"
         ) as file:
