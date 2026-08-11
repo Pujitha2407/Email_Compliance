@@ -11,7 +11,8 @@ client = AzureOpenAI(
     api_version="2025-01-01-preview"
 )
 
-model_deployment = "julbatch1-264a95fb-a4ce-458f-b0a5-87d9fdf7cd60"
+model_deployment = "gpt-5.5s" 
+
 
 
 class ComplianceAnalysisService:
