@@ -9,7 +9,7 @@
         "risk_categories": "",
         "classification": "Need Review",
         "score": 0,
-        "status": "Critical"
+        "status": "Low"
     },
     "2": {
         "email": {
@@ -21,7 +21,7 @@
         "risk_categories": "",
         "classification": "Need Review",
         "score": 0,
-        "status": "Critical"
+        "status": "Low"
     },
     "3": {
         "email": {
@@ -33,7 +33,7 @@
         "risk_categories": "",
         "classification": "Need Review",
         "score": 0,
-        "status": "Critical"
+        "status": "Low"
     },
     "4": {
         "email": {
@@ -45,7 +45,7 @@
         "risk_categories": "",
         "classification": "Need Review",
         "score": 0,
-        "status": "Critical"
+        "status": "Low"
     },
     "5": {
         "email": {
@@ -54,10 +54,10 @@
             "subject": "gas message board access",
             "body": "Boyd John, Is, access to the board on a password basis now? If so, when you get a chance could you authorise access for myself and Andrew Hill (a colleague in crude fundamentals) please? A similar board for crude and products should be ready within a couple of weeks. Thanks  Chris"
         },
-        "risk_categories": "",
-        "classification": "Need Review",
-        "score": 0,
-        "status": "Critical"
+        "risk_categories": [],
+        "classification": "Compliant",
+        "score": 0.0,
+        "status": "Low"
     },
     "6": {
         "email": {
@@ -69,7 +69,7 @@
         "risk_categories": [
             {
                 "category": "Employee ethics",
-                "reason": "The email contains a discussion related to drinks in a personal and social context using an official company communication channel, which constitutes inappropriate personal/social content unrelated to legitimate business activity.",
+                "reason": "The email discusses 'drinks' in a way that is personal/social and unrelated to legitimate business activity, which violates the company's policy on appropriate workplace communication as stated in ETH-001.",
                 "evidence": "so who are the drinks on until I do ???"
             }
         ],
@@ -84,9 +84,15 @@
             "subject": "RE:",
             "body": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
         },
-        "risk_categories": "",
-        "classification": "Need Review",
-        "score": 0,
+        "risk_categories": [
+            {
+                "category": "Market bribery",
+                "reason": "The email suggests that a 'small gesture' for the decision maker could help in obtaining approval, which aligns with the policy condition of proposing a benefit to influence a business decision.",
+                "evidence": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 90.0,
         "status": "Critical"
     },
     "8": {
@@ -99,7 +105,7 @@
         "risk_categories": [
             {
                 "category": "Employee ethics",
-                "reason": "The email suggests bypassing an established compliance process which could conflict with expected workplace behavior and ethical standards surrounding proper procedural conduct.",
+                "reason": "The email suggests proceeding with an action ('move this forward') that bypasses the required compliance review ('without waiting for the usual compliance review'). This suggests an intention to circumvent established compliance processes, which constitutes an employee ethics violation under the policy.",
                 "evidence": "We may be able to move this forward without waiting for the usual compliance review."
             }
         ],
@@ -114,10 +120,16 @@
             "subject": "RE:",
             "body": "If we coordinate the activity around the announcement,market should react the way we are expecting."
         },
-        "risk_categories": "",
-        "classification": "Need Review",
-        "score": 0,
-        "status": "Critical"
+        "risk_categories": [
+            {
+                "category": "Market manipulation",
+                "reason": "The email mentions coordinating activity around an announcement with the intention of producing a market reaction, which aligns with the violation condition of planning or coordinating activity around an announcement with the intention of creating a particular artificial market reaction.",
+                "evidence": "If we coordinate the activity around the announcement, market should react the way we are expecting."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 70.0,
+        "status": "High"
     },
     "10": {
         "email": {
@@ -126,9 +138,15 @@
             "subject": "RE:",
             "body": "Could we adjust a few figures before sharing the report so the results look more favourable."
         },
-        "risk_categories": "",
-        "classification": "Need Review",
-        "score": 0,
-        "status": "Critical"
+        "risk_categories": [
+            {
+                "category": "Employee ethics",
+                "reason": "The email proposes adjusting figures in a report to make the results appear more favorable, which satisfies the violation condition of intentionally falsifying or misrepresenting business information for an improper purpose.",
+                "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 30.0,
+        "status": "Medium"
     }
 }
