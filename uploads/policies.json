@@ -1,155 +1,30 @@
-[
-    {
-        "policy_id": "SEC-001",
-        "category": "Secrecy",
-        "title": "Confidential Information and Unauthorized Disclosure",
-        "definition": "A secrecy violation occurs when a person discloses, shares, forwards, provides access to, or improperly handles confidential, restricted, proprietary, or otherwise protected company information without appropriate authorization.",
-        "violations": [
-            "Disclosing confidential or restricted company information to a person who is not authorized to receive it",
-            "Sharing confidential documents, files, information, or business details with an unauthorized external or internal recipient",
-            "Forwarding or providing access to protected company information without authorization",
-            "Improperly handling confidential information in a way that exposes it to unauthorized individuals",
-            "Requesting or encouraging another person to disclose protected company information without authorization"
-        ],
-        "exceptions": [
-            "Legitimate instructions to keep information confidential",
-            "Instructions that prevent disclosure of information until an agreement, contract, or authorization is formally completed",
-            "Disclosure that is explicitly authorized by the appropriate company authority",
-            "Sharing information with a recipient who is explicitly authorized to receive it",
-            "Routine business communication that does not disclose protected or restricted information"
-        ],
-        "examples": [
-            "Sending a confidential company document to an unauthorized external recipient",
-            "Forwarding restricted business information to someone who is not authorized to receive it",
-            "Providing an unauthorized person with access to confidential company files",
-            "Telling a recipient not to disclose an agreement until it has been formally signed is not itself an unauthorized disclosure"
-        ]
-    },
-    {
-        "policy_id": "MB-001",
-        "category": "Market bribery",
-        "title": "Improper Payments, Gifts, and Benefits",
-        "definition": "A market bribery violation occurs when a person offers, promises, gives, requests, accepts, or arranges an improper payment, gift, benefit, favor, or other advantage with the purpose or expectation of improperly influencing a business, commercial, regulatory, or market-related decision.",
-        "violations": [
-            "Offering money or another improper benefit in exchange for favorable business treatment",
-            "Requesting or accepting an improper payment or benefit to influence a business decision",
-            "Offering a gift, favor, service, or advantage with the intention of improperly influencing a decision",
-            "Agreeing to provide an improper benefit in return for preferential treatment",
-            "Using an intermediary or third party to provide an improper payment or benefit intended to influence a business decision",
-            "Discussing or arranging an improper payment or benefit for the purpose of obtaining an unfair business advantage"
-        ],
-        "exceptions": [
-            "Legitimate business expenses that are permitted under applicable company policy",
-            "Ordinary business activities that do not involve an attempt to improperly influence a decision",
-            "Benefits that are explicitly permitted and appropriately authorized under company policy"
-        ],
-        "examples": [
-            "Offering money to a business partner in exchange for awarding a contract",
-            "Offering an inappropriate gift to influence a customer's purchasing decision",
-            "Requesting a personal payment in exchange for approving a business transaction",
-            "Arranging for another person to provide a benefit in exchange for preferential treatment"
-        ]
-    },
-    {
-        "policy_id": "MM-001",
-        "category": "Market manipulation",
-        "title": "Artificial or Misleading Market Activity",
-        "definition": "A market manipulation violation occurs when a person intentionally attempts to artificially influence the price, supply, demand, trading activity, or market perception of a financial instrument through deceptive, misleading, or artificial actions.",
-        "violations": [
-            "Intentionally creating artificial buying or selling activity to influence a market price",
-            "Coordinating transactions for the purpose of artificially increasing or decreasing a financial instrument's price",
-            "Creating false or misleading market activity to influence other market participants",
-            "Spreading false or misleading information with the intention of influencing trading activity or market prices",
-            "Using deceptive transactions or trading strategies to create a false impression of market demand or supply",
-            "Encouraging another person to participate in activity intended to artificially influence market conditions"
-        ],
-        "exceptions": [
-            "Legitimate market analysis that does not involve deceptive or artificial activity",
-            "Ordinary trading or investment decisions made for legitimate business or investment purposes",
-            "Accurate communication of publicly available market information without an intention to mislead",
-            "Legitimate discussion of market conditions without instructions to manipulate market activity"
-        ],
-        "examples": [
-            "Coordinating transactions specifically to artificially increase the price of a security",
-            "Creating misleading trading activity to make market demand appear higher than it actually is",
-            "Sharing intentionally false information to influence another person's trading decision",
-            "Planning transactions specifically to create an artificial market price"
-        ]
-    },
-    {
-        "policy_id": "ETH-001",
-        "category": "Employee ethics",
-        "title": "Employee Ethical Conduct",
-        "definition": "An employee ethics violation occurs when an employee engages in dishonest, deceptive, inappropriate, unethical, or improper conduct that conflicts with company standards, responsibilities, or expected professional behavior.",
-        "violations": [
-            "Knowingly providing false or misleading information for an improper purpose",
-            "Using an employee's position, authority, or access for an improper personal benefit",
-            "Engaging in dishonest or deceptive conduct related to company business",
-            "Intentionally concealing relevant information for the purpose of obtaining an improper benefit",
-            "Using company resources, information, or authority for an unauthorized personal purpose",
-            "Engaging in conduct that creates an undisclosed or improperly managed conflict of interest"
-        ],
-        "exceptions": [
-            "Ordinary mistakes that do not involve intentional dishonesty or improper conduct",
-            "Good-faith business decisions made within the employee's responsibilities",
-            "Legitimate use of company resources for authorized business purposes",
-            "Routine professional communication that does not demonstrate unethical behavior"
-        ],
-        "examples": [
-            "Knowingly providing false information to obtain an improper personal benefit",
-            "Using an employee's position to obtain preferential treatment for a personal matter",
-            "Concealing a relevant conflict of interest while making a related business decision",
-            "Using company information for an unauthorized personal purpose"
-        ]
-    },
-    {
-        "policy_id": "CMP-001",
-        "category": "Complaints",
-        "title": "Complaint Handling and Reporting",
-        "definition": "A complaints-related violation occurs when a legitimate complaint or concern involving employee conduct, business practices, or company processes is improperly ignored, suppressed, mishandled, or intentionally prevented from reaching the appropriate reporting or review process.",
-        "violations": [
-            "Intentionally preventing a legitimate complaint from being reported through the appropriate process",
-            "Ignoring a complaint that requires investigation or appropriate handling",
-            "Suppressing or concealing a legitimate complaint or concern",
-            "Improperly handling a formal complaint in a way that prevents appropriate review",
-            "Discouraging a person from reporting a legitimate concern through an approved reporting process",
-            "Retaliating against or improperly treating a person because they raised a legitimate complaint"
-        ],
-        "exceptions": [
-            "A person simply reporting a legitimate concern or complaint",
-            "Routine communication about a complaint that does not suppress, ignore, or improperly handle the complaint",
-            "Resolving a complaint through an authorized company process",
-            "Requesting additional information needed to properly investigate a complaint"
-        ],
-        "examples": [
-            "Telling an employee not to report a legitimate workplace concern",
-            "Ignoring a formal complaint that requires investigation",
-            "Attempting to prevent a complaint from reaching the appropriate compliance team",
-            "Suppressing a legitimate complaint to avoid an investigation"
-        ]
-    },
-    {
-        "policy_id": "COM-001",
-        "category": "Change in communication",
-        "title": "Unauthorized Communication Channels",
-        "definition": "A change in communication violation occurs when business-related communication is moved, continued, or redirected from an approved company communication channel to a personal or external communication channel that is not approved for company business.",
-        "violations": [
-            "Moving a business discussion from an approved company channel to a personal or external communication channel",
-            "Asking another person to continue business-related communication through a personal or external messaging service",
-            "Using a personal or external communication service to continue discussions concerning company business, agreements, transactions, or other work-related matters",
-            "Redirecting business communication to an external channel specifically to avoid or bypass an approved company communication system",
-            "Continuing a business discussion through an external communication method when the communication concerns company work or a business agreement"
-        ],
-        "exceptions": [
-            "The external communication channel is explicitly approved for the relevant business activity",
-            "The communication is clearly personal and unrelated to company business",
-            "The external channel is being used for a legitimate purpose specifically authorized by the company"
-        ],
-        "examples": [
-            "Asking a business contact to continue a company discussion through a personal messaging service",
-            "Moving a discussion about a business agreement to an external messaging application",
-            "Asking someone to continue company-related communication through a personal account",
-            "Inviting a business contact to continue work-related communication outside the approved company communication system"
-        ]
-    }
-]
+{
+    "policy_id": "ETH-001",
+    "category": "Employee ethics",
+    "title": "Employee Ethical Conduct",
+    "definition": "An employee ethics violation occurs when an employee engages in dishonest, deceptive, inappropriate, or improper conduct that conflicts with company standards, responsibilities, or expected professional behavior. Casual, informal, unclear, or non-business-related communication is not by itself an ethics violation.",
+    "violations": [
+        "Knowingly providing false or misleading information for an improper purpose",
+        "Using an employee's position, authority, or access for an improper personal benefit",
+        "Engaging in dishonest or deceptive conduct related to company business",
+        "Intentionally concealing relevant information for the purpose of obtaining an improper benefit",
+        "Using company resources, information, or authority for an unauthorized personal purpose",
+        "Engaging in conduct that creates an undisclosed or improperly managed conflict of interest",
+        "Making an inappropriate request, statement, or arrangement that is clearly connected to unethical employee conduct"
+    ],
+    "exceptions": [
+        "Ordinary mistakes that do not involve intentional dishonesty or improper conduct",
+        "Good-faith business decisions made within the employee's responsibilities",
+        "Legitimate use of company resources for authorized business purposes",
+        "Routine professional communication that does not demonstrate unethical behavior",
+        "Casual, informal, unclear, or conversational communication that does not contain evidence of dishonest, deceptive, improper, or unethical conduct",
+        "Communication that is unrelated to an employee's misuse of position, authority, company resources, confidential information, or business responsibilities"
+    ],
+    "examples": [
+        "Knowingly providing false information to obtain an improper personal benefit",
+        "Using an employee's position to obtain preferential treatment for a personal matter",
+        "Concealing a relevant conflict of interest while making a related business decision",
+        "Using company information for an unauthorized personal purpose",
+        "A casual or unclear message about an ordinary matter, without evidence of dishonest or improper conduct, is not an employee ethics violation"
+    ]
+}
