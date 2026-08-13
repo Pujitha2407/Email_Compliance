@@ -16,7 +16,7 @@ class ComplainceScore:
                 self.scores[mail_id] = {
                     "classification": "Need Review",
                     "score": 0,
-                    "status": "Critical"
+                    "status": "Low"
                 }
                 continue
             score = 0

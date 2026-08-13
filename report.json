@@ -6,9 +6,9 @@
             "subject": "Agreement of Confidentiality",
             "body": "Ken - Thanks again for your time yesterday.  Here is the C.A. per our discussion, signature and faxing back to me at 713.853.0528.  Pls do not disclose the C.A. until it is signed by the appropriate party here, we will have a fully-signed copy faxed to you for your records.  Should you have questions or comments, please Mr. Comiskey.  Thank you."
         },
-        "risk_categories": "",
-        "classification": "Need Review",
-        "score": 0,
+        "risk_categories": [],
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low"
     },
     "2": {
@@ -30,9 +30,9 @@
             "subject": "Not visible in screenshot",
             "body": "Not visible in screenshot"
         },
-        "risk_categories": "",
-        "classification": "Need Review",
-        "score": 0,
+        "risk_categories": [],
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low"
     },
     "4": {
@@ -42,9 +42,9 @@
             "subject": "Continental Briefing for Enron/Continental meeting December 12th",
             "body": "Mr. Shankman:  In preparation for the meeting on December 12th with Larry Kellner, CFO, Continental Airlines, I have noted below some background on the Enron/Continental relationship and the purpose for the meeting. Mr. Shankman, please advise if you would like me to distribute this to the attendees.  EXECUTIVE SUMMARY:  Over the past several years Enron has been hedging Continental's crude oil. The relationship has been beneficial to both sides. As a result, since 1999 Enron has earned over $9 million and Continental has saved over $45 million.  The purpose for the December 12th meeting is to address three initiatives in order of economic value: (1) fuel management, (2) weather derivatives, and (3) plastics hedging - VaR analysis.  Several new initiatives being proposed to Continental include the following:  exchanging call options on crude oil for airline tickets (Craig Breslau, Originator) transacting financial swaps on-line (Larry Gagliani, Originator) creating a weather derivative product for the airline industry (Mark Tawney and Gary Taylor, Originators) outsourcing Continental's antifreeze and plastics risks by hedging these products with Enron (Alan Engberg, Originator)  Meeting Attendees from Continental Airlines:  Ron Howard, Vice President, Food Services Larry Kellner, Chief Financial Officer Greg Hartford, Vice President, Fuel Management Company Jeff Misner, Vice President and Treasurer (tentative)"
         },
-        "risk_categories": "",
-        "classification": "Need Review",
-        "score": 0,
+        "risk_categories": [],
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low"
     },
     "5": {
@@ -69,7 +69,7 @@
         "risk_categories": [
             {
                 "category": "Employee ethics",
-                "reason": "The email discusses 'drinks' in a way that is personal/social and unrelated to legitimate business activity, which violates the company's policy on appropriate workplace communication as stated in ETH-001.",
+                "reason": "The email contains an informal discussion about drinks that is social and unrelated to legitimate business activity, sent through an official company communication channel. This matches the behavior described in the Employee ethics policy as a violation for discussing personal/social content, such as drinks, inappropriately in company communication.",
                 "evidence": "so who are the drinks on until I do ???"
             }
         ],
@@ -87,7 +87,7 @@
         "risk_categories": [
             {
                 "category": "Market bribery",
-                "reason": "The email suggests that a 'small gesture' for the decision maker could help in obtaining approval, which aligns with the policy condition of proposing a benefit to influence a business decision.",
+                "reason": "The email suggests that providing a small gesture to the decision maker could help obtain approval, which aligns with behavior described in the violation conditions and examples of the Market bribery policy.",
                 "evidence": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
             }
         ],
@@ -105,7 +105,7 @@
         "risk_categories": [
             {
                 "category": "Employee ethics",
-                "reason": "The email suggests proceeding with an action ('move this forward') that bypasses the required compliance review ('without waiting for the usual compliance review'). This suggests an intention to circumvent established compliance processes, which constitutes an employee ethics violation under the policy.",
+                "reason": "The email suggests bypassing the usual compliance review process, which could reflect unprofessional or improper behavior that conflicts with expected workplace conduct per the Employee Ethical Conduct and Appropriate Workplace Communication policy.",
                 "evidence": "We may be able to move this forward without waiting for the usual compliance review."
             }
         ],
@@ -123,7 +123,7 @@
         "risk_categories": [
             {
                 "category": "Market manipulation",
-                "reason": "The email mentions coordinating activity around an announcement with the intention of producing a market reaction, which aligns with the violation condition of planning or coordinating activity around an announcement with the intention of creating a particular artificial market reaction.",
+                "reason": "The email suggests coordinating activity around an announcement with the expectation of causing a market reaction, which aligns with the policy's prohibition of planning or coordinating activity intended to create an artificial market effect.",
                 "evidence": "If we coordinate the activity around the announcement, market should react the way we are expecting."
             }
         ],
@@ -141,7 +141,7 @@
         "risk_categories": [
             {
                 "category": "Employee ethics",
-                "reason": "The email proposes adjusting figures in a report to make the results appear more favorable, which satisfies the violation condition of intentionally falsifying or misrepresenting business information for an improper purpose.",
+                "reason": "The email suggests intentionally adjusting figures in a way that would make the results appear more favorable. This constitutes intentionally changing, falsifying, or misrepresenting business information, which conflicts with the policy's defined violation conditions.",
                 "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
             }
         ],

@@ -18,7 +18,7 @@ class ComplianceAnalysisService:
         self.results = {}
 
     # Compliance Analysis
-    def execute(self, emails, risk_categories, retriever, export=False):
+    def execute(self, emails, risk_categories, retriever, export=True):
         print("Starting Compliance Analysis...")
         self.results = {}
         for mail_id, email in emails.items():
