@@ -129,7 +129,7 @@ def load_results():
     try:
 
         with open(
-            "llm_ouput.json",
+            "report.json",
             "r",
             encoding="utf-8"
         ) as f:
@@ -138,7 +138,7 @@ def load_results():
 
     except FileNotFoundError:
 
-        st.error("llm_ouput.json not found.")
+        st.error("report.json not found.")
 
         return {}
 
