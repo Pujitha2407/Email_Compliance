@@ -1,5 +1,4 @@
 import json
-import html
 from pathlib import Path
 
 import streamlit as st
@@ -17,7 +16,7 @@ st.set_page_config(
 
 
 # ============================================================
-# CSS
+# CUSTOM CSS
 # ============================================================
 
 st.markdown(
@@ -30,24 +29,29 @@ st.markdown(
         padding-right: 3rem;
     }
 
+    /* HEADER */
+
     .title {
         font-size: 32px;
         font-weight: 700;
-        color: #18202a;
     }
 
     .subtitle {
-        color: #777777;
+        color: #888888;
         font-size: 15px;
+        margin-top: 4px;
         margin-bottom: 25px;
     }
 
+
+    /* METRIC CARDS */
+
     .metric-box {
-        background-color: white;
-        padding: 18px;
+        background-color: #ffffff;
+        padding: 18px 20px;
         border-radius: 14px;
         border: 1px solid #e5e7eb;
-        min-height: 90px;
+        min-height: 95px;
     }
 
     .metric-title {
@@ -58,29 +62,61 @@ st.markdown(
     .metric-value {
         font-size: 30px;
         font-weight: 700;
-        margin-top: 5px;
+        margin-top: 6px;
     }
 
-    .info-box {
+
+    /* EMAIL INFO */
+
+    .email-box {
         background-color: #f8f9fb;
-        padding: 15px;
+        padding: 16px;
         border-radius: 10px;
         border: 1px solid #e5e7eb;
     }
+
+
+    /* ANALYSIS */
 
     .analysis-box {
         background-color: #f8f9fb;
-        padding: 15px;
+        padding: 16px;
         border-radius: 10px;
         border: 1px solid #e5e7eb;
+        line-height: 1.5;
     }
+
+
+    /* EVIDENCE */
+
+    .evidence-box {
+        background-color: #fff8e6;
+        padding: 14px;
+        border-radius: 10px;
+        border-left: 4px solid #d29b18;
+    }
+
+
+    /* POLICY */
 
     .policy-box {
         background-color: #fafbfc;
-        padding: 10px 14px;
+        padding: 12px 15px;
         margin-bottom: 8px;
         border-left: 3px solid #7c83fd;
         border-radius: 6px;
+    }
+
+
+    /* RISK BADGE */
+
+    .risk-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
     }
 
     </style>
@@ -90,31 +126,37 @@ st.markdown(
 
 
 # ============================================================
-# LOAD REPORT
+# FIND REPORT.JSON
 # ============================================================
 
-# frontend.py is inside:
+# Project structure:
 #
 # EMAIL_COMPLIANCE/
-#       services/
-#           frontend.py
 #
-# report.json is inside:
+#     report.json
 #
-# EMAIL_COMPLIANCE/
-#       report.json
+#     services/
+#         frontend.py
+#
+# Therefore:
+# frontend.py -> parent = services
+# parent.parent = EMAIL_COMPLIANCE
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 REPORT_FILE = BASE_DIR / "report.json"
 
 
+# ============================================================
+# LOAD REPORT
+# ============================================================
+
 def load_results():
 
     if not REPORT_FILE.exists():
 
         st.error(
-            f"report.json not found at: {REPORT_FILE}"
+            f"report.json not found:\n{REPORT_FILE}"
         )
 
         return {}
@@ -129,12 +171,20 @@ def load_results():
 
             data = json.load(file)
 
+        if not isinstance(data, dict):
+
+            st.error(
+                "report.json must contain a JSON object."
+            )
+
+            return {}
+
         return data
 
     except json.JSONDecodeError as error:
 
         st.error(
-            f"report.json contains invalid JSON: {error}"
+            f"Invalid JSON in report.json: {error}"
         )
 
         return {}
@@ -142,99 +192,13 @@ def load_results():
     except Exception as error:
 
         st.error(
-            f"Error reading report.json: {error}"
+            f"Unable to read report.json: {error}"
         )
 
         return {}
 
 
 results = load_results()
-
-
-# ============================================================
-# HELPER - GET VALUE
-# ============================================================
-
-def get_value(data, possible_keys, default="Unknown"):
-
-    if not isinstance(data, dict):
-        return default
-
-    for key in possible_keys:
-
-        value = data.get(key)
-
-        if value is not None:
-
-            value = str(value).strip()
-
-            if value:
-
-                return value
-
-    return default
-
-
-# ============================================================
-# GET SENDER AND SUBJECT
-# ============================================================
-
-def get_email_details(result):
-
-    sender = get_value(
-        result,
-        [
-            "sender",
-            "sender_email",
-            "from",
-            "from_email",
-            "email_sender",
-            "sender_address"
-        ]
-    )
-
-    subject = get_value(
-        result,
-        [
-            "subject",
-            "email_subject",
-            "title",
-            "email_title"
-        ]
-    )
-
-    # --------------------------------------------------------
-    # Check nested email object
-    # --------------------------------------------------------
-
-    email_data = result.get("email")
-
-    if isinstance(email_data, dict):
-
-        if sender == "Unknown":
-
-            sender = get_value(
-                email_data,
-                [
-                    "sender",
-                    "sender_email",
-                    "from",
-                    "from_email"
-                ]
-            )
-
-        if subject == "Unknown":
-
-            subject = get_value(
-                email_data,
-                [
-                    "subject",
-                    "email_subject",
-                    "title"
-                ]
-            )
-
-    return sender, subject
 
 
 # ============================================================
@@ -261,7 +225,7 @@ def normalize_risk(value):
 
 
 # ============================================================
-# RISK SETTINGS
+# RISK CONFIGURATION
 # ============================================================
 
 RISK_PRIORITY = {
@@ -292,10 +256,229 @@ RISK_ICON = {
 
 
 # ============================================================
+# EXTRACT EMAIL DATA
+# ============================================================
+
+def extract_email_data(mail_id, result):
+
+    # --------------------------------------------------------
+    # EMAIL
+    # --------------------------------------------------------
+
+    email = result.get(
+        "email",
+        {}
+    )
+
+    if not isinstance(email, dict):
+
+        email = {}
+
+
+    sender = email.get(
+        "from",
+        "Unknown"
+    )
+
+    recipient = email.get(
+        "to",
+        "Unknown"
+    )
+
+    subject = email.get(
+        "subject",
+        "No subject"
+    )
+
+    body = email.get(
+        "body",
+        ""
+    )
+
+
+    # --------------------------------------------------------
+    # RISK
+    # --------------------------------------------------------
+
+    status = result.get(
+        "status",
+        "Unknown"
+    )
+
+    risk = normalize_risk(
+        status
+    )
+
+
+    # --------------------------------------------------------
+    # CLASSIFICATION
+    # --------------------------------------------------------
+
+    classification = result.get(
+        "classification",
+        "Unknown"
+    )
+
+
+    # --------------------------------------------------------
+    # SCORE
+    # --------------------------------------------------------
+
+    score = result.get(
+        "score",
+        "N/A"
+    )
+
+
+    # --------------------------------------------------------
+    # RISK CATEGORIES
+    # --------------------------------------------------------
+
+    risk_categories = result.get(
+        "risk_categories",
+        []
+    )
+
+    if not isinstance(
+        risk_categories,
+        list
+    ):
+
+        risk_categories = []
+
+
+    categories = []
+
+    reasons = []
+
+    evidences = []
+
+
+    for risk_item in risk_categories:
+
+        if not isinstance(
+            risk_item,
+            dict
+        ):
+            continue
+
+
+        category = risk_item.get(
+            "category"
+        )
+
+        reason = risk_item.get(
+            "reason"
+        )
+
+        evidence = risk_item.get(
+            "evidence"
+        )
+
+
+        if category:
+
+            categories.append(
+                str(category)
+            )
+
+
+        if reason:
+
+            reasons.append(
+                str(reason)
+            )
+
+
+        if evidence:
+
+            evidences.append(
+                str(evidence)
+            )
+
+
+    # --------------------------------------------------------
+    # DEFAULT VALUES
+    # --------------------------------------------------------
+
+    if not categories:
+
+        categories = [
+            "No risk category identified"
+        ]
+
+
+    if not reasons:
+
+        reasons = [
+            "No AI analysis available."
+        ]
+
+
+    return {
+        "mail_id": mail_id,
+        "result": result,
+        "sender": sender,
+        "recipient": recipient,
+        "subject": subject,
+        "body": body,
+        "risk": risk,
+        "classification": classification,
+        "score": score,
+        "categories": categories,
+        "reasons": reasons,
+        "evidences": evidences
+    }
+
+
+# ============================================================
+# PREPARE ALL EMAILS
+# ============================================================
+
+email_data = []
+
+
+for mail_id, result in results.items():
+
+    if not isinstance(
+        result,
+        dict
+    ):
+
+        continue
+
+
+    email = extract_email_data(
+        mail_id,
+        result
+    )
+
+
+    email_data.append(
+        email
+    )
+
+
+# ============================================================
+# SORT EMAILS
+# ============================================================
+
+email_data.sort(
+    key=lambda email: RISK_PRIORITY.get(
+        email["risk"],
+        4
+    )
+)
+
+
+# ============================================================
 # HEADER
 # ============================================================
 
-header_col, refresh_col = st.columns([6, 1])
+header_col, refresh_col = st.columns(
+    [6, 1]
+)
+
 
 with header_col:
 
@@ -323,99 +506,11 @@ with refresh_col:
 
 
 # ============================================================
-# PREPARE EMAIL DATA
-# ============================================================
-
-email_data = []
-
-
-if isinstance(results, dict):
-
-    for mail_id, result in results.items():
-
-        if not isinstance(result, dict):
-            continue
-
-        # ----------------------------------------------------
-        # Risk
-        # ----------------------------------------------------
-
-        risk = normalize_risk(
-            result.get(
-                "risk_level",
-                result.get(
-                    "status",
-                    "Unknown"
-                )
-            )
-        )
-
-        # ----------------------------------------------------
-        # Category
-        # ----------------------------------------------------
-
-        category = get_value(
-            result,
-            [
-                "risk_category",
-                "category",
-                "compliance_category"
-            ]
-        )
-
-        # ----------------------------------------------------
-        # Confidence
-        # ----------------------------------------------------
-
-        confidence = get_value(
-            result,
-            [
-                "confidence",
-                "confidence_score"
-            ],
-            default="N/A"
-        )
-
-        # ----------------------------------------------------
-        # Sender / Subject
-        # ----------------------------------------------------
-
-        sender, subject = get_email_details(result)
-
-        # ----------------------------------------------------
-        # Store
-        # ----------------------------------------------------
-
-        email_data.append(
-            {
-                "mail_id": mail_id,
-                "result": result,
-                "risk": risk,
-                "category": category,
-                "confidence": confidence,
-                "sender": sender,
-                "subject": subject
-            }
-        )
-
-
-# ============================================================
-# SORT EMAILS
-# ============================================================
-
-email_data.sort(
-    key=lambda email: RISK_PRIORITY.get(
-        email["risk"],
-        4
-    )
-)
-
-
-# ============================================================
-# COUNTS
+# SUMMARY COUNTS
 # ============================================================
 
 total = len(email_data)
+
 
 critical = sum(
     1
@@ -423,17 +518,20 @@ critical = sum(
     if email["risk"] == "Critical"
 )
 
+
 high = sum(
     1
     for email in email_data
     if email["risk"] == "High"
 )
 
+
 medium = sum(
     1
     for email in email_data
     if email["risk"] == "Medium"
 )
+
 
 low = sum(
     1
@@ -443,28 +541,41 @@ low = sum(
 
 
 # ============================================================
-# METRIC CARD FUNCTION
+# METRIC CARD
 # ============================================================
 
-def show_metric(column, title, value, color):
+def show_metric(
+    column,
+    title,
+    value,
+    color
+):
 
     with column:
 
         st.markdown(
             f"""
-<div class="metric-box">
-    <div class="metric-title">{title}</div>
-    <div class="metric-value" style="color: {color};">
-        {value}
-    </div>
-</div>
+            <div class="metric-box">
+
+                <div class="metric-title">
+                    {title}
+                </div>
+
+                <div
+                    class="metric-value"
+                    style="color: {color};"
+                >
+                    {value}
+                </div>
+
+            </div>
             """,
             unsafe_allow_html=True
         )
 
 
 # ============================================================
-# SUMMARY
+# SUMMARY CARDS
 # ============================================================
 
 col1, col2, col3, col4, col5 = st.columns(5)
@@ -477,12 +588,14 @@ show_metric(
     "#27313b"
 )
 
+
 show_metric(
     col2,
     "Critical",
     critical,
     RISK_COLOR["Critical"]
 )
+
 
 show_metric(
     col3,
@@ -491,12 +604,14 @@ show_metric(
     RISK_COLOR["High"]
 )
 
+
 show_metric(
     col4,
     "Medium",
     medium,
     RISK_COLOR["Medium"]
 )
+
 
 show_metric(
     col5,
@@ -513,15 +628,19 @@ st.divider()
 # EMAIL SECTION
 # ============================================================
 
-st.subheader("Recent Emails")
+st.subheader(
+    "Recent Emails"
+)
+
 
 st.caption(
-    "Sorted by risk priority: Critical → High → Medium → Low"
+    "Sorted by risk priority: "
+    "Critical → High → Medium → Low"
 )
 
 
 # ============================================================
-# DISPLAY EMAILS
+# EMAIL LIST
 # ============================================================
 
 for index, email in enumerate(
@@ -529,17 +648,7 @@ for index, email in enumerate(
     start=1
 ):
 
-    result = email["result"]
-
     risk = email["risk"]
-
-    category = email["category"]
-
-    confidence = email["confidence"]
-
-    sender = email["sender"]
-
-    subject = email["subject"]
 
     icon = RISK_ICON[risk]
 
@@ -547,69 +656,84 @@ for index, email in enumerate(
 
 
     # --------------------------------------------------------
-    # EMAIL DROPDOWN
+    # EMAIL HEADER
     # --------------------------------------------------------
 
     with st.expander(
-        f"{icon}  {index} | {sender} | {subject} | {risk}"
+        f"{icon}  {index} | "
+        f"{email['sender']} | "
+        f"{email['subject']} | "
+        f"{risk}"
     ):
 
-        # ----------------------------------------------------
-        # Sender / Subject
-        # ----------------------------------------------------
 
-        sender_safe = html.escape(
-            str(sender)
-        )
-
-        subject_safe = html.escape(
-            str(subject)
-        )
+        # ====================================================
+        # EMAIL INFORMATION
+        # ====================================================
 
         st.markdown(
-            f"""
-<div class="info-box">
-
-<b>📧 Sender</b><br>
-{sender_safe}
-
-<br><br>
-
-<b>Subject</b><br>
-{subject_safe}
-
-</div>
-            """,
-            unsafe_allow_html=True
+            "### 📧 Email Details"
         )
 
 
-        st.write("")
+        col1, col2 = st.columns(2)
 
 
-        # ----------------------------------------------------
-        # Risk Information
-        # ----------------------------------------------------
+        with col1:
+
+            st.caption(
+                "From"
+            )
+
+            st.write(
+                email["sender"]
+            )
+
+
+        with col2:
+
+            st.caption(
+                "To"
+            )
+
+            st.write(
+                email["recipient"]
+            )
+
+
+        st.caption(
+            "Subject"
+        )
+
+        st.write(
+            email["subject"]
+        )
+
+
+        # ====================================================
+        # RISK INFORMATION
+        # ====================================================
+
+        st.divider()
+
 
         col1, col2, col3 = st.columns(3)
 
 
         with col1:
 
-            st.caption("Risk Level")
+            st.caption(
+                "Risk Level"
+            )
 
             st.markdown(
                 f"""
-<span style="
-background-color:{color};
-color:white;
-padding:5px 12px;
-border-radius:20px;
-font-size:12px;
-font-weight:600;
-">
-{icon} {risk}
-</span>
+                <span
+                    class="risk-badge"
+                    style="background:{color};"
+                >
+                    {icon} {risk}
+                </span>
                 """,
                 unsafe_allow_html=True
             )
@@ -617,117 +741,115 @@ font-weight:600;
 
         with col2:
 
-            st.caption("Risk Category")
+            st.caption(
+                "Classification"
+            )
 
-            st.write(category)
+            st.write(
+                email["classification"]
+            )
 
 
         with col3:
 
-            st.caption("Confidence")
+            st.caption(
+                "Score"
+            )
 
-            st.write(confidence)
-
-
-        st.divider()
-
-
-        # ----------------------------------------------------
-        # AI ANALYSIS
-        # ----------------------------------------------------
-
-        st.markdown(
-            "#### 🤖 AI Analysis"
-        )
-
-
-        reason = get_value(
-            result,
-            [
-                "reasoning",
-                "reason",
-                "explanation",
-                "analysis"
-            ],
-            default="No explanation available."
-        )
-
-
-        reason_safe = html.escape(
-            str(reason)
-        )
-
-
-        st.markdown(
-            f"""
-<div class="analysis-box">
-{reason_safe}
-</div>
-            """,
-            unsafe_allow_html=True
-        )
-
-
-        # ----------------------------------------------------
-        # RETRIEVED POLICIES
-        # ----------------------------------------------------
-
-        policies = result.get(
-            "retrieved_policies"
-        )
-
-
-        if policies:
-
-            st.markdown(
-                "#### 🔍 Retrieved Policies"
+            st.write(
+                email["score"]
             )
 
 
-            for policy_index, policy in enumerate(
-                policies,
-                start=1
-            ):
+        # ====================================================
+        # RISK CATEGORIES
+        # ====================================================
 
-                if not isinstance(
-                    policy,
-                    dict
-                ):
-                    continue
+        st.markdown(
+            "### 🏷️ Risk Category"
+        )
 
 
-                policy_id = policy.get(
-                    "policy_id",
-                    "Unknown"
-                )
+        for category in email["categories"]:
+
+            st.write(
+                f"• {category}"
+            )
 
 
-                similarity = policy.get(
-                    "similarity_score",
-                    "N/A"
-                )
+        # ====================================================
+        # AI ANALYSIS
+        # ====================================================
 
+        st.markdown(
+            "### 🤖 AI Analysis"
+        )
+
+
+        for reason in email["reasons"]:
+
+            st.markdown(
+                f"""
+                <div class="analysis-box">
+                    {reason}
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+
+        # ====================================================
+        # EVIDENCE
+        # ====================================================
+
+        if email["evidences"]:
+
+            st.markdown(
+                "### 🔎 Evidence"
+            )
+
+
+            for evidence in email["evidences"]:
 
                 st.markdown(
                     f"""
-<div class="policy-box">
-
-<b>{policy_index}. {policy_id}</b>
-<br>
-Similarity: {similarity}
-
-</div>
+                    <div class="evidence-box">
+                        {evidence}
+                    </div>
                     """,
                     unsafe_allow_html=True
                 )
 
 
-        # ----------------------------------------------------
-        # COMPLETE RESULT
-        # ----------------------------------------------------
+        # ====================================================
+        # EMAIL BODY
+        # ====================================================
 
         with st.expander(
-            "View complete analysis"
+            "View Email Body"
         ):
 
-            st.json(result)
+            if email["body"]:
+
+                st.write(
+                    email["body"]
+                )
+
+            else:
+
+                st.caption(
+                    "No email body available."
+                )
+
+
+        # ====================================================
+        # COMPLETE ANALYSIS
+        # ====================================================
+
+        with st.expander(
+            "View Complete Analysis"
+        ):
+
+            st.json(
+                email["result"]
+            )
