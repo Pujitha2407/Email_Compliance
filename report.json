@@ -6,10 +6,10 @@
             "subject": "Agreement of Confidentiality",
             "body": "Ken - Thanks again for your time yesterday.  Here is the C.A. per our discussion, signature and faxing back to me at 713.853.0528.  Pls do not disclose the C.A. until it is signed by the appropriate party here, we will have a fully-signed copy faxed to you for your records.  Should you have questions or comments, please Mr. Comiskey.  Thank you."
         },
-        "risk_categories": [],
-        "classification": "Compliant",
-        "score": 0.0,
-        "status": "Low"
+        "risk_categories": "",
+        "classification": "Need Review",
+        "score": 100,
+        "status": "Critical"
     },
     "2": {
         "email": {
@@ -18,16 +18,10 @@
             "subject": "Agreement",
             "body": "John:  Hope you did ok today.  As I said yesterday, the poor close Monday should lead to additional market weakness, which we saw today.  You indicated that you would mail the service agreement back to me. I don't know if you have the mailing address, so here it is:  Psytech Analytics 11604 Greenspring Ave. Lutherville, MD? 21093  Speak to you over phone later during the day once I have decent set-up on my work for natural.  Feel free to ding me on whatsapp anytime.  Mark"
         },
-        "risk_categories": [
-            {
-                "category": "Change in communication",
-                "reason": "The email contains a request to use an external communication channel (WhatsApp) for business-related matters, explicitly classified as a violation under the policy COM-001.",
-                "evidence": "Feel free to ding me on whatsapp anytime."
-            }
-        ],
-        "classification": "Non Compliant",
-        "score": 10.0,
-        "status": "Low"
+        "risk_categories": "",
+        "classification": "Need Review",
+        "score": 100,
+        "status": "Critical"
     },
     "3": {
         "email": {
@@ -70,20 +64,38 @@
             "from": "kim.ward@enron.com",
             "to": "john.arnold@enron.com",
             "subject": "RE:",
+            "body": "so who are the drinks on until I do ???"
+        },
+        "risk_categories": [
+            {
+                "category": "Employee ethics",
+                "reason": "The email contains inappropriate and unprofessional communication that discusses drinks in an official company communication, which is unrelated to legitimate business activity. This behavior violates the policy on Employee Ethical Conduct and Appropriate Workplace Communication.",
+                "evidence": "so who are the drinks on until I do ???"
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 30.0,
+        "status": "Medium"
+    },
+    "7": {
+        "email": {
+            "from": "kim.ward@enron.com",
+            "to": "john.arnold@enron.com",
+            "subject": "RE:",
             "body": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
         },
         "risk_categories": [
             {
                 "category": "Market Bribery",
-                "reason": "The email discusses the concept of providing a 'gesture for the decision maker' to help secure approval, which aligns with a potential violation involving offering a benefit with the intention of improperly influencing a business decision.",
-                "evidence": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
+                "reason": "The email contains a suggestion of giving a 'small gesture' to influence a decision maker in order to 'get the approval'. This could potentially be interpreted as a bribe or improper benefit to influence business outcomes, which satisfies the policy on employee ethical conduct related to inappropriate personal requests, arrangements, or behaviors.",
+                "evidence": "Perhaps a small gesture for the decision maker would help us get the approval though."
             }
         ],
         "classification": "Non Compliant",
         "score": 90.0,
         "status": "Critical"
     },
-    "7": {
+    "8": {
         "email": {
             "from": "john@company.com",
             "to": "alice@company.com",
@@ -92,16 +104,16 @@
         },
         "risk_categories": [
             {
-                "category": "Change in communication",
-                "reason": "The email suggests bypassing the usual compliance process, which might involve using unapproved methods of communication or avoiding established compliance protocols.",
+                "category": "Employee ethics",
+                "reason": "The email suggests bypassing the usual compliance review process, which could be considered unprofessional or improper conduct within the scope of company policies.",
                 "evidence": "We may be able to move this forward without waiting for the usual compliance review."
             }
         ],
         "classification": "Non Compliant",
-        "score": 10.0,
-        "status": "Low"
+        "score": 30.0,
+        "status": "Medium"
     },
-    "8": {
+    "9": {
         "email": {
             "from": "john@company.com",
             "to": "alice@company.com",
@@ -111,7 +123,7 @@
         "risk_categories": [
             {
                 "category": "Market Manipulation/Misconduct",
-                "reason": "The email suggests coordinating activity around an announcement to influence the market's reaction, which aligns with the violation conditions of attempting to artificially influence market perception or behavior.",
+                "reason": "The email contains language suggesting coordination of activity to induce a market reaction, which may satisfy violation conditions for attempting to artificially influence the market.",
                 "evidence": "If we coordinate the activity around the announcement, market should react the way we are expecting."
             }
         ],
@@ -119,27 +131,16 @@
         "score": 70.0,
         "status": "High"
     },
-    "9": {
+    "10": {
         "email": {
             "from": "john@company.com",
             "to": "alice@company.com",
             "subject": "RE:",
             "body": "Could we adjust a few figures before sharing the report so the results look more favourable."
         },
-        "risk_categories": [
-            {
-                "category": "Market Manipulation/Misconduct",
-                "reason": "The email contains a request to adjust figures in a report to make results appear more favorable, which may constitute an attempt to manipulate or misrepresent data.",
-                "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
-            },
-            {
-                "category": "Employee ethics",
-                "reason": "The email suggests altering figures to present a misleading outcome, which raises concerns about ethical behavior.",
-                "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
-            }
-        ],
-        "classification": "Non Compliant",
-        "score": 76.0,
-        "status": "High"
+        "risk_categories": "",
+        "classification": "Need Review",
+        "score": 100,
+        "status": "Critical"
     }
 }
