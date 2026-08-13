@@ -169,13 +169,11 @@ ANALYSIS INSTRUCTIONS
 12. Legitimate business activity must not automatically be
     treated as a compliance violation.
 
-13. 🟨 IMPORTANT:
-    Do not be overly conservative when the email explicitly
+13. Do not be overly conservative when the email explicitly
     requests, instructs, suggests, or arranges behavior that
     falls under a policy violation.
 
-14. 🟨 IMPORTANT:
-    A violation does NOT necessarily require that the
+14. A violation does NOT necessarily require that the
     prohibited action has already occurred.
 
     If the policy covers requests, instructions, attempts,
@@ -188,19 +186,15 @@ ANALYSIS INSTRUCTIONS
     determine whether this satisfies the Change in
     communication policy.
 
-16. 🟨 For example:
+16. If an email says:
 
-    If an email says:
+    "Feel free to ding me on whatsapp anytime."
 
-    "Feel free to ding me on WhatsApp anytime."
-
-    do not automatically classify it as compliant simply
-    because the actual WhatsApp conversation is not shown.
-
-    Determine whether the email is inviting the recipient
-    to move business-related communication to an external
-    communication channel and evaluate that behavior against
-    the retrieved Change in communication policy.
+    and the surrounding communication concerns business,
+    an agreement, transaction, work, or another business
+    matter, evaluate whether this is a request to continue
+    business-related communication through an external
+    messaging service.
 
 17. If an email discusses confidentiality, agreements,
     or preventing disclosure, determine whether the email
@@ -231,96 +225,310 @@ ANALYSIS INSTRUCTIONS
     return violation as false.
 
 ============================================================
-IMPORTANT DECISION RULE
+POLICY APPLICATION RULE
 ============================================================
 
-A category should be classified as a violation ONLY when:
+Evaluate EVERY retrieved policy independently.
 
-- The email contains an actual action, request, instruction,
-  behavior, or statement relevant to the policy.
+Do NOT assume that the highest similarity policy is the
+correct policy.
 
-AND
+The FAISS similarity score only determines which policies
+are supplied to you. It is NOT evidence that a violation
+exists.
 
-- That action, request, instruction, behavior, or statement
-  satisfies one or more violation conditions in the policy.
+For EACH retrieved policy:
 
-AND
+1. Read the policy definition.
+2. Read every violation condition.
+3. Read every exception.
+4. Read the examples.
+5. Compare the complete email against all of them.
+6. Determine whether the email actually satisfies a
+   violation condition.
+7. Check whether an exception applies.
+8. Only then decide whether that category is a violation.
 
-- No applicable exception removes the violation.
-
-AND
-
-- There is exact supporting evidence in the email.
-
-🟨 IMPORTANT:
-
-The model must evaluate the MEANING of the email, not just
-search for policy keywords.
-
-For example:
-
-Email:
-"Let's continue this discussion on WhatsApp."
-
-If the retrieved policy prohibits moving business-related
-communication to an external or unauthorized channel,
-this may satisfy the policy even though the email does not
-contain the words "violation", "unauthorized", or
-"compliance".
-
-Do not require the email to explicitly state that the
-behavior is prohibited.
+The policy definition, violations, exceptions, and examples
+are the PRIMARY authority for your decision.
 
 ============================================================
-CONTEXTUAL REASONING
+POLICY EXAMPLES ARE STRONG EVIDENCE
 ============================================================
 
-🟨 Before deciding violation=true or violation=false,
-perform the following internal reasoning steps:
+If the email directly matches the behavior described in a
+policy example, treat that example as strong evidence that
+the policy applies.
 
-1. What is the sender communicating?
+Do NOT ignore a violation merely because the email uses:
 
-2. What is the recipient being asked, instructed, or invited
-   to do?
+- informal wording
+- short wording
+- incomplete wording
+- indirect wording
+- slang
+- abbreviations
+- conversational wording
 
-3. Is the communication personal or business-related?
+The email does NOT need to use the exact terminology from
+the policy.
 
-4. Is there a behavior relevant to any retrieved policy?
-
-5. Which specific policy violation condition applies?
-
-6. Does an exception apply?
-
-7. What exact sentence or phrase proves the decision?
-
-8. If the email is compliant, explain why none of the
-   retrieved policy violation conditions are satisfied.
-
-Do not output this internal reasoning.
-Only return the required JSON.
+You must understand the meaning of the communication.
 
 ============================================================
-SPECIAL ATTENTION
+IMPORTANT CATEGORY APPLICATIONS
 ============================================================
 
-🟨 Pay particular attention to:
+CHANGE IN COMMUNICATION
+------------------------------------------------------------
 
-- requests to move communication to WhatsApp or other
-  external messaging services
-- personal email addresses
-- personal phone numbers
-- requests to avoid official communication channels
-- requests to bypass approval processes
-- requests to hide or avoid compliance controls
-- confidential information
-- improper gifts or benefits
-- bribery or kickbacks
-- market-related misconduct
-- employee ethical concerns
+Example:
 
-However, do NOT flag these automatically.
+"Feel free to ding me on whatsapp anytime."
 
-They must still satisfy the retrieved policy.
+If the surrounding email concerns business, an agreement,
+transaction, work, or another business matter, this is an
+invitation to continue business-related communication through
+an external messaging service.
+
+Evaluate it against the Change in communication policy.
+
+Do not require the email to explicitly say:
+
+"unauthorized channel"
+
+"communication violation"
+
+or
+
+"bypass company communication."
+
+The actual request to continue business communication through
+the external channel is the relevant behavior.
+
+------------------------------------------------------------
+EMPLOYEE ETHICS
+------------------------------------------------------------
+
+Example:
+
+"so who are the drinks on until I do ???"
+
+When this is sent through official company communication,
+evaluate it against the Employee ethics policy.
+
+The policy specifically covers inappropriate discussion of
+drinks, alcohol, drinking, partying, personal entertainment,
+social activities, and inappropriate personal arrangements.
+
+Do NOT require the email to explicitly say:
+
+"alcohol"
+
+"ethics"
+
+"violation"
+
+or
+
+"inappropriate."
+
+Understand the meaning of the communication.
+
+However, do NOT classify every mention of drinks as a violation.
+
+For example, legitimate business-related hospitality,
+authorized company events, business dinners, or other
+activities covered by an applicable exception must be treated
+according to the policy exception.
+
+------------------------------------------------------------
+MARKET BRIBERY
+------------------------------------------------------------
+
+Example:
+
+"Perhaps a small gesture for the decision maker would help us
+get the approval though."
+
+Evaluate the COMPLETE meaning.
+
+The combination of:
+
+- a gesture or benefit
+- a decision maker
+- obtaining approval
+
+may constitute an improper benefit intended to influence a
+business decision.
+
+Evaluate this against the Market bribery policy.
+
+Do not require the email to explicitly use the word:
+
+"bribe."
+
+------------------------------------------------------------
+MARKET MANIPULATION
+------------------------------------------------------------
+
+Example:
+
+"If we coordinate the activity around the announcement,
+market should react the way we are expecting."
+
+Evaluate this against the Market manipulation policy.
+
+The combination of:
+
+- coordinated activity
+- an announcement
+- an intended or expected market reaction
+
+must be evaluated against the policy conditions concerning
+artificially influencing market activity.
+
+Do not require the email to explicitly say:
+
+"manipulate the market."
+
+However, ordinary market analysis or legitimate trading
+discussion is NOT automatically manipulation.
+
+The policy violation conditions and exceptions must still
+be satisfied.
+
+------------------------------------------------------------
+SECRECY
+------------------------------------------------------------
+
+Example:
+
+"Pls do not disclose the C.A. until it is signed..."
+
+This is NOT automatically a secrecy violation.
+
+If the applicable policy explicitly contains an exception for
+instructions preventing disclosure until an agreement,
+contract, or authorization is formally completed, that
+exception applies.
+
+Therefore:
+
+"Do not disclose the agreement until it is signed."
+
+must NOT be treated as an unauthorized disclosure by itself.
+
+The actual disclosure or unauthorized handling of protected
+information must be supported by the email.
+
+============================================================
+FINAL CATEGORY DECISION RULE
+============================================================
+
+A category may be returned ONLY when ALL applicable conditions
+below are satisfied:
+
+1. The email contains an actual action, request, instruction,
+   suggestion, behavior, or statement relevant to the policy.
+
+2. That behavior satisfies at least one violation condition
+   in the policy.
+
+3. No applicable policy exception removes the violation.
+
+4. There is exact supporting evidence in the email.
+
+If these conditions are satisfied:
+
+- "violation" MUST be true.
+- The applicable category MUST be included.
+- The reason MUST explain the policy violation.
+- The evidence MUST quote the email exactly.
+
+If these conditions are NOT satisfied:
+
+- Do NOT include that category.
+
+============================================================
+DO NOT USE KEYWORD-ONLY CLASSIFICATION
+============================================================
+
+Never classify an email solely because it contains a word
+associated with a policy.
+
+Examples:
+
+"confidential"
+does NOT automatically mean Secrecy violation.
+
+"WhatsApp"
+does NOT automatically mean Change in communication violation.
+
+"drinks"
+does NOT automatically mean Employee ethics violation.
+
+"market"
+does NOT automatically mean Market manipulation.
+
+"gesture"
+does NOT automatically mean Market bribery.
+
+"complaint"
+does NOT automatically mean Complaints violation.
+
+The complete meaning, context, policy violation conditions,
+and exceptions must be considered.
+
+============================================================
+EVIDENCE REQUIREMENT
+============================================================
+
+Every non-compliant category MUST have exact evidence from
+the email.
+
+The evidence must show WHY the category applies.
+
+Bad evidence:
+
+"drinks"
+
+Good evidence:
+
+"so who are the drinks on until I do ???"
+
+Bad evidence:
+
+"WhatsApp"
+
+Good evidence:
+
+"Feel free to ding me on whatsapp anytime."
+
+Do not create evidence that does not exist in the email.
+
+============================================================
+COMPLIANT DECISION
+============================================================
+
+Return:
+
+"violation": false
+
+ONLY when, after evaluating the retrieved policies, the email
+does not satisfy any applicable violation condition.
+
+Do not return violation=false merely because:
+
+- a keyword was not found
+- the policy wording is different
+- the email is short
+- the email uses informal language
+- the email does not explicitly say that something is illegal
+  or prohibited
+
+If the email clearly matches a policy violation, classify it
+as a violation even when the wording is indirect.
 
 ============================================================
 OUTPUT REQUIREMENTS
@@ -330,30 +538,39 @@ Return ONLY a valid JSON object.
 
 The JSON object MUST contain:
 
-- "violation": a boolean value.
-- "categories": an array.
+- "violation": true or false
+- "categories": an array
 
 When a violation exists:
 
-- "violation" must be true.
-- "categories" must contain each applicable risk category.
-- Each category must contain:
-    - "category"
-    - "reason"
-    - "evidence"
+{{
+    "violation": true,
+    "categories": [
+        {{
+            "category": "exact policy category",
+            "reason": "specific explanation of why the email violates the policy",
+            "evidence": "exact quote from the email"
+        }}
+    ]
+}}
 
 When no violation exists:
 
-- "violation" must be false.
-- "categories" must be an empty array.
+{{
+    "violation": false,
+    "categories": []
+}}
 
-Every evidence value must be an exact quote from the email.
+Rules:
 
-Do not add markdown code fences.
-
-Do not add any text before the JSON.
-
-Do not add any text after the JSON.
+- Every category MUST correspond to one of the retrieved policies.
+- Do NOT invent category names.
+- Every evidence value MUST be an exact quote from the email.
+- Do NOT paraphrase evidence.
+- Do NOT add markdown.
+- Do NOT add explanations outside the JSON.
+- Do NOT add comments.
+- Do NOT add trailing text.
 
 Return ONLY the JSON object.
 """
