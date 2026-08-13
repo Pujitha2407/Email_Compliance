@@ -22,7 +22,7 @@ class ComplianceAnalysisService:
         print("Starting Compliance Analysis...")
         self.results = {}
         for mail_id, email in emails.items():
-            retrieved_policies=retriever.retrieve(email,top_k=3)
+            retrieved_policies=retriever.retrieve(email,top_k=6)
             print("number of policies recieved:",len(retrieved_policies))
             print("\n-----retrieved policies-------")
             for i ,item in enumerate(retrieved_policies,1):

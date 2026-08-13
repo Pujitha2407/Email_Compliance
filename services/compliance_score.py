@@ -15,7 +15,7 @@ class ComplainceScore:
             if "error" in result:
                 self.scores[mail_id] = {
                     "classification": "Need Review",
-                    "score": 100,
+                    "score": 0,
                     "status": "Critical"
                 }
                 continue
