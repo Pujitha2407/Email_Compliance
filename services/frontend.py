@@ -21,112 +21,110 @@ st.set_page_config(
 
 st.markdown(
     """
-    <style>
+<style>
 
-    .block-container {
-        padding-top: 2rem;
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
+.block-container {
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
 
-    /* HEADER */
+/* =========================================================
+   HEADER
+   ========================================================= */
 
-    .title {
-        font-size: 32px;
-        font-weight: 700;
-    }
+.comply-title {
+    font-size: 32px;
+    font-weight: 700;
+}
 
-    .subtitle {
-        color: #888888;
-        font-size: 15px;
-        margin-top: 4px;
-        margin-bottom: 25px;
-    }
-
-
-    /* METRIC CARDS */
-
-    .metric-box {
-        background-color: #ffffff;
-        padding: 18px 20px;
-        border-radius: 14px;
-        border: 1px solid #e5e7eb;
-        min-height: 95px;
-    }
-
-    .metric-title {
-        color: #737983;
-        font-size: 14px;
-    }
-
-    .metric-value {
-        font-size: 30px;
-        font-weight: 700;
-        margin-top: 6px;
-    }
+.comply-subtitle {
+    color: #888888;
+    font-size: 15px;
+    margin-top: 4px;
+    margin-bottom: 25px;
+}
 
 
-    /* EMAIL INFO */
+/* =========================================================
+   METRIC CARDS
+   ========================================================= */
 
-    .email-box {
-        background-color: #f8f9fb;
-        padding: 16px;
-        border-radius: 10px;
-        border: 1px solid #e5e7eb;
-    }
+.metric-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 18px 20px;
+    min-height: 90px;
+}
 
+.metric-label {
+    color: #737983;
+    font-size: 14px;
+    font-weight: 500;
+}
 
-    /* ANALYSIS */
-
-    .analysis-box {
-        background-color: #f8f9fb;
-        padding: 16px;
-        border-radius: 10px;
-        border: 1px solid #e5e7eb;
-        line-height: 1.5;
-    }
-
-
-    /* EVIDENCE */
-
-    .evidence-box {
-        background-color: #fff8e6;
-        padding: 14px;
-        border-radius: 10px;
-        border-left: 4px solid #d29b18;
-    }
+.metric-number {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 6px;
+}
 
 
-    /* POLICY */
+/* =========================================================
+   EMAIL DETAILS
+   ========================================================= */
 
-    .policy-box {
-        background-color: #fafbfc;
-        padding: 12px 15px;
-        margin-bottom: 8px;
-        border-left: 3px solid #7c83fd;
-        border-radius: 6px;
-    }
+.email-info {
+    background-color: #f8f9fb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 15px;
+}
 
 
-    /* RISK BADGE */
+/* =========================================================
+   ANALYSIS
+   ========================================================= */
 
-    .risk-badge {
-        display: inline-block;
-        padding: 5px 12px;
-        border-radius: 20px;
-        color: white;
-        font-size: 12px;
-        font-weight: 700;
-    }
+.analysis-info {
+    background-color: #f8f9fb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 15px;
+}
 
-    </style>
-    """,
+
+/* =========================================================
+   EVIDENCE
+   ========================================================= */
+
+.evidence-info {
+    background-color: #fff8e6;
+    border-left: 4px solid #d29b18;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+
+/* =========================================================
+   EXPANDER
+   ========================================================= */
+
+[data-testid="stExpander"] {
+    border-radius: 10px;
+    border: 1px solid #e1e4e8;
+    margin-bottom: 8px;
+}
+
+</style>
+""",
     unsafe_allow_html=True
 )
 
 
 # ============================================================
-# FIND REPORT.JSON
+# REPORT FILE
 # ============================================================
 
 # Project structure:
@@ -138,9 +136,8 @@ st.markdown(
 #     services/
 #         frontend.py
 #
-# Therefore:
-# frontend.py -> parent = services
-# parent.parent = EMAIL_COMPLIANCE
+# frontend.py is inside services,
+# so parent.parent points to EMAIL_COMPLIANCE.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -184,7 +181,7 @@ def load_results():
     except json.JSONDecodeError as error:
 
         st.error(
-            f"Invalid JSON in report.json: {error}"
+            f"Invalid JSON in report.json:\n{error}"
         )
 
         return {}
@@ -192,36 +189,13 @@ def load_results():
     except Exception as error:
 
         st.error(
-            f"Unable to read report.json: {error}"
+            f"Error reading report.json:\n{error}"
         )
 
         return {}
 
 
 results = load_results()
-
-
-# ============================================================
-# NORMALIZE RISK
-# ============================================================
-
-def normalize_risk(value):
-
-    risk = str(value).strip().lower()
-
-    if "critical" in risk:
-        return "Critical"
-
-    if "high" in risk:
-        return "High"
-
-    if "medium" in risk:
-        return "Medium"
-
-    if "low" in risk:
-        return "Low"
-
-    return "Unknown"
 
 
 # ============================================================
@@ -256,13 +230,36 @@ RISK_ICON = {
 
 
 # ============================================================
+# NORMALIZE RISK
+# ============================================================
+
+def normalize_risk(status):
+
+    value = str(status).strip().lower()
+
+    if "critical" in value:
+        return "Critical"
+
+    if "high" in value:
+        return "High"
+
+    if "medium" in value:
+        return "Medium"
+
+    if "low" in value:
+        return "Low"
+
+    return "Unknown"
+
+
+# ============================================================
 # EXTRACT EMAIL DATA
 # ============================================================
 
-def extract_email_data(mail_id, result):
+def extract_email(mail_id, result):
 
     # --------------------------------------------------------
-    # EMAIL
+    # EMAIL OBJECT
     # --------------------------------------------------------
 
     email = result.get(
@@ -274,6 +271,10 @@ def extract_email_data(mail_id, result):
 
         email = {}
 
+
+    # --------------------------------------------------------
+    # BASIC EMAIL INFORMATION
+    # --------------------------------------------------------
 
     sender = email.get(
         "from",
@@ -300,13 +301,11 @@ def extract_email_data(mail_id, result):
     # RISK
     # --------------------------------------------------------
 
-    status = result.get(
-        "status",
-        "Unknown"
-    )
-
     risk = normalize_risk(
-        status
+        result.get(
+            "status",
+            "Unknown"
+        )
     )
 
 
@@ -348,30 +347,29 @@ def extract_email_data(mail_id, result):
 
 
     categories = []
-
     reasons = []
-
     evidences = []
 
 
-    for risk_item in risk_categories:
+    for item in risk_categories:
 
         if not isinstance(
-            risk_item,
+            item,
             dict
         ):
+
             continue
 
 
-        category = risk_item.get(
+        category = item.get(
             "category"
         )
 
-        reason = risk_item.get(
+        reason = item.get(
             "reason"
         )
 
-        evidence = risk_item.get(
+        evidence = item.get(
             "evidence"
         )
 
@@ -432,7 +430,7 @@ def extract_email_data(mail_id, result):
 
 
 # ============================================================
-# PREPARE ALL EMAILS
+# PREPARE EMAIL DATA
 # ============================================================
 
 email_data = []
@@ -448,7 +446,7 @@ for mail_id, result in results.items():
         continue
 
 
-    email = extract_email_data(
+    email = extract_email(
         mail_id,
         result
     )
@@ -483,12 +481,12 @@ header_col, refresh_col = st.columns(
 with header_col:
 
     st.markdown(
-        '<div class="title">🛡️ COMPLY AI</div>',
+        '<div class="comply-title">🛡️ COMPLY AI</div>',
         unsafe_allow_html=True
     )
 
     st.markdown(
-        '<div class="subtitle">'
+        '<div class="comply-subtitle">'
         'AI-Powered Email Compliance & Risk Detection'
         '</div>',
         unsafe_allow_html=True
@@ -553,23 +551,14 @@ def show_metric(
 
     with column:
 
+        # Keep the HTML on one line.
+        # This prevents the previous <div> rendering problem.
+
         st.markdown(
-            f"""
-            <div class="metric-box">
-
-                <div class="metric-title">
-                    {title}
-                </div>
-
-                <div
-                    class="metric-value"
-                    style="color: {color};"
-                >
-                    {value}
-                </div>
-
-            </div>
-            """,
+            f'<div class="metric-card">'
+            f'<div class="metric-label">{title}</div>'
+            f'<div class="metric-number" style="color:{color};">{value}</div>'
+            f'</div>',
             unsafe_allow_html=True
         )
 
@@ -625,7 +614,7 @@ st.divider()
 
 
 # ============================================================
-# EMAIL SECTION
+# RECENT EMAILS
 # ============================================================
 
 st.subheader(
@@ -634,8 +623,7 @@ st.subheader(
 
 
 st.caption(
-    "Sorted by risk priority: "
-    "Critical → High → Medium → Low"
+    "Sorted by risk priority: Critical → High → Medium → Low"
 )
 
 
@@ -656,11 +644,11 @@ for index, email in enumerate(
 
 
     # --------------------------------------------------------
-    # EMAIL HEADER
+    # EMAIL DROPDOWN
     # --------------------------------------------------------
 
     with st.expander(
-        f"{icon}  {index} | "
+        f"{icon} {index} | "
         f"{email['sender']} | "
         f"{email['subject']} | "
         f"{risk}"
@@ -668,7 +656,7 @@ for index, email in enumerate(
 
 
         # ====================================================
-        # EMAIL INFORMATION
+        # EMAIL DETAILS
         # ====================================================
 
         st.markdown(
@@ -711,7 +699,7 @@ for index, email in enumerate(
 
 
         # ====================================================
-        # RISK INFORMATION
+        # RISK SUMMARY
         # ====================================================
 
         st.divider()
@@ -726,15 +714,17 @@ for index, email in enumerate(
                 "Risk Level"
             )
 
+            # One-line HTML only.
+
             st.markdown(
-                f"""
-                <span
-                    class="risk-badge"
-                    style="background:{color};"
-                >
-                    {icon} {risk}
-                </span>
-                """,
+                f'<span style="'
+                f'background:{color};'
+                f'color:white;'
+                f'padding:5px 12px;'
+                f'border-radius:20px;'
+                f'font-weight:600;">'
+                f'{icon} {risk}'
+                f'</span>',
                 unsafe_allow_html=True
             )
 
@@ -762,7 +752,7 @@ for index, email in enumerate(
 
 
         # ====================================================
-        # RISK CATEGORIES
+        # RISK CATEGORY
         # ====================================================
 
         st.markdown(
@@ -788,13 +778,8 @@ for index, email in enumerate(
 
         for reason in email["reasons"]:
 
-            st.markdown(
-                f"""
-                <div class="analysis-box">
-                    {reason}
-                </div>
-                """,
-                unsafe_allow_html=True
+            st.info(
+                reason
             )
 
 
@@ -811,13 +796,8 @@ for index, email in enumerate(
 
             for evidence in email["evidences"]:
 
-                st.markdown(
-                    f"""
-                    <div class="evidence-box">
-                        {evidence}
-                    </div>
-                    """,
-                    unsafe_allow_html=True
+                st.warning(
+                    evidence
                 )
 
 
@@ -843,7 +823,7 @@ for index, email in enumerate(
 
 
         # ====================================================
-        # COMPLETE ANALYSIS
+        # COMPLETE JSON
         # ====================================================
 
         with st.expander(
