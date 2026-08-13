@@ -5,7 +5,6 @@ from services.preprocessing import PreprocessingService
 from services.rag_retriever import RAGRetriever
 from services.compliance_analysis import ComplianceAnalysisService
 from services.compliance_score import ComplainceScore
-from services.rag_retriever import RAGRetriever
 parser = argparse.ArgumentParser()
 
 def run():

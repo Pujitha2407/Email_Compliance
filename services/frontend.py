@@ -17,21 +17,33 @@ with open("report.json", "r", encoding="utf-8") as f:
 # Summary
 total = len(results)
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
     st.metric("Total Emails", total)
 
 with col2:
-    st.metric("High Risk", sum(
+    st.metric("Critical", sum(
         1 for r in results.values()
-        if str(r.get("risk_level", "")).lower() == "high"
+        if str(r.get("status", "")).lower() == "critical"
     ))
 
 with col3:
-    st.metric("Low Risk", sum(
+    st.metric("High", sum(
         1 for r in results.values()
-        if str(r.get("risk_level", "")).lower() == "low"
+        if str(r.get("status", "")).lower() == "high"
+    ))
+
+with col4:
+    st.metric("Medium", sum(
+        1 for r in results.values()
+        if str(r.get("status", "")).lower() == "medium"
+    ))
+
+with col5:
+    st.metric("Low", sum(
+        1 for r in results.values()
+        if str(r.get("status", "")).lower() == "low"
     ))
 
 st.divider()
