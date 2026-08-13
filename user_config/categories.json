@@ -7,5 +7,10 @@
         "Complaints": 20,
         "Employee ethics": 30
     },
-    "threshold" : 50
+    "status" : {
+        "Critical" : 85,
+        "High" : 60,
+        "Medium" : 30,
+        "Low" : 0
+    }
 }

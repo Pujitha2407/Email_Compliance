@@ -51,7 +51,7 @@ class RAGRetriever:
         self.policy_index.add(embeddings)
         print("Built Policy Model Index with ", len(policies), " policies.")
 
-    def retrieve(self, email, top_k=2):
+    def retrieve(self, email, top_k=3):
         """
         Retrieve the most relevant policies for an email.
         """

@@ -40,25 +40,25 @@ def build_compliance_prompt(
     policies = "\n\n".join(
         f"""
 Policy ID:
-{policy["policy_id"]}
+{policy['policy']["policy_id"]}
 
 Category:
-{policy["category"]}
+{policy['policy']["category"]}
 
 Title:
-{policy["title"]}
+{policy['policy']["title"]}
 
 Definition:
-{policy["definition"]}
+{policy['policy']["definition"]}
 
 Violations:
-{chr(10).join("- " + item for item in policy["violations"])}
+{chr(10).join("- " + item for item in policy['policy']["violations"])}
 
 Exceptions:
-{chr(10).join("- " + item for item in policy["exceptions"])}
+{chr(10).join("- " + item for item in policy['policy']["exceptions"])}
 
 Examples:
-{chr(10).join("- " + item for item in policy["examples"])}
+{chr(10).join("- " + item for item in policy['policy']["examples"])}
 """
         for policy in retrieved_policies
     )

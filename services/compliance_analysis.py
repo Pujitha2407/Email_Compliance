@@ -18,10 +18,16 @@ class ComplianceAnalysisService:
         self.results = {}
 
     # Compliance Analysis
-    def execute(self, emails, risk_categories, retrieved_policies, export=False):
+    def execute(self, emails, risk_categories, retriever, export=False):
         print("Starting Compliance Analysis...")
         self.results = {}
         for mail_id, email in emails.items():
+            retrieved_policies=retriever.retrieve(email,top_k=3)
+            print("number of policies recieved:",len(retrieved_policies))
+            print("\n-----retrieved policies-------")
+            for i ,item in enumerate(retrieved_policies,1):
+                print(f"{i}: {item['policy']['policy_id']}"
+                      f"-{item['similarity_score']}")
             # Build prompt
             prompt = build_compliance_prompt(
                 email,
@@ -33,6 +39,11 @@ class ComplianceAnalysisService:
                 f.write("\n" + "=" * 100 +"\n")
                 f.write(f"Mail: {mail_id}\n")
                 f.write("=" * 100 +"\n")
+                f.write("Retrieved policies:\n")
+                for item in retrieved_policies:
+                    f.write(f"{item['policy']['policy_id']}"
+                            f"-score:{item['similarity_score']}\n")
+                f.write("\n")
                 f.write(prompt)
                 f.write("\n\n")
             response = self.client.responses.create(

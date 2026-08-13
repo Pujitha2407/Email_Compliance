@@ -1,154 +1,145 @@
 {
     "1": {
         "email": {
-            "email": {
-                "from": "trey.comiskey@enron.com",
-                "to": "kenneth.cooper@am.sony.com",
-                "subject": "Agreement of Confidentiality",
-                "body": "Ken - Thanks again for your time yesterday.  Here is the C.A. per our discussion, signature and faxing back to me at 713.853.0528.  Pls do not disclose the C.A. until it is signed by the appropriate party here, we will have a fully-signed copy faxed to you for your records.  Should you have questions or comments, please Mr. Comiskey.  Thank you."
-            }
+            "from": "trey.comiskey@enron.com",
+            "to": "kenneth.cooper@am.sony.com",
+            "subject": "Agreement of Confidentiality",
+            "body": "Ken - Thanks again for your time yesterday.  Here is the C.A. per our discussion, signature and faxing back to me at 713.853.0528.  Pls do not disclose the C.A. until it is signed by the appropriate party here, we will have a fully-signed copy faxed to you for your records.  Should you have questions or comments, please Mr. Comiskey.  Thank you."
         },
-        "result": {
-            "violation": true,
-            "categories": [
-                {
-                    "category": "Secrecy",
-                    "reason": "The email discusses non-disclosure of a document and specifies a request to maintain its confidentiality until signed.",
-                    "evidence": [
-                        "Pls do not disclose the C.A. until it is signed by the appropriate party here",
-                        "We will have a fully-signed copy faxed to you for your records."
-                    ]
-                }
-            ]
-        },
-        "score": {
-            "score": 50.0,
-            "status": "Non Compliant"
-        }
+        "risk_categories": [],
+        "classification": "Compliant",
+        "score": 0.0,
+        "status": "Low"
     },
     "2": {
         "email": {
-            "email": {
-                "from": "msagel@home.com",
-                "to": "jarnold@enron.com",
-                "subject": "Agreement",
-                "body": "John:  Hope you did ok today.  As I said yesterday, the poor close Monday should lead to additional market weakness, which we saw today.  You indicated that you would mail the service agreement back to me. I don't know if you have the mailing address, so here it is:  Psytech Analytics 11604 Greenspring Ave. Lutherville, MD? 21093  Speak to you over phone later during the day once I have decent set-up on my work for natural.  Feel free to ding me on whatsapp anytime.  Mark"
+            "from": "msagel@home.com",
+            "to": "jarnold@enron.com",
+            "subject": "Agreement",
+            "body": "John:  Hope you did ok today.  As I said yesterday, the poor close Monday should lead to additional market weakness, which we saw today.  You indicated that you would mail the service agreement back to me. I don't know if you have the mailing address, so here it is:  Psytech Analytics 11604 Greenspring Ave. Lutherville, MD? 21093  Speak to you over phone later during the day once I have decent set-up on my work for natural.  Feel free to ding me on whatsapp anytime.  Mark"
+        },
+        "risk_categories": [
+            {
+                "category": "Change in communication",
+                "reason": "The email contains a request to use an external communication channel (WhatsApp) for business-related matters, explicitly classified as a violation under the policy COM-001.",
+                "evidence": "Feel free to ding me on whatsapp anytime."
             }
-        },
-        "result": {
-            "violation": true,
-            "categories": [
-                {
-                    "category": "Change in communication",
-                    "reason": "The sender provides alternative communication methods outside of official company channels, such as WhatsApp, which could be used to bypass regulatory oversight.",
-                    "evidence": [
-                        "Feel free to ding me on whatsapp anytime."
-                    ]
-                },
-                {
-                    "category": "Secrecy",
-                    "reason": "The use of non-official communication channels and informal language may suggest an effort to avoid official channels that are monitored for compliance purposes.",
-                    "evidence": [
-                        "Feel free to ding me on whatsapp anytime.",
-                        "Speak to you over phone later during the day once I have decent set-up on my work for natural."
-                    ]
-                }
-            ]
-        },
-        "score": {
-            "score": 52.0,
-            "status": "Non Compliant"
-        }
+        ],
+        "classification": "Non Compliant",
+        "score": 10.0,
+        "status": "Low"
     },
     "3": {
         "email": {
-            "email": {
-                "from": "outlook.team@enron.com",
-                "to": "aimee.shek@enron.com, albino.lopez@enron.com, andrea.williams@enron.com,",
-                "subject": "Not visible in screenshot",
-                "body": "Not visible in screenshot"
-            }
+            "from": "outlook.team@enron.com",
+            "to": "aimee.shek@enron.com, albino.lopez@enron.com, andrea.williams@enron.com,",
+            "subject": "Not visible in screenshot",
+            "body": "Not visible in screenshot"
         },
-        "result": {
-            "violation": false,
-            "categories": [],
-            "evidence": []
-        },
-        "score": {
-            "score": 0.0,
-            "status": "Compliant"
-        }
+        "risk_categories": [],
+        "classification": "Compliant",
+        "score": 0.0,
+        "status": "Low"
     },
     "4": {
         "email": {
-            "email": {
-                "from": "30-2:30/trading floor tour 2:30-3:00",
-                "to": "jeffrey.shankman@enron.com",
-                "subject": "Continental Briefing for Enron/Continental meeting December 12th",
-                "body": "Mr. Shankman:  In preparation for the meeting on December 12th with Larry Kellner, CFO, Continental Airlines, I have noted below some background on the Enron/Continental relationship and the purpose for the meeting. Mr. Shankman, please advise if you would like me to distribute this to the attendees.  EXECUTIVE SUMMARY:  Over the past several years Enron has been hedging Continental's crude oil. The relationship has been beneficial to both sides. As a result, since 1999 Enron has earned over $9 million and Continental has saved over $45 million.  The purpose for the December 12th meeting is to address three initiatives in order of economic value: (1) fuel management, (2) weather derivatives, and (3) plastics hedging - VaR analysis.  Several new initiatives being proposed to Continental include the following:  exchanging call options on crude oil for airline tickets (Craig Breslau, Originator) transacting financial swaps on-line (Larry Gagliani, Originator) creating a weather derivative product for the airline industry (Mark Tawney and Gary Taylor, Originators) outsourcing Continental's antifreeze and plastics risks by hedging these products with Enron (Alan Engberg, Originator)  Meeting Attendees from Continental Airlines:  Ron Howard, Vice President, Food Services Larry Kellner, Chief Financial Officer Greg Hartford, Vice President, Fuel Management Company Jeff Misner, Vice President and Treasurer (tentative)"
-            }
+            "from": "30-2:30/trading floor tour 2:30-3:00",
+            "to": "jeffrey.shankman@enron.com",
+            "subject": "Continental Briefing for Enron/Continental meeting December 12th",
+            "body": "Mr. Shankman:  In preparation for the meeting on December 12th with Larry Kellner, CFO, Continental Airlines, I have noted below some background on the Enron/Continental relationship and the purpose for the meeting. Mr. Shankman, please advise if you would like me to distribute this to the attendees.  EXECUTIVE SUMMARY:  Over the past several years Enron has been hedging Continental's crude oil. The relationship has been beneficial to both sides. As a result, since 1999 Enron has earned over $9 million and Continental has saved over $45 million.  The purpose for the December 12th meeting is to address three initiatives in order of economic value: (1) fuel management, (2) weather derivatives, and (3) plastics hedging - VaR analysis.  Several new initiatives being proposed to Continental include the following:  exchanging call options on crude oil for airline tickets (Craig Breslau, Originator) transacting financial swaps on-line (Larry Gagliani, Originator) creating a weather derivative product for the airline industry (Mark Tawney and Gary Taylor, Originators) outsourcing Continental's antifreeze and plastics risks by hedging these products with Enron (Alan Engberg, Originator)  Meeting Attendees from Continental Airlines:  Ron Howard, Vice President, Food Services Larry Kellner, Chief Financial Officer Greg Hartford, Vice President, Fuel Management Company Jeff Misner, Vice President and Treasurer (tentative)"
         },
-        "result": {
-            "violation": true,
-            "categories": [
-                {
-                    "category": "Market Bribery",
-                    "reason": "The email suggests exchanging call options on crude oil for airline tickets, which may potentially constitute an inappropriate quid pro quo arrangement.",
-                    "evidence": [
-                        "exchanging call options on crude oil for airline tickets"
-                    ]
-                },
-                {
-                    "category": "Secrecy",
-                    "reason": "The email details a significant financial relationship between Enron and Continental Airlines and discusses proprietary activities, indicating the potential for an attempt to conceal sensitive information.",
-                    "evidence": [
-                        "Over the past several years Enron has been hedging Continental's crude oil.",
-                        "Enron has earned over $9 million and Continental has saved over $45 million."
-                    ]
-                }
-            ]
-        },
-        "score": {
-            "score": 100.0,
-            "status": "Non Compliant"
-        }
+        "risk_categories": [],
+        "classification": "Compliant",
+        "score": 0.0,
+        "status": "Low"
     },
     "5": {
         "email": {
-            "email": {
-                "from": "chris.gaskill@enron.com",
-                "to": "john.arnold@enron.com",
-                "subject": "gas message board access",
-                "body": "Boyd John, Is, access to the board on a password basis now? If so, when you get a chance could you authorise access for myself and Andrew Hill (a colleague in crude fundamentals) please? A similar board for crude and products should be ready within a couple of weeks. Thanks  Chris"
-            }
+            "from": "chris.gaskill@enron.com",
+            "to": "john.arnold@enron.com",
+            "subject": "gas message board access",
+            "body": "Boyd John, Is, access to the board on a password basis now? If so, when you get a chance could you authorise access for myself and Andrew Hill (a colleague in crude fundamentals) please? A similar board for crude and products should be ready within a couple of weeks. Thanks  Chris"
         },
-        "result": {
-            "violation": false,
-            "categories": [],
-            "evidence": []
-        },
-        "score": {
-            "score": 0.0,
-            "status": "Compliant"
-        }
+        "risk_categories": [],
+        "classification": "Compliant",
+        "score": 0.0,
+        "status": "Low"
     },
     "6": {
         "email": {
-            "email": {
-                "from": "kim.ward@enron.com",
-                "to": "john.arnold@enron.com",
-                "subject": "RE:",
-                "body": "Boyd: So who are the drinks on until I do ?..."
+            "from": "kim.ward@enron.com",
+            "to": "john.arnold@enron.com",
+            "subject": "RE:",
+            "body": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
+        },
+        "risk_categories": [
+            {
+                "category": "Market Bribery",
+                "reason": "The email discusses the concept of providing a 'gesture for the decision maker' to help secure approval, which aligns with a potential violation involving offering a benefit with the intention of improperly influencing a business decision.",
+                "evidence": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
             }
+        ],
+        "classification": "Non Compliant",
+        "score": 90.0,
+        "status": "Critical"
+    },
+    "7": {
+        "email": {
+            "from": "john@company.com",
+            "to": "alice@company.com",
+            "subject": "RE:",
+            "body": "We may be able to move this forward without waiting for the usual compliance review."
         },
-        "result": {
-            "violation": false,
-            "categories": [],
-            "evidence": []
+        "risk_categories": [
+            {
+                "category": "Change in communication",
+                "reason": "The email suggests bypassing the usual compliance process, which might involve using unapproved methods of communication or avoiding established compliance protocols.",
+                "evidence": "We may be able to move this forward without waiting for the usual compliance review."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 10.0,
+        "status": "Low"
+    },
+    "8": {
+        "email": {
+            "from": "john@company.com",
+            "to": "alice@company.com",
+            "subject": "RE:",
+            "body": "If we coordinate the activity around the announcement,market should react the way we are expecting."
         },
-        "score": {
-            "score": 0.0,
-            "status": "Compliant"
-        }
+        "risk_categories": [
+            {
+                "category": "Market Manipulation/Misconduct",
+                "reason": "The email suggests coordinating activity around an announcement to influence the market's reaction, which aligns with the violation conditions of attempting to artificially influence market perception or behavior.",
+                "evidence": "If we coordinate the activity around the announcement, market should react the way we are expecting."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 70.0,
+        "status": "High"
+    },
+    "9": {
+        "email": {
+            "from": "john@company.com",
+            "to": "alice@company.com",
+            "subject": "RE:",
+            "body": "Could we adjust a few figures before sharing the report so the results look more favourable."
+        },
+        "risk_categories": [
+            {
+                "category": "Market Manipulation/Misconduct",
+                "reason": "The email contains a request to adjust figures in a report to make results appear more favorable, which may constitute an attempt to manipulate or misrepresent data.",
+                "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
+            },
+            {
+                "category": "Employee ethics",
+                "reason": "The email suggests altering figures to present a misleading outcome, which raises concerns about ethical behavior.",
+                "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 76.0,
+        "status": "High"
     }
 }
