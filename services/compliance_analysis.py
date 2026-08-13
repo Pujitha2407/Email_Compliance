@@ -1,14 +1,16 @@
 import os
 import json
+from dotenv import load_dotenv
 from openai import AzureOpenAI
 from services.compliance_prompt import build_compliance_prompt
+load_dotenv()
 
 client = AzureOpenAI(
     api_key=os.getenv("AZURE_OPENAI_API_KEY"),
     azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    api_version="2025-01-01-preview"
+    api_version=os.getenv("AZURE_OPENAI_API_VERSION")
 )
-model_deployment = "gpt-5.5s" 
+model_deployment = os.getenv("AZURE_OPENAI_MODEL_DEPLOYMENT")
 
 class ComplianceAnalysisService:
     def __init__(self):
@@ -16,7 +18,7 @@ class ComplianceAnalysisService:
         self.results = {}
 
     # Compliance Analysis
-    def execute(self, emails, risk_categories, retrieved_policies):
+    def execute(self, emails, risk_categories, retrieved_policies, export=False):
         print("Starting Compliance Analysis...")
         self.results = {}
         for mail_id, email in emails.items():
@@ -24,9 +26,15 @@ class ComplianceAnalysisService:
             prompt = build_compliance_prompt(
                 email,
                 risk_categories,
-                retrieved_policies[mail_id]
+                retrieved_policies
             )
             # LLM Model Call
+            with open("llm_input","a",encoding="utf-8") as f:
+                f.write("\n" + "=" * 100 +"\n")
+                f.write(f"Mail: {mail_id}\n")
+                f.write("=" * 100 +"\n")
+                f.write(prompt)
+                f.write("\n\n")
             response = self.client.responses.create(
                 model=model_deployment,
                 input=prompt
@@ -48,6 +56,10 @@ class ComplianceAnalysisService:
                     "raw_output": response.output_text
                 }
         print("Compliance Analysis Finished.")
+        # export result
+        if export == True:
+            with open("llm_ouput.json", "w") as f:
+                json.dump(self.results, f, indent=4)
 
     def get_results(self):
         return self.results

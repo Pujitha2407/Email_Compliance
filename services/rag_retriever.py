@@ -35,16 +35,16 @@ class RAGRetriever:
             self._policy_to_text(policy)
             for policy in policies
         ]
-        # for i in range(len(policy_texts)):
-        #     print(f"Policy {i+1} Text:\n{policy_texts[i]}\n")  # Debugging line
+        for i in range(len(policy_texts)):
+             print(f"Policy {i+1} Text:\n{policy_texts[i]}\n")  # Debugging line
 
         embeddings = self.model.encode(
             policy_texts,
             convert_to_numpy=True
         )
         embeddings = embeddings.astype("float32")
-        # Normalize embeddings so inner product behaves
-        # like cosine similarity.
+        #Normalize embeddings so inner product behaves
+        #like cosine similarity.
         faiss.normalize_L2(embeddings)
         dimension = embeddings.shape[1]
         self.policy_index = faiss.IndexFlatIP(dimension)

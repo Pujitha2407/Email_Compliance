@@ -1,5 +1,7 @@
+import json
+
 class PreprocessingService:
-    def execute(self, emails):
+    def execute(self, emails, export=False):
         print("Starting PreProcessing...")
         for mail_id, email in emails.items():
             email_text = email["email"]
@@ -33,3 +35,7 @@ class PreprocessingService:
                 "body": " ".join(body)
             }
         print("PreProcessing Finished")
+        # export result
+        if export == True:
+            with open("preprocessing_ouput.json", "w") as f:
+                json.dump(emails, f, indent=4)
