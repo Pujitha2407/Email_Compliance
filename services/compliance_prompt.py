@@ -123,7 +123,7 @@ RETRIEVED COMPLIANCE POLICIES
 The following policies were retrieved from the compliance
 policy knowledge base.
 
-Use these policies as the primary source for determining
+Use these policies as the PRIMARY source for determining
 whether a violation exists.
 
 {policies}
@@ -156,47 +156,79 @@ ANALYSIS INSTRUCTIONS
 8. An exception must be considered before classifying
    something as a violation.
 
-9. Do not infer facts, intent, authorization, or wrongdoing
-   that are not supported by the email.
+9. Do not invent facts that are not supported by the email.
 
-10. Legitimate business activity must not automatically be
+10. Do not invent authorization, wrongdoing, relationships,
+    transactions, or events that are not supported by the
+    email.
+
+11. However, you MAY infer the reasonable meaning of an
+    explicit request, instruction, suggestion, or action
+    when that meaning is directly supported by the email.
+
+12. Legitimate business activity must not automatically be
     treated as a compliance violation.
 
-11. If an email contains business-related communication
+13. 🟨 IMPORTANT:
+    Do not be overly conservative when the email explicitly
+    requests, instructs, suggests, or arranges behavior that
+    falls under a policy violation.
+
+14. 🟨 IMPORTANT:
+    A violation does NOT necessarily require that the
+    prohibited action has already occurred.
+
+    If the policy covers requests, instructions, attempts,
+    invitations, arrangements, or proposals to perform
+    prohibited behavior, the request itself may constitute
+    a violation.
+
+15. If an email contains business-related communication
     through a personal or external communication channel,
     determine whether this satisfies the Change in
     communication policy.
 
-12. For example, if an email asks or invites a recipient
-    to continue business-related communication through
-    an external messaging service, evaluate this against
-    the Change in communication policy.
+16. 🟨 For example:
 
-13. If an email discusses confidentiality, agreements,
+    If an email says:
+
+    "Feel free to ding me on WhatsApp anytime."
+
+    do not automatically classify it as compliant simply
+    because the actual WhatsApp conversation is not shown.
+
+    Determine whether the email is inviting the recipient
+    to move business-related communication to an external
+    communication channel and evaluate that behavior against
+    the retrieved Change in communication policy.
+
+17. If an email discusses confidentiality, agreements,
     or preventing disclosure, determine whether the email
     actually discloses confidential information.
 
-14. An instruction to prevent disclosure is NOT itself an
+18. An instruction to prevent disclosure is NOT itself an
     unauthorized disclosure.
 
-15. If an email satisfies an exception in the applicable
+19. If an email satisfies an exception in the applicable
     policy, do not classify that activity as a violation
     unless there is separate evidence of another violation.
 
-16. An email may belong to multiple risk categories, but
+20. An email may belong to multiple risk categories, but
     each category must independently satisfy the applicable
     policy violation conditions.
 
-17. Every identified category MUST contain evidence directly
+21. Every identified category MUST contain evidence directly
     quoted from the email.
 
-18. Evidence MUST be an exact quote from the email.
+22. Evidence MUST be an exact quote from the email.
 
-19. The evidence must demonstrate the actual violation,
-    not merely mention a related topic.
+23. The evidence must demonstrate the actual behavior,
+    request, instruction, or statement relevant to the
+    policy, not merely mention a related topic.
 
-20. If the email does not contain sufficient evidence of
-    an actual violation, return violation as false.
+24. If the email does not contain sufficient evidence of
+    an actual violation or policy-covered request,
+    return violation as false.
 
 ============================================================
 IMPORTANT DECISION RULE
@@ -220,7 +252,75 @@ AND
 
 - There is exact supporting evidence in the email.
 
-Do not classify based only on keywords.
+🟨 IMPORTANT:
+
+The model must evaluate the MEANING of the email, not just
+search for policy keywords.
+
+For example:
+
+Email:
+"Let's continue this discussion on WhatsApp."
+
+If the retrieved policy prohibits moving business-related
+communication to an external or unauthorized channel,
+this may satisfy the policy even though the email does not
+contain the words "violation", "unauthorized", or
+"compliance".
+
+Do not require the email to explicitly state that the
+behavior is prohibited.
+
+============================================================
+CONTEXTUAL REASONING
+============================================================
+
+🟨 Before deciding violation=true or violation=false,
+perform the following internal reasoning steps:
+
+1. What is the sender communicating?
+
+2. What is the recipient being asked, instructed, or invited
+   to do?
+
+3. Is the communication personal or business-related?
+
+4. Is there a behavior relevant to any retrieved policy?
+
+5. Which specific policy violation condition applies?
+
+6. Does an exception apply?
+
+7. What exact sentence or phrase proves the decision?
+
+8. If the email is compliant, explain why none of the
+   retrieved policy violation conditions are satisfied.
+
+Do not output this internal reasoning.
+Only return the required JSON.
+
+============================================================
+SPECIAL ATTENTION
+============================================================
+
+🟨 Pay particular attention to:
+
+- requests to move communication to WhatsApp or other
+  external messaging services
+- personal email addresses
+- personal phone numbers
+- requests to avoid official communication channels
+- requests to bypass approval processes
+- requests to hide or avoid compliance controls
+- confidential information
+- improper gifts or benefits
+- bribery or kickbacks
+- market-related misconduct
+- employee ethical concerns
+
+However, do NOT flag these automatically.
+
+They must still satisfy the retrieved policy.
 
 ============================================================
 OUTPUT REQUIREMENTS
