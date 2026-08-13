@@ -3,124 +3,80 @@
         "policy_id": "SEC-001",
         "category": "Secrecy",
         "title": "Confidential Information and Unauthorized Disclosure",
-        "definition": "A secrecy violation occurs when a person discloses, shares, forwards, provides access to, requests, obtains, or improperly handles confidential, restricted, proprietary, sensitive, or otherwise protected company information without appropriate authorization. The model must evaluate the meaning and context of the communication and must not rely only on confidentiality-related keywords.",
+        "definition": "A secrecy violation occurs when a person discloses, shares, forwards, provides access to, or improperly handles confidential, restricted, proprietary, or otherwise protected company information without appropriate authorization.",
         "violations": [
-            "Disclosing confidential or restricted company information to an unauthorized person",
-            "Sharing confidential documents, files, customer information, business information, financial information, technical information, or internal company information with an unauthorized recipient",
+            "Disclosing confidential or restricted company information to a person who is not authorized to receive it",
+            "Sharing confidential documents, files, information, or business details with an unauthorized external or internal recipient",
             "Forwarding or providing access to protected company information without authorization",
             "Improperly handling confidential information in a way that exposes it to unauthorized individuals",
-            "Requesting or encouraging another person to disclose protected company information without authorization",
-            "Requesting another person to provide confidential information that they are not authorized to share",
-            "Sending protected information to a personal account or unauthorized external recipient",
-            "Sharing confidential information through an unauthorized communication channel",
-            "Providing restricted information to someone who does not have a legitimate business need to receive it",
-            "Attempting to bypass confidentiality controls to obtain or share protected information",
-            "Attempting to conceal an unauthorized disclosure of protected information",
-            "Using protected company information for an unauthorized personal or external purpose"
+            "Requesting or encouraging another person to disclose protected company information without authorization"
         ],
         "exceptions": [
             "Legitimate instructions to keep information confidential",
-            "Instructions that prevent disclosure until an agreement, contract, or authorization is completed",
-            "Disclosure explicitly authorized by the appropriate company authority",
-            "Sharing information with an explicitly authorized recipient",
-            "Routine business communication that does not disclose protected information",
-            "Mentioning confidentiality, agreements, contracts, projects, customers, or documents without disclosing protected information",
-            "Discussing the importance of protecting confidential information",
-            "Requesting authorization before sharing protected information",
-            "Reporting a suspected unauthorized disclosure to an appropriate authority"
+            "Instructions that prevent disclosure of information until an agreement, contract, or authorization is formally completed",
+            "Disclosure that is explicitly authorized by the appropriate company authority",
+            "Sharing information with a recipient who is explicitly authorized to receive it",
+            "Routine business communication that does not disclose protected or restricted information"
         ],
         "examples": [
             "Sending a confidential company document to an unauthorized external recipient",
-            "Forwarding restricted business information to an unauthorized person",
-            "Providing an unauthorized person access to confidential company files",
-            "Sending customer information to a personal email account without authorization",
-            "Asking a colleague to send confidential project information to an external contact",
-            "Telling someone not to disclose an agreement until it is formally signed is not a violation",
-            "Discussing confidentiality without revealing protected information is not a violation",
-            "Mentioning a confidential project without revealing confidential information is not automatically a violation"
+            "Forwarding restricted business information to someone who is not authorized to receive it",
+            "Providing an unauthorized person with access to confidential company files",
+            "Telling a recipient not to disclose an agreement until it has been formally signed is not itself an unauthorized disclosure"
         ]
     },
     {
         "policy_id": "MB-001",
         "category": "Market bribery",
         "title": "Improper Payments, Gifts, and Benefits",
-        "definition": "A market bribery violation occurs when a person offers, promises, gives, requests, accepts, or arranges an improper payment, gift, benefit, favor, service, hospitality, entertainment, or other advantage with the purpose or expectation of improperly influencing a business, commercial, regulatory, or market-related decision. The model must understand the relationship between the benefit and the intended decision rather than flagging individual words such as gift, drinks, dinner, payment, or entertainment.",
+        "definition": "A market bribery violation occurs when a person offers, promises, gives, requests, accepts, or arranges an improper payment, gift, benefit, favor, or other advantage with the purpose or expectation of improperly influencing a business, commercial, regulatory, or market-related decision.",
         "violations": [
             "Offering money or another improper benefit in exchange for favorable business treatment",
             "Requesting or accepting an improper payment or benefit to influence a business decision",
-            "Offering a gift with the intention of improperly influencing a decision",
-            "Offering meals, drinks, entertainment, travel, services, favors, or hospitality to improperly influence a decision",
+            "Offering a gift, favor, service, or advantage with the intention of improperly influencing a decision",
             "Agreeing to provide an improper benefit in return for preferential treatment",
             "Using an intermediary or third party to provide an improper payment or benefit intended to influence a business decision",
-            "Discussing or arranging an improper payment or benefit to obtain an unfair business advantage",
-            "Requesting a personal payment, gift, favor, service, or benefit in exchange for approving or influencing a business activity",
-            "Offering benefits to a decision-maker before a business decision with the intention of obtaining favorable treatment",
-            "Arranging entertainment, drinks, meals, gifts, or other benefits specifically to influence a business, commercial, regulatory, or market decision",
-            "Attempting to conceal or disguise an improper payment or benefit",
-            "Encouraging another person to provide an improper benefit to obtain preferential treatment"
+            "Discussing or arranging an improper payment or benefit for the purpose of obtaining an unfair business advantage"
         ],
         "exceptions": [
-            "Legitimate business expenses permitted under company policy",
-            "Ordinary business activities without an attempt to improperly influence a decision",
-            "Benefits explicitly permitted and authorized under company policy",
-            "Routine discussion of gifts, meals, drinks, entertainment, expenses, or business benefits without an improper purpose",
-            "Approved business hospitality without improper influence",
-            "Legitimate company events and social activities",
-            "Rejecting, reporting, or discussing concerns about a potentially improper payment or benefit",
-            "Ordinary personal or social discussion that has no connection to influencing a business decision"
+            "Legitimate business expenses that are permitted under applicable company policy",
+            "Ordinary business activities that do not involve an attempt to improperly influence a decision",
+            "Benefits that are explicitly permitted and appropriately authorized under company policy"
         ],
         "examples": [
             "Offering money to a business partner in exchange for awarding a contract",
-            "Offering an expensive gift to influence a customer's purchasing decision",
-            "Requesting a personal payment in exchange for approving a transaction",
-            "Arranging for another person to provide a benefit in exchange for preferential treatment",
-            "Offering drinks or entertainment specifically to obtain favorable business treatment",
-            "Offering a gift immediately before a business decision with the intention of influencing the decision",
-            "Discussing an ordinary business dinner without improper influence is not bribery",
-            "Mentioning gifts or drinks without an improper business purpose is not automatically bribery"
+            "Offering an inappropriate gift to influence a customer's purchasing decision",
+            "Requesting a personal payment in exchange for approving a business transaction",
+            "Arranging for another person to provide a benefit in exchange for preferential treatment"
         ]
     },
     {
         "policy_id": "MM-001",
         "category": "Market manipulation",
         "title": "Artificial or Misleading Market Activity",
-        "definition": "A market manipulation violation occurs when a person intentionally attempts to artificially influence the price, supply, demand, trading activity, or market perception of a financial instrument through deceptive, misleading, coordinated, or artificial actions. The model must understand the intended market behavior rather than relying on words such as buy, sell, price, volume, market, or trading.",
+        "definition": "A market manipulation violation occurs when a person intentionally attempts to artificially influence the price, supply, demand, trading activity, or market perception of a financial instrument through deceptive, misleading, or artificial actions.",
         "violations": [
             "Intentionally creating artificial buying or selling activity to influence a market price",
-            "Coordinating transactions to artificially increase or decrease a financial instrument's price",
+            "Coordinating transactions for the purpose of artificially increasing or decreasing a financial instrument's price",
             "Creating false or misleading market activity to influence other market participants",
             "Spreading false or misleading information with the intention of influencing trading activity or market prices",
             "Using deceptive transactions or trading strategies to create a false impression of market demand or supply",
-            "Encouraging another person to participate in activity intended to artificially influence market conditions",
-            "Planning transactions specifically to create an artificial market price",
-            "Coordinating with others to create artificial demand, supply, volume, or trading activity",
-            "Instructing another person to create misleading market activity",
-            "Intentionally distributing false information to influence trading decisions",
-            "Attempting to conceal an artificial or deceptive trading strategy",
-            "Creating a false appearance of market interest, liquidity, demand, supply, or trading volume"
+            "Encouraging another person to participate in activity intended to artificially influence market conditions"
         ],
         "exceptions": [
-            "Legitimate market analysis",
-            "Ordinary trading or investment decisions for legitimate business or investment purposes",
-            "Accurate communication of publicly available market information",
-            "Legitimate discussion of market conditions without instructions to manipulate activity",
-            "General discussion of prices, markets, securities, trading, or investment strategies",
-            "Legitimate research or analysis without an intention to manipulate",
-            "Good-faith discussion of possible market scenarios",
-            "Reporting suspected market manipulation for legitimate compliance purposes"
+            "Legitimate market analysis that does not involve deceptive or artificial activity",
+            "Ordinary trading or investment decisions made for legitimate business or investment purposes",
+            "Accurate communication of publicly available market information without an intention to mislead",
+            "Legitimate discussion of market conditions without instructions to manipulate market activity"
         ],
         "examples": [
-            "Coordinating transactions specifically to artificially increase a security's price",
-            "Creating misleading trading activity to make demand appear higher than it is",
+            "Coordinating transactions specifically to artificially increase the price of a security",
+            "Creating misleading trading activity to make market demand appear higher than it actually is",
             "Sharing intentionally false information to influence another person's trading decision",
-            "Planning transactions specifically to create an artificial market price",
-            "Asking others to create buying activity so a security appears more popular",
-            "Coordinating trades to make trading volume appear artificially high",
-            "Discussing normal market conditions without manipulation is not a violation",
-            "Legitimate market analysis is not market manipulation"
+            "Planning transactions specifically to create an artificial market price"
         ]
     },
-    {
+   {
     "policy_id": "ETH-001",
     "category": "Employee ethics",
     "title": "Employee Ethical Conduct and Appropriate Workplace Communication",
@@ -169,79 +125,50 @@
         "policy_id": "CMP-001",
         "category": "Complaints",
         "title": "Complaint Handling and Reporting",
-        "definition": "A complaints-related violation occurs when a legitimate complaint or concern involving employee conduct, business practices, or company processes is improperly ignored, suppressed, mishandled, discouraged, concealed, or intentionally prevented from reaching the appropriate reporting or review process. The model must distinguish between reporting or discussing a complaint and attempting to suppress or improperly handle it.",
+        "definition": "A complaints-related violation occurs when a legitimate complaint or concern involving employee conduct, business practices, or company processes is improperly ignored, suppressed, mishandled, or intentionally prevented from reaching the appropriate reporting or review process.",
         "violations": [
-            "Intentionally preventing a legitimate complaint from being reported",
-            "Ignoring a complaint requiring investigation or appropriate handling",
+            "Intentionally preventing a legitimate complaint from being reported through the appropriate process",
+            "Ignoring a complaint that requires investigation or appropriate handling",
             "Suppressing or concealing a legitimate complaint or concern",
-            "Improperly handling a formal complaint to prevent appropriate review",
-            "Discouraging a person from reporting a legitimate concern",
-            "Retaliating against or improperly treating a person because they raised a legitimate complaint",
-            "Telling someone not to report a legitimate workplace concern",
-            "Attempting to hide a complaint from compliance, HR, management, or another appropriate authority",
-            "Destroying, withholding, or manipulating information to prevent investigation of a legitimate complaint",
-            "Attempting to close or resolve a legitimate complaint outside the required process specifically to prevent review",
-            "Threatening or pressuring a person to withdraw a legitimate complaint",
-            "Instructing another person to conceal or suppress a legitimate complaint"
+            "Improperly handling a formal complaint in a way that prevents appropriate review",
+            "Discouraging a person from reporting a legitimate concern through an approved reporting process",
+            "Retaliating against or improperly treating a person because they raised a legitimate complaint"
         ],
         "exceptions": [
-            "Simply reporting a legitimate concern or complaint",
-            "Routine communication about a complaint",
+            "A person simply reporting a legitimate concern or complaint",
+            "Routine communication about a complaint that does not suppress, ignore, or improperly handle the complaint",
             "Resolving a complaint through an authorized company process",
-            "Requesting additional information needed to investigate a complaint",
-            "Discussing the existence or status of a complaint without suppressing it",
-            "Providing legitimate assistance to someone reporting a concern",
-            "Forwarding a complaint to the appropriate team",
-            "Requesting clarification about a complaint in good faith",
-            "Discussing a complaint without attempting to influence whether it is reported or investigated"
+            "Requesting additional information needed to properly investigate a complaint"
         ],
         "examples": [
-            "Telling an employee not to report a workplace concern",
-            "Ignoring a formal complaint requiring investigation",
-            "Preventing a complaint from reaching compliance",
-            "Suppressing a complaint to avoid investigation",
-            "Threatening an employee because they submitted a complaint",
-            "Asking someone to withdraw a complaint to avoid investigation",
-            "Reporting a legitimate complaint is not a violation",
-            "Requesting information needed to investigate a complaint is not a violation"
+            "Telling an employee not to report a legitimate workplace concern",
+            "Ignoring a formal complaint that requires investigation",
+            "Attempting to prevent a complaint from reaching the appropriate compliance team",
+            "Suppressing a legitimate complaint to avoid an investigation"
         ]
     },
     {
         "policy_id": "COM-001",
         "category": "Change in communication",
         "title": "Unauthorized Communication Channels",
-        "definition": "A change in communication violation occurs when business-related communication is moved, continued, redirected, or intentionally arranged through a personal or external communication channel that is not approved for company business. The model must determine whether the communication is actually business-related and whether the external channel is unauthorized. It must not flag an email merely because it mentions WhatsApp, personal email, phone, social media, drinks, meetings, or another communication method.",
+        "definition": "A change in communication violation occurs when business-related communication is moved, continued, or redirected from an approved company communication channel to a personal or external communication channel that is not approved for company business.",
         "violations": [
             "Moving a business discussion from an approved company channel to a personal or external communication channel",
             "Asking another person to continue business-related communication through a personal or external messaging service",
-            "Using a personal or external communication service to continue discussions concerning company business, agreements, transactions, or work-related matters",
-            "Redirecting business communication to an external channel to avoid or bypass an approved company communication system",
-            "Continuing a business discussion through an external communication method when the communication concerns company work or a business agreement",
-            "Requesting a colleague or business contact to use a personal account for company-related communication",
-            "Moving confidential, transactional, contractual, or work-related discussions to an unauthorized external channel",
-            "Using a personal phone, email, messaging application, or other external service to conduct company business when the channel is not approved",
-            "Attempting to avoid company monitoring, retention, approval, or compliance controls by moving business communication externally",
-            "Arranging future business communication through an unauthorized external channel"
+            "Using a personal or external communication service to continue discussions concerning company business, agreements, transactions, or other work-related matters",
+            "Redirecting business communication to an external channel specifically to avoid or bypass an approved company communication system",
+            "Continuing a business discussion through an external communication method when the communication concerns company work or a business agreement"
         ],
         "exceptions": [
             "The external communication channel is explicitly approved for the relevant business activity",
             "The communication is clearly personal and unrelated to company business",
-            "The external channel is used for a legitimate purpose specifically authorized by the company",
-            "Mentioning WhatsApp, personal email, phone, or another external service without requesting business communication through it",
-            "Personal communication unrelated to company business",
-            "Discussing an external communication channel without moving or requesting movement of business communication",
-            "Using an approved external communication service for an authorized business purpose",
-            "Discussing personal social activities without moving business communication to an unauthorized channel"
+            "The external channel is being used for a legitimate purpose specifically authorized by the company"
         ],
         "examples": [
             "Asking a business contact to continue a company discussion through a personal messaging service",
-            "Moving a business agreement discussion to an external messaging application",
-            "Asking someone to continue company communication through a personal account",
-            "Inviting a business contact to continue work-related communication outside the approved company system",
-            "Asking a colleague to send company documents to a personal email address",
-            "Moving a business transaction discussion to a personal messaging application to avoid monitoring",
-            "Mentioning WhatsApp in an unrelated personal conversation is not a violation",
-            "Discussing plans to meet socially without moving business communication externally is not a violation"
+            "Moving a discussion about a business agreement to an external messaging application",
+            "Asking someone to continue company-related communication through a personal account",
+            "Inviting a business contact to continue work-related communication outside the approved company communication system"
         ]
     }
 ]
