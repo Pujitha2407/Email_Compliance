@@ -133,29 +133,19 @@ Evaluate EVERY retrieved policy independently.
 For EACH policy:
 
 1. Read the complete policy definition.
-
 2. Read ALL violation conditions.
-
 3. Read ALL exceptions.
-
 4. Read ALL examples.
-
 5. Understand the complete email and its context.
-
 6. Identify what the sender is actually communicating.
-
 7. Identify the specific action, request, instruction,
    suggestion, proposal, arrangement, disclosure,
    behavior, or statement present in the email.
-
 8. Compare that actual behavior with the policy violation
    conditions.
-
 9. Use policy examples to understand the TYPE OF BEHAVIOR
    covered by the policy.
-
 10. Check whether an explicit policy exception applies.
-
 11. Identify exact evidence from the email supporting the
     decision.
 
@@ -180,10 +170,13 @@ C. No applicable policy exception removes the violation.
 
 AND
 
-D. Exact evidence from the email supports the decision.
+D. The email contains sufficient evidence to support the
+   violation condition.
 
-All four conditions should be satisfied before returning
-a category.
+Evidence must be quoted exactly in the output.
+
+Do not reject a genuine violation merely because the email
+uses informal, indirect, abbreviated, or conversational wording.
 
 ============================================================
 DO NOT OVER-CLASSIFY
@@ -365,9 +358,9 @@ IMPORTANT:
 
 If an email contains sensitive financial, commercial,
 transactional, or client-related information AND explicitly
-asks whether it should be distributed/shared/provided to
-attendees or recipients, treat that distribution proposal as
-an important part of the Disclaimer analysis.
+asks whether it should be distributed, shared, or provided
+to attendees or recipients, treat that distribution proposal
+as an important part of the Disclaimer analysis.
 
 For example:
 
@@ -397,49 +390,93 @@ Do not invent a disclaimer that is not present.
 EMPLOYEE ETHICS - SPECIAL RULE
 ============================================================
 
-For Employee ethics, evaluate workplace behavior and the
-communication context.
+For Employee ethics, evaluate the actual workplace behavior
+and communication context.
 
-Personal or social content in an official company email can
-be an Employee ethics violation when it is unrelated to
-legitimate business activity and is inappropriate for the
-official communication channel.
+Personal or social communication in an official company email
+is a violation when it is unrelated to legitimate business
+activity and is inappropriate for the official business
+communication channel.
 
-Examples include:
+This includes personal discussions about:
 
-- personal drinking or drinks
+- drinks
+- drinking
 - partying
 - personal entertainment
 - personal social arrangements
-- inappropriate personal requests
-- inappropriate workplace communication
-- dishonest or deceptive business conduct
-- intentionally changing business figures
-- intentionally making reports or results appear more favorable
-  through misleading changes
+- personal activities
 
-Do NOT classify legitimate business hospitality, company events,
-business meals, authorized entertainment, or legitimate business
-discussion merely because drinks, food, or social activity is
-mentioned.
+Example:
 
-For dishonest or misleading business conduct, determine whether
-the email proposes, requests, instructs, or communicates an
-intentional change, concealment, falsification, or
-misrepresentation.
+"so who are the drinks on until I do ???"
+
+This is personal/social communication about drinks and contains
+no legitimate business purpose.
+
+Therefore, when the Employee ethics policy covers inappropriate
+personal/social communication in official company communication,
+classify this as an Employee ethics violation.
+
+IMPORTANT:
+
+Do NOT require the email to contain the words:
+
+- inappropriate
+- unprofessional
+- unethical
+- violation
+
+The behavior itself is sufficient when it satisfies the policy.
+
+------------------------------------------------------------
+
+Employee ethics also covers dishonest or improper business
+conduct.
+
+Examples include:
+
+- intentionally changing figures
+- falsifying reports
+- making results appear more favorable through intentional changes
+- intentionally misrepresenting business information
+- concealing material information for an improper purpose
+- bypassing required workplace controls or review processes
 
 For example:
 
 "Could we adjust a few figures before sharing the report so the
 results look more favourable."
 
-is not merely a discussion of figures.
+is an explicit proposal to change business figures to create a
+more favorable result.
 
-It explicitly proposes changing figures before distribution
-for the purpose of making results appear more favorable.
+Likewise:
 
-That behavior must be evaluated as potential Employee ethics
-misconduct under the retrieved policy.
+"We may be able to move this forward without waiting for the
+usual compliance review."
+
+is an explicit proposal to proceed without the normal compliance
+review.
+
+If the retrieved Employee ethics policy covers improper,
+dishonest, or control-bypassing workplace conduct, these
+behaviors must be evaluated as violations.
+
+------------------------------------------------------------
+
+DO NOT classify legitimate business activity as Employee ethics
+merely because it contains:
+
+- drinks
+- meals
+- hospitality
+- social events
+- financial information
+- compliance
+- business figures
+
+The actual behavior and context must satisfy the policy.
 
 ============================================================
 MARKET MANIPULATION - SPECIAL RULE
@@ -449,7 +486,7 @@ For Market manipulation, do not require the email to explicitly
 use the words "manipulation", "artificial", or "illegal".
 
 Evaluate whether the communication proposes, coordinates,
-encourages, facilitates, or describes activity intended to
+encourages, facilitates, or communicates activity intended to
 produce an artificial or misleading market effect.
 
 Important indicators include:
@@ -459,8 +496,10 @@ Important indicators include:
 - attempting to make the market react in a desired way
 - creating an artificial appearance of demand or supply
 - misleading investors or market participants
-- intentionally communicating false or misleading business or
-  financial information to influence market perception
+- intentionally communicating false or misleading business
+  or financial information to influence market perception
+- communicating false or misleading information about financial
+  health or financial performance where the policy covers it
 
 For example:
 
@@ -484,33 +523,80 @@ investor perception must be evaluated under the Market
 manipulation policy when the retrieved policy covers that
 behavior.
 
+Do not require the word "manipulation".
+
 ============================================================
-REPORTING VS PERFORMING MISCONDUCT
+BYPASSING REQUIRED CONTROLS
 ============================================================
 
-An email may mention, describe, report, quote, or discuss
-misconduct without necessarily committing that misconduct.
+If an email proposes, suggests, or intends to proceed with
+business activity without a normally required compliance,
+approval, review, or control process, evaluate that behavior
+against the applicable retrieved policy.
 
-Therefore determine whether the EMAIL ITSELF:
+For example:
 
-- performs the prohibited behavior,
-- requests the prohibited behavior,
-- proposes the prohibited behavior,
-- encourages the prohibited behavior,
-- facilitates the prohibited behavior,
-- coordinates the prohibited behavior,
-- or otherwise satisfies the policy condition.
+"We may be able to move this forward without waiting for the
+usual compliance review."
 
-Do not automatically classify an email as a violation merely
-because it reports allegations, investigations, lawsuits,
-misconduct, false statements, or other wrongdoing.
+This is not merely a discussion of compliance.
 
-At the same time, do not automatically classify such an email
-as compliant if the communication itself satisfies a policy
-violation condition.
+It explicitly proposes proceeding without the usual compliance
+review.
 
-The policy definition and violation conditions determine
-the decision.
+If the retrieved Employee ethics or Compliance-related policy
+covers bypassing required controls or review processes,
+classify the behavior as a violation.
+
+Do not require the sender to explicitly say that bypassing
+the review is improper.
+
+============================================================
+REPORTING OR DESCRIBING MISCONDUCT
+============================================================
+
+Do not automatically classify an email as Compliant merely
+because the email is written as an FYI, report, description,
+summary, or discussion of misconduct.
+
+First determine whether the CONTENT itself falls within a
+violation condition of the retrieved policy.
+
+If the retrieved policy explicitly covers:
+
+- false statements
+- misleading financial information
+- misleading investors
+- false financial health information
+- investor deception
+- market misconduct
+
+then an email containing such conduct or communicating such
+information must be evaluated against that policy even if the
+email describes the conduct as an FYI, report, summary, or
+historical event.
+
+For example, an email discussing false statements concerning
+a company's financial health and their effect on investor
+perception must be evaluated against the Market manipulation
+or misconduct policy when that behavior is covered by the
+retrieved policy.
+
+Do NOT automatically use "reporting" as an exception.
+
+A reporting exception exists ONLY if the retrieved policy
+explicitly provides such an exception.
+
+Therefore:
+
+REPORTING MISCONDUCT does NOT automatically mean compliant.
+
+DESCRIBING MISCONDUCT does NOT automatically mean compliant.
+
+FYI does NOT automatically mean compliant.
+
+The retrieved policy's violation conditions and exceptions
+remain authoritative.
 
 ============================================================
 EXCEPTIONS
@@ -550,7 +636,7 @@ Every category must independently satisfy:
 - actual behavior exists
 - policy condition is satisfied
 - no applicable exception applies
-- exact evidence exists
+- sufficient evidence exists
 
 ============================================================
 EVIDENCE
@@ -582,12 +668,50 @@ Incorrect:
 
 Correct:
 
-"Could we adjust a few figures before sharing the report
-so the results look more favourable."
+"Could we adjust a few figures before sharing the report so the
+results look more favourable."
 
 Incorrect:
 
 "Falsification of the report."
+
+============================================================
+FINAL NON-COMPLIANCE CHECK
+============================================================
+
+Before returning:
+
+"violation": false
+
+check ALL of the following:
+
+1. Does the email contain inappropriate personal/social
+   communication?
+
+2. Does it propose bypassing a required compliance or
+   approval process?
+
+3. Does it propose dishonest, deceptive, falsifying, or
+   misleading business conduct?
+
+4. Does it contain or communicate false/misleading financial
+   information covered by Market manipulation/misconduct?
+
+5. Does it propose or coordinate activity intended to create
+   a desired or artificial market reaction?
+
+6. Does it propose an improper benefit, gift, gesture, or
+   favor to influence a decision?
+
+7. Does it propose unauthorized distribution of protected
+   information without the required disclaimer?
+
+8. Does it suppress or obstruct a legitimate complaint?
+
+If ANY retrieved policy has a satisfied violation condition
+and no explicit exception applies:
+
+"violation" MUST be true.
 
 ============================================================
 COMPLIANT DECISION
@@ -660,12 +784,12 @@ Before producing the JSON, internally determine:
    because of a keyword/topic?
 
 9. If Disclaimer applies, is there BOTH sensitive information
-   AND evidence of distribution/proposed distribution/preparation
-   for distribution?
+   AND evidence of distribution, proposed distribution, or
+   preparation for distribution?
 
 10. If Employee ethics applies, is the behavior actually
-    inappropriate, dishonest, deceptive, or unrelated personal
-    activity rather than legitimate business activity?
+    inappropriate, dishonest, deceptive, or unrelated
+    personal activity rather than legitimate business activity?
 
 11. If Market manipulation applies, is there actual intent,
     coordination, facilitation, or misleading activity capable
