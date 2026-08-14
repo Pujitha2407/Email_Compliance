@@ -203,5 +203,20 @@
       "Discussing a business agreement and then saying 'Feel free to ding me on WhatsApp anytime'",
       "Providing a personal messaging account specifically so a business discussion can continue outside the approved company channel"
     ]
-  }
+  },
+  {
+    "policy_id": "DISC-001",
+    "category": "Disclaimer",
+    "title": "Business Communication Disclaimer",
+    "definition": "Business communications containing sensitive financial, commercial, transactional, or client-related information must include an appropriate disclaimer or distribution restriction where required.",
+    "violations": [
+        "Distributing or proposing to distribute sensitive business, financial, commercial, or client-related information without the required disclaimer or distribution restriction."
+    ],
+    "exceptions": [
+        "Information may be distributed when the required disclaimer or authorized distribution controls are already present."
+    ],
+    "examples": [
+        "A detailed financial or commercial briefing is prepared for distribution to meeting attendees without the required disclaimer."
+    ]
+}
 ]
