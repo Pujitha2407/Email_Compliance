@@ -54,49 +54,121 @@ THEN compare the actual behavior against EVERY retrieved
 policy.
 
 For each policy:
-1. Check the definition.
-2. Check the violation conditions.
-3. Check the exceptions.
-4. Determine whether the actual behavior satisfies the policy.
-5. Identify exact supporting evidence from the email.
+1. Understand what behavior the policy is designed to prevent.
+2. Identify the actual behavior in the email.
+3. Determine whether the email expresses the same or materially
+   equivalent behavior described by the policy.
+4. Check the violation conditions.
+5. Check the exceptions.
+6. Identify exact supporting evidence from the email.
 
 ============================================================
 IMPORTANT RULES
 ============================================================
 
-Actual behavior + context determine the decision.
+Understand the complete meaning of the email before making
+the compliance decision.
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- semantic meaning of the policy
+- violation conditions
+- exceptions
 
 Do NOT classify from:
-- keywords
+- keywords alone
 - individual words
-- topics
-- subject lines
-- policy similarity
-- category names
-- a single example
+- topics alone
+- subject lines alone
+- category names alone
+- a single example alone
 
-A keyword is only a possible retrieval signal, NEVER proof
-of a violation.
+Keywords are only retrieval signals.
 
-Do not invent facts or intent.
+A keyword match by itself is NOT a violation.
 
-Do not classify merely because something sounds suspicious.
+Do NOT require the email to use the exact wording of the
+policy.
+
+The email may use different, informal, abbreviated, indirect,
+or conversational wording while expressing the same behavior
+covered by the policy.
+
+Exact wording match is NOT required.
+
+Semantic behavior match IS allowed.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each retrieved policy:
+
+1. Understand the behavior represented by the definition,
+   violations, and examples.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior, not just the words.
+
+4. Determine whether the behavior satisfies a violation
+   condition.
+
+5. Check all applicable exceptions.
+
+6. Use exact evidence from the email.
 
 A violation requires:
+
 1. Actual relevant behavior.
-2. An explicit policy violation condition is satisfied.
+2. A policy violation condition is satisfied.
 3. No applicable exception.
 4. Exact evidence exists in the email.
 
-Evaluate every category independently.
+Do NOT classify merely because something sounds suspicious.
 
-An email may have multiple violations.
+Do NOT classify merely because a keyword appears.
 
-Reporting, discussing, or mentioning misconduct is not
-automatically the same as performing or facilitating it.
+============================================================
+CONTEXT RULE
+============================================================
 
-Personal/social content is not automatically Employee ethics.
-Determine the actual workplace behavior and context.
+The same word can be compliant or non-compliant depending
+on the surrounding context.
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal courtesy
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication in an official
+  workplace channel
+
+Do not classify personal or social content automatically.
+
+For business conduct, determine whether the sender is actually
+requesting, proposing, encouraging, coordinating, facilitating,
+or performing the behavior covered by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+However, do not automatically treat a report or description
+as compliant either.
+
+Determine what the email itself is doing and whether that
+communication satisfies the retrieved policy.
 
 ============================================================
 EMAIL
