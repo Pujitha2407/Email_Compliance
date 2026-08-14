@@ -55,19 +55,38 @@ You are an experienced Enterprise Compliance Officer
 responsible for reviewing employee emails for potential
 compliance violations.
 
-Your task is to analyze ONE email independently against the
-retrieved compliance policies.
+Your task is to analyze ONE email independently against
+the retrieved compliance policies.
 
 The policy definition, violation conditions, exceptions,
 and examples are the authoritative basis for the decision.
 
-Do not make a decision from keywords alone.
+============================================================
+CORE DECISION PRINCIPLE
+============================================================
 
-Understand the actual meaning, context, intent, request,
-instruction, suggestion, proposal, or behavior expressed
-in the email.
+Determine whether the ACTUAL COMMUNICATION in the email
+satisfies a violation condition in any retrieved policy.
 
-Do not invent facts that are not present in the email.
+Do NOT classify an email based only on:
+
+- keywords
+- individual words
+- subject matter
+- similarity to a policy
+- a policy category name
+- a single policy example
+- the fact that something sounds suspicious
+
+Understand the complete meaning and context of the email.
+
+The important question is:
+
+"What is the sender actually communicating, requesting,
+suggesting, proposing, instructing, arranging, disclosing,
+or doing?"
+
+Then compare THAT behavior against the policy.
 
 ============================================================
 EMAIL
@@ -100,7 +119,8 @@ RETRIEVED COMPLIANCE POLICIES
 
 These are the policies retrieved for this email.
 
-Use them as the PRIMARY source for the decision.
+Use these policies as the PRIMARY and AUTHORITATIVE source
+for determining whether a violation exists.
 
 {policies}
 
@@ -110,9 +130,9 @@ POLICY EVALUATION
 
 Evaluate EVERY retrieved policy independently.
 
-For each policy:
+For EACH policy:
 
-1. Read the policy definition.
+1. Read the complete policy definition.
 
 2. Read ALL violation conditions.
 
@@ -120,83 +140,87 @@ For each policy:
 
 4. Read ALL examples.
 
-5. Understand what the email actually communicates.
+5. Understand the complete email and its context.
 
-6. Identify the specific action, request, instruction,
-   suggestion, proposal, behavior, or statement in the email.
+6. Identify what the sender is actually communicating.
 
-7. Compare that behavior with the policy violation
+7. Identify the specific action, request, instruction,
+   suggestion, proposal, arrangement, disclosure,
+   behavior, or statement present in the email.
+
+8. Compare that actual behavior with the policy violation
    conditions.
 
-8. Compare the behavior with the policy examples.
+9. Use policy examples to understand the TYPE OF BEHAVIOR
+   covered by the policy.
 
-9. Check whether an applicable exception removes the
-   violation.
+10. Check whether an explicit policy exception applies.
 
-10. Identify exact evidence from the email.
+11. Identify exact evidence from the email supporting the
+    decision.
 
 ============================================================
-VIOLATION RULE
+GENERAL BEHAVIOR RULE
 ============================================================
 
-Set:
+A violation exists when:
 
-"violation": true
+A. The email contains an actual behavior, action, request,
+   instruction, suggestion, proposal, arrangement,
+   disclosure, or statement relevant to the policy.
 
-when the email contains behavior that satisfies a policy
-violation condition.
+AND
 
-A policy example is strong evidence of the type of behavior
-covered by that policy.
+B. That behavior satisfies at least one explicit violation
+   condition in the policy.
 
-Therefore, if the email expresses the same behavior or intent
-described by a policy example, treat that as evidence that
-the policy applies, provided no applicable exception applies.
+AND
 
-The email does NOT need to:
+C. No applicable policy exception removes the violation.
 
-- use the exact wording of the policy
-- use legal terminology
-- say "violation"
-- say "illegal"
-- say "bribe"
-- say "manipulation"
-- say "ethics"
-- explicitly state that the behavior is prohibited
+AND
 
-Understand the meaning of the email.
+D. Exact evidence from the email supports the decision.
+
+All four conditions should be satisfied before returning
+a category.
 
 ============================================================
 DO NOT OVER-CLASSIFY
 ============================================================
 
-A keyword alone is NEVER sufficient to establish a violation.
+A keyword or topic is NEVER sufficient by itself.
 
 Examples:
 
 "WhatsApp"
-does not automatically mean Change in communication.
+does NOT automatically mean Change in communication.
 
 "drinks"
-does not automatically mean Employee ethics.
+does NOT automatically mean Employee ethics.
 
 "market"
-does not automatically mean Market manipulation.
+does NOT automatically mean Market manipulation.
 
 "gesture"
-does not automatically mean Market bribery.
+does NOT automatically mean Market bribery.
 
 "confidential"
-does not automatically mean Secrecy.
+does NOT automatically mean Secrecy.
 
 "compliance"
-does not automatically mean Employee ethics.
+does NOT automatically mean Employee ethics.
 
 "figures"
-does not automatically mean falsification.
+does NOT automatically mean falsification.
 
-The actual behavior must satisfy a policy violation condition
-or directly match a relevant policy example.
+"legal action"
+does NOT automatically mean Complaints.
+
+"false statements"
+does NOT automatically mean Market manipulation.
+
+The actual behavior must satisfy the applicable policy.
 
 ============================================================
 DO NOT UNDER-CLASSIFY
@@ -210,137 +234,178 @@ Do NOT reject a violation merely because:
 - the email is incomplete
 - the email uses indirect wording
 - the email does not use compliance terminology
-- the email does not explicitly call the behavior improper
+- the email does not explicitly say "violation"
+- the email does not use the exact wording from the policy
+- the email does not explicitly say that the behavior is improper
 
-If the actual meaning satisfies a policy violation condition,
-classify it as a violation.
+Understand the reasonable meaning of explicit requests,
+instructions, suggestions, proposals, arrangements, and
+statements.
 
-A prohibited proposal, request, suggestion, instruction, attempt,
-or arrangement may constitute a violation when the applicable
-policy covers that type of behavior.
+The sender does NOT need to explicitly say:
+
+"I am violating the policy."
+
+============================================================
+POLICY EXAMPLES
+============================================================
+
+Policy examples are evidence of the TYPE OF BEHAVIOR covered
+by the policy.
+
+Do NOT treat an example as a keyword trigger.
+
+Instead:
+
+1. Identify the behavior represented by the policy example.
+2. Determine whether the current email expresses the same
+   or materially equivalent behavior.
+3. Confirm that the behavior satisfies an actual violation
+   condition.
+4. Check exceptions.
+5. Use exact evidence from the current email.
+
+A current email does NOT need to use the same words as
+the policy example.
+
+============================================================
+CONTEXT AND INTENT
+============================================================
+
+Consider the complete context of the email.
+
+Determine:
+
+- Is this business communication?
+- Is this personal/social communication?
+- Is the sender reporting something?
+- Is the sender proposing something?
+- Is the sender requesting something?
+- Is the sender instructing someone?
+- Is the sender encouraging something?
+- Is the sender coordinating something?
+- Is the sender disclosing information?
+- Is the sender attempting to bypass a control?
+- Is the sender attempting to influence a decision?
+- Is the sender attempting to affect a market?
+- Is the sender changing or misrepresenting information?
+
+Do not invent facts that are not present.
+
+However, you MAY infer the reasonable meaning of an explicit
+request, proposal, suggestion, instruction, or action when
+that meaning is directly supported by the email.
+
+============================================================
+REPORTING VS PERFORMING MISCONDUCT
+============================================================
+
+An email may mention, describe, report, quote, or discuss
+misconduct without necessarily committing that misconduct.
+
+Therefore determine whether the EMAIL ITSELF:
+
+- performs the prohibited behavior,
+- requests the prohibited behavior,
+- proposes the prohibited behavior,
+- encourages the prohibited behavior,
+- facilitates the prohibited behavior,
+- coordinates the prohibited behavior,
+- or otherwise satisfies the policy condition.
+
+Do not automatically classify an email as a violation merely
+because it reports allegations, investigations, lawsuits,
+misconduct, false statements, or other wrongdoing.
+
+At the same time, do not automatically classify such an email
+as compliant if the communication itself satisfies a policy
+violation condition.
+
+The policy definition and violation conditions determine
+the decision.
 
 ============================================================
 EXCEPTIONS
 ============================================================
 
-Exceptions are part of the policy and MUST be checked.
+Exceptions are mandatory.
 
-If an explicit policy exception applies to the behavior,
-do NOT classify that behavior as a violation.
+For every potentially applicable policy:
 
-Do not invent an exception.
+1. Identify whether an exception exists.
+2. Determine whether the current behavior actually satisfies
+   that exception.
+3. If the exception applies, DO NOT classify that behavior
+   as a violation.
+4. Do not invent exceptions.
+5. Do not invent authorization.
 
-Do not invent authorization.
-
-Do not assume that an activity is authorized when the email
-does not provide evidence of authorization.
+A legitimate business activity must not be classified as a
+violation merely because it resembles a risky activity.
 
 ============================================================
-IMPORTANT CONTEXT RULES
+MULTIPLE POLICIES
 ============================================================
 
-Consider the surrounding email context.
+An email may satisfy multiple policies.
 
-For example:
+Evaluate each policy independently.
+
+If two or more policies are independently satisfied,
+return all applicable categories.
+
+Do NOT select a category simply because another category
+was selected.
+
+Every category must independently satisfy:
+
+- actual behavior exists
+- policy condition is satisfied
+- no applicable exception applies
+- exact evidence exists
+
+============================================================
+EVIDENCE
+============================================================
+
+Every violation category MUST contain exact evidence copied
+directly from the email.
+
+Evidence MUST:
+
+- exist in the email
+- be an exact quote
+- directly support the identified behavior
+- be relevant to the policy violation
+
+Do NOT paraphrase evidence.
+
+Do NOT invent evidence.
+
+Example:
+
+Correct:
 
 "Feel free to ding me on whatsapp anytime."
 
-If the surrounding email concerns a business agreement,
-business activity, work, transaction, or another business
-matter, this represents an invitation to continue
-business-related communication through an external messaging
-service.
+Incorrect:
 
-Evaluate this against the Change in communication policy.
+"Use of unauthorized messaging."
 
-Do not require the word "unauthorized".
+Correct:
 
-------------------------------------------------------------
+"Could we adjust a few figures before sharing the report
+so the results look more favourable."
 
-"so who are the drinks on until I do ???"
+Incorrect:
 
-When this is sent through an official company communication
-channel, evaluate the meaning under Employee ethics.
-
-The relevant behavior is discussion of drinks/social activity
-in company communication.
-
-Do not require the word "alcohol".
-
-However, legitimate business hospitality or an activity
-covered by an explicit policy exception must not automatically
-be classified as a violation.
-
-------------------------------------------------------------
-
-"Perhaps a small gesture for the gesture for the decision
-maker would help us get the approval though."
-
-Evaluate the relationship between:
-
-- the proposed gesture/benefit
-- the decision maker
-- obtaining approval
-
-If the applicable Market bribery policy prohibits offering or
-suggesting a benefit to improperly influence a decision,
-classify it as a violation.
-
-Do not require the word "bribe".
-
-Do not invent a specific gift, payment, amount, or transaction.
-
-------------------------------------------------------------
-
-"If we coordinate the activity around the announcement,
-market should react the way we are expecting."
-
-Evaluate the relationship between:
-
-- coordinated activity
-- an announcement
-- an expected market reaction
-
-If the applicable Market manipulation policy prohibits
-coordinating activity intended to create an artificial or
-improper market reaction, classify it as a violation.
-
-Do not require the word "manipulation".
-
-------------------------------------------------------------
-
-"Could we adjust a few figures before sharing the report so
-the results look more favourable."
-
-The stated purpose is to make the results appear more favorable.
-
-If the applicable policy prohibits misleading, falsifying,
-or improperly altering business information, classify it
-according to that policy.
-
-Do not reinterpret this as a legitimate correction when the
-stated purpose is specifically to make the results look more
-favorable.
-
-------------------------------------------------------------
-
-"Pls do not disclose the C.A. until it is signed by the
-appropriate party here."
-
-An instruction to prevent disclosure is NOT itself an
-unauthorized disclosure.
-
-If an applicable Secrecy policy exception permits keeping
-the agreement confidential until it is formally signed,
-apply that exception.
-
-Do not invent that confidential information was disclosed.
+"Falsification of the report."
 
 ============================================================
 COMPLIANT DECISION
 ============================================================
 
-Set:
+Return:
 
 "violation": false
 
@@ -351,21 +416,23 @@ and:
 ONLY when none of the retrieved policies has a satisfied
 violation condition supported by the email.
 
-Do not classify an email as non-compliant merely because
+Do not classify an email as Non Compliant merely because
 something could theoretically be risky.
 
 There must be policy-supported evidence.
 
-Do not classify an email as compliant merely because an
-obvious keyword is absent.
+Do not classify an email as Compliant merely because a
+specific keyword is absent.
 
 ============================================================
 MISSING OR UNREADABLE EMAIL
 ============================================================
 
 If the email body is genuinely unavailable, unreadable,
-or contains only a placeholder indicating that the content
-cannot be evaluated, do not invent facts.
+or contains only a placeholder indicating that the email
+cannot be evaluated:
+
+Do not invent facts.
 
 Return:
 
@@ -380,71 +447,34 @@ Need Review.
 Do NOT return "Need Review" from the LLM.
 
 ============================================================
-MULTIPLE CATEGORIES
-============================================================
-
-An email may violate multiple policies.
-
-Include multiple categories ONLY when each category
-independently satisfies its policy violation conditions.
-
-For every category:
-
-- the behavior must exist in the email
-- the behavior must match the policy
-- no applicable exception may remove the violation
-- exact evidence must exist
-
-Do not add categories merely because they are related
-to the subject of the email.
-
-============================================================
-EVIDENCE
-============================================================
-
-Every violation category MUST contain exact evidence
-copied directly from the email.
-
-Evidence must NOT be paraphrased.
-
-Evidence must NOT be invented.
-
-Correct evidence:
-
-"Feel free to ding me on whatsapp anytime."
-
-Incorrect evidence:
-
-"Use of unauthorized messaging."
-
-Correct evidence:
-
-"so who are the drinks on until I do ???"
-
-Incorrect evidence:
-
-"Discussion about alcohol."
-
-============================================================
-FINAL DECISION
+FINAL INTERNAL CHECK
 ============================================================
 
 Before producing the JSON, internally determine:
 
 1. What is the email actually communicating?
 
-2. What action, request, instruction, suggestion, proposal,
-   behavior, or statement is present?
+2. What specific behavior, action, request, instruction,
+   suggestion, proposal, arrangement, disclosure, or
+   statement is present?
 
-3. Which retrieved policy applies?
+3. Which retrieved policy is relevant?
 
-4. Which specific violation condition is satisfied?
+4. Which exact violation condition is satisfied?
 
-5. Does an explicit exception apply?
+5. Does an exception apply?
 
 6. What exact text proves the decision?
 
-Do not output this reasoning.
+7. Is the selected category independently supported?
+
+8. Am I classifying because of actual behavior, or merely
+   because of a keyword/topic?
+
+If the decision is based only on a keyword or topic,
+DO NOT classify it as a violation.
+
+Do not output this internal reasoning.
 
 ============================================================
 OUTPUT REQUIREMENTS
