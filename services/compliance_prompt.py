@@ -220,6 +220,18 @@ does NOT automatically mean Complaints.
 "false statements"
 does NOT automatically mean Market manipulation.
 
+"financial information"
+does NOT automatically mean Disclaimer.
+
+"commercial information"
+does NOT automatically mean Disclaimer.
+
+"client information"
+does NOT automatically mean Disclaimer.
+
+"transaction information"
+does NOT automatically mean Disclaimer.
+
 The actual behavior must satisfy the applicable policy.
 
 ============================================================
@@ -289,12 +301,188 @@ Determine:
 - Is the sender attempting to influence a decision?
 - Is the sender attempting to affect a market?
 - Is the sender changing or misrepresenting information?
+- Is the sender distributing or proposing to distribute
+  sensitive business information?
+- Is the sender preparing information for distribution?
 
-Do not invent facts that are not present.
+Do not invent facts.
 
 However, you MAY infer the reasonable meaning of an explicit
 request, proposal, suggestion, instruction, or action when
 that meaning is directly supported by the email.
+
+============================================================
+DISCLAIMER POLICY - SPECIAL RULE
+============================================================
+
+When the retrieved policy category is "Disclaimer", evaluate
+the COMPLETE combination of:
+
+1. The type of information being communicated.
+
+AND
+
+2. What the sender intends to do with that information.
+
+AND
+
+3. Whether the communication is being distributed, proposed
+   for distribution, prepared for distribution, or explicitly
+   intended to be shared with recipients.
+
+AND
+
+4. Whether the required disclaimer or distribution restriction
+   is present.
+
+Sensitive information may include:
+
+- financial information
+- financial performance
+- revenue
+- profits
+- losses
+- valuation
+- trading information
+- commercial information
+- transaction information
+- client information
+- business relationships
+- strategic business information
+- derivatives
+- hedging activities
+- pricing information
+- material business information
+
+Do NOT classify Disclaimer merely because sensitive information
+appears.
+
+There must also be evidence that the information is being
+distributed, proposed for distribution, prepared for distribution,
+or otherwise intended to be shared.
+
+IMPORTANT:
+
+If an email contains sensitive financial, commercial,
+transactional, or client-related information AND explicitly
+asks whether it should be distributed/shared/provided to
+attendees or recipients, treat that distribution proposal as
+an important part of the Disclaimer analysis.
+
+For example:
+
+"Mr. Shankman, please advise if you would like me to distribute
+this to the attendees."
+
+combined with sensitive business information is materially
+different from merely discussing sensitive information privately.
+
+Do NOT require the sender to explicitly write:
+
+"I am distributing this without a disclaimer."
+
+If the policy states that the sensitive information requires
+a disclaimer or distribution restriction, and the email proposes
+distribution without showing that the required disclaimer or
+restriction is present, classify according to the Disclaimer
+policy.
+
+However, if the email explicitly contains the required disclaimer
+or an authorized distribution restriction, apply the policy
+exception.
+
+Do not invent a disclaimer that is not present.
+
+============================================================
+EMPLOYEE ETHICS - SPECIAL RULE
+============================================================
+
+For Employee ethics, evaluate workplace behavior and the
+communication context.
+
+Personal or social content in an official company email can
+be an Employee ethics violation when it is unrelated to
+legitimate business activity and is inappropriate for the
+official communication channel.
+
+Examples include:
+
+- personal drinking or drinks
+- partying
+- personal entertainment
+- personal social arrangements
+- inappropriate personal requests
+- inappropriate workplace communication
+- dishonest or deceptive business conduct
+- intentionally changing business figures
+- intentionally making reports or results appear more favorable
+  through misleading changes
+
+Do NOT classify legitimate business hospitality, company events,
+business meals, authorized entertainment, or legitimate business
+discussion merely because drinks, food, or social activity is
+mentioned.
+
+For dishonest or misleading business conduct, determine whether
+the email proposes, requests, instructs, or communicates an
+intentional change, concealment, falsification, or
+misrepresentation.
+
+For example:
+
+"Could we adjust a few figures before sharing the report so the
+results look more favourable."
+
+is not merely a discussion of figures.
+
+It explicitly proposes changing figures before distribution
+for the purpose of making results appear more favorable.
+
+That behavior must be evaluated as potential Employee ethics
+misconduct under the retrieved policy.
+
+============================================================
+MARKET MANIPULATION - SPECIAL RULE
+============================================================
+
+For Market manipulation, do not require the email to explicitly
+use the words "manipulation", "artificial", or "illegal".
+
+Evaluate whether the communication proposes, coordinates,
+encourages, facilitates, or describes activity intended to
+produce an artificial or misleading market effect.
+
+Important indicators include:
+
+- coordinating activity around an announcement
+- coordinating transactions to influence market reaction
+- attempting to make the market react in a desired way
+- creating an artificial appearance of demand or supply
+- misleading investors or market participants
+- intentionally communicating false or misleading business or
+  financial information to influence market perception
+
+For example:
+
+"If we coordinate the activity around the announcement, market
+should react the way we are expecting."
+
+contains BOTH:
+
+1. coordination of activity around an announcement
+
+AND
+
+2. an expected desired market reaction.
+
+This must be evaluated against the Market manipulation policy
+as behavior, not merely as a mention of the market.
+
+Similarly, intentionally communicating misleading information
+about financial performance or financial health to influence
+investor perception must be evaluated under the Market
+manipulation policy when the retrieved policy covers that
+behavior.
 
 ============================================================
 REPORTING VS PERFORMING MISCONDUCT
@@ -470,6 +658,18 @@ Before producing the JSON, internally determine:
 
 8. Am I classifying because of actual behavior, or merely
    because of a keyword/topic?
+
+9. If Disclaimer applies, is there BOTH sensitive information
+   AND evidence of distribution/proposed distribution/preparation
+   for distribution?
+
+10. If Employee ethics applies, is the behavior actually
+    inappropriate, dishonest, deceptive, or unrelated personal
+    activity rather than legitimate business activity?
+
+11. If Market manipulation applies, is there actual intent,
+    coordination, facilitation, or misleading activity capable
+    of producing an artificial or misleading market effect?
 
 If the decision is based only on a keyword or topic,
 DO NOT classify it as a violation.
