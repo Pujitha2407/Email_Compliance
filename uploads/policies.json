@@ -84,16 +84,5 @@
         "Bypassing required workplace controls, approvals, or review processes",
         "possesing illegal substances or improper things or encouraging for the same in office premise"
     ]
-  },
-  {
-    "policy_id": "DISC-001",
-    "category": "Disclaimer",
-    "title": "Business Communication Disclaimer",
-    "definition": "A violation occurs when company financial data, commercial, transactional, client-related sensitive data, or strategic business information is distributed internal or external communications without a required disclaimer or distribution restriction being mentioned",
-    "violations": [
-      "Distributing sensitive financial information without the any disclaimer mentioned",
-      "Distributing sensitive commercial information without the any disclaimer mentioned",
-      "Distributing sensitive transaction or client information without the any disclaimer/restriction mentioned"
-    ]
   }
 ]
