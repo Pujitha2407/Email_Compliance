@@ -1,5 +1,5 @@
 def build_compliance_prompt(
-    email: dict,
+    email: str,
     risk_categories: list[str],
     retrieved_policies: list[dict]
 ) -> str:
@@ -12,27 +12,21 @@ def build_compliance_prompt(
     policies = "\n\n".join(
         f"""
 Policy ID:
-{item["policy"].get("policy_id", "")}
+{item.get("policy_id", "")}
 
 Category:
-{item["policy"].get("category", "")}
+{item.get("category", "")}
 
 Title:
-{item["policy"].get("title", "")}
+{item.get("title", "")}
 
 Definition:
-{item["policy"].get("definition", "")}
+{item.get("definition", "")}
 
 Violations:
 {chr(10).join(
     "- " + x
-    for x in item["policy"].get("violations", [])
-)}
-
-Exceptions:
-{chr(10).join(
-    "- " + x
-    for x in item["policy"].get("exceptions", [])
+    for x in item.get("violations", [])
 )}
 """
         for item in retrieved_policies
@@ -54,28 +48,11 @@ Remember the reason for violations for each policy.
 {categories}
 
 # Email
-Secon step, understand the complete email.
+Second step, Read this below detailed email context summary 
 
-From:
-{email["from"]}
-To:
-{email["to"]}
-Subject:
-{email["subject"]}
-Body:
-{email["body"]}
-
-Determine internally:
-
-- purpose
-- sender and recipients
-- actual intent
-- actual action or behavior
-- whether it is business, personal, social,
-  administrative, or informational
-- what the sender is requesting, proposing, suggesting,
-  instructing, arranging, disclosing, reporting,
-  or actually doing
+==========================================================
+{email}
+==========================================================
 
 then, compare your mail understanding against EVERY supplied
 policy description, violations and exceptions.
@@ -90,7 +67,6 @@ The decision must be based on:
 - intent supported by the email
 - policy definition
 - violation conditions
-- exceptions
 
 A keyword match by itself is NOT a violation.
 Not necessary to require exact wording from the policy.
@@ -139,4 +115,31 @@ Rules:
 - return ONLY valid JSON.
 - do not return Markdown code fences.
 - do not return any text outside the JSON object.
+"""
+
+
+def build_context_prompt(email: dict) -> str:
+    return f"""
+Understand the complete email and generate a context detaile analysis summary
+
+From:
+{email["from"]}
+To:
+{email["to"]}
+Subject:
+{email["subject"]}
+Body:
+{email["body"]}
+
+Determine:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
 """

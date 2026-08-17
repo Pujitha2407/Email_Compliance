@@ -2,7 +2,6 @@ import json
 import argparse
 from services.email_ingestion import EmailIngestionService
 from services.preprocessing import PreprocessingService
-from services.rag_retriever import RAGRetriever
 from services.compliance_analysis import ComplianceAnalysisService
 from services.compliance_score import ComplainceScore
 parser = argparse.ArgumentParser()
@@ -23,15 +22,13 @@ def run():
     # Initialize services
     email_ingestion = EmailIngestionService()
     preprocessing = PreprocessingService()
-    retriever = RAGRetriever()
-    compliance = ComplianceAnalysisService()
+    compliance = ComplianceAnalysisService(policies)
     compliance_score = ComplainceScore(user_config)
 
     # Execute services
     email_ingestion.execute("uploads/SampleCategorisedEmails_all_data.csv", args.export)
     preprocessing.execute(email_ingestion.get_emails(), args.export)
-    retriever.build_index(policies)
-    compliance.execute(email_ingestion.get_emails(), risk_categories, retriever, args.export)
+    compliance.execute(email_ingestion.get_emails(), risk_categories, args.export)
     # For debugging scoring
     # compliance.results = json.load(open("llm_output.json"))
     compliance_score.execute(

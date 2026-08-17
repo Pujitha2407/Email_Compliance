@@ -10,21 +10,8 @@
       "Forwarding protected information to an unauthorized person",
       "Providing unauthorized access to protected information",
       "Requesting or encouraging unauthorized disclosure"
-    ],
-    "exceptions": [
-      "Authorized disclosure",
-      "Authorized recipient",
-      "Legitimate confidentiality agreement",
-      "Instruction to keep information confidential without actually disclosing it",
-      "Legitimate business communication that does not reveal protected information"
-    ],
-    "examples": [
-      "Sending confidential information to an unauthorized recipient",
-      "Forwarding restricted business information without authorization",
-      "Telling someone not to disclose an agreement until it is signed is not itself a secrecy violation"
     ]
   },
-
   {
     "policy_id": "MM-001",
     "category": "Market manipulation",
@@ -38,22 +25,8 @@
       "Communicating false or misleading financial information to influence market perception",
       "Creating a false impression of demand or supply",
       "Planning activity around an announcement to obtain a desired artificial market reaction"
-    ],
-    "exceptions": [
-      "Legitimate market analysis",
-      "Ordinary legitimate trading",
-      "Accurate public information",
-      "Historical reporting that is not itself misleading",
-      "Legitimate discussion of market conditions without manipulative intent"
-    ],
-    "examples": [
-      "Coordinate activity around an announcement so the market reacts as expected",
-      "Create artificial buying or selling activity",
-      "Mislead investors about financial performance",
-      "Create a false impression of market demand"
     ]
   },
-
   {
     "policy_id": "MB-001",
     "category": "Market bribery",
@@ -66,20 +39,8 @@
       "Offering a favor for favorable treatment",
       "Requesting a personal benefit in exchange for a business decision",
       "Arranging an improper benefit through another person"
-    ],
-    "exceptions": [
-      "Authorized business expense",
-      "Authorized reasonable hospitality",
-      "Legitimate business activity without improper influence",
-      "Benefits explicitly permitted by company policy"
-    ],
-    "examples": [
-      "A small gesture could help obtain approval",
-      "Offering a gift to influence a decision maker",
-      "Providing a personal benefit for favorable treatment"
     ]
   },
-
   {
     "policy_id": "COM-001",
     "category": "Change in communication",
@@ -91,20 +52,8 @@
       "Using personal email or accounts for company business",
       "Redirecting business communication to an external channel",
       "Inviting a business contact to continue work-related communication outside the approved channel"
-    ],
-    "exceptions": [
-      "Explicitly authorized external channel",
-      "Clearly personal communication unrelated to business",
-      "Company-approved communication method",
-      "Business process specifically requiring the external channel"
-    ],
-    "examples": [
-      "Continuing a business discussion through WhatsApp",
-      "Continuing business communication through a personal account",
-      "Moving a company discussion to a personal messaging service"
     ]
   },
-
   {
     "policy_id": "CMP-001",
     "category": "Complaints",
@@ -118,22 +67,9 @@
       "Concealing a complaint",
       "Obstructing a legitimate investigation",
       "Retaliating against someone for making a legitimate complaint"
-    ],
-    "exceptions": [
-      "Good-faith reporting",
-      "Authorized complaint handling",
-      "Proper escalation",
-      "Legitimate investigation",
-      "Historical reporting without suppression"
-    ],
-    "examples": [
-      "Tell an employee not to report misconduct",
-      "Prevent a complaint from reaching compliance",
-      "Suppress a complaint to avoid investigation"
     ]
   },
-
-{
+  {
     "policy_id": "ETH-001",
     "category": "Employee ethics",
     "title": "Employee Ethical Conduct",
@@ -147,18 +83,8 @@
         "Concealing relevant information for an improper purpose",
         "Bypassing required workplace controls, approvals, or review processes",
         "possesing illegal substances or improper things or encouraging for the same in office premise"
-    ],
-    "exceptions": [
-        "Legitimate business communication",
-        "Authorized company event or activity",
-        "Authorized business entertainment",
-        "Legitimate business hospitality",
-        "Legitimate administrative communication",
-        "Accurate correction or clarification of information",
-        "Clearly personal communication outside official company business channels"
-    ],
-    "examples": []
-},
+    ]
+  },
   {
     "policy_id": "DISC-001",
     "category": "Disclaimer",
@@ -167,17 +93,7 @@
     "violations": [
       "Distributing sensitive financial information without the any disclaimer mentioned",
       "Distributing sensitive commercial information without the any disclaimer mentioned",
-      "Distributing sensitive transaction or client information without the any disclaimer/restriction mentioned",
-      "Incorrect Disclaimer is present which doesn't support the context"
-    ],
-    "exceptions": [
-      "Correct Disclaimer is present which supports the context",
-      "No sensitive information whether internal business or external client information is present in context"
-    ],
-    "examples": [
-      "Sensitive financial briefing proposed for distribution without the required disclaimer",
-      "Sensitive commercial information prepared for distribution without the required restriction",
-      "Sensitive business information proposed for distribution to external recipients"
+      "Distributing sensitive transaction or client information without the any disclaimer/restriction mentioned"
     ]
   }
 ]
