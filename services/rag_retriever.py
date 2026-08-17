@@ -1,10 +1,10 @@
-from sentence_transformers import SentenceTransformer
-import faiss
+# from sentence_transformers import SentenceTransformer
+# import faiss
 
 
 class RAGRetriever:
     def __init__(self, model_name="all-MiniLM-L6-v2"):
-        self.model = SentenceTransformer(model_name)
+        # self.model = SentenceTransformer(model_name)
         self.policy_index = None
         self.policies = []
 
@@ -58,30 +58,30 @@ Exceptions:
             for policy in policies
         ]
 
-        for i in range(len(policy_texts)):
-            print(
-                f"Policy {i + 1} Text:\n"
-                f"{policy_texts[i]}\n"
-            )
+        # for i in range(len(policy_texts)):
+        #     print(
+        #         f"Policy {i + 1} Text:\n"
+        #         f"{policy_texts[i]}\n"
+        #     )
 
-        embeddings = self.model.encode(
-            policy_texts,
-            convert_to_numpy=True
-        )
+        # embeddings = self.model.encode(
+        #     policy_texts,
+        #     convert_to_numpy=True
+        # )
 
-        embeddings = embeddings.astype("float32")
+        # embeddings = embeddings.astype("float32")
 
         # Normalize embeddings so inner product behaves
         # like cosine similarity.
-        faiss.normalize_L2(embeddings)
+        # faiss.normalize_L2(embeddings)
 
-        dimension = embeddings.shape[1]
+        # dimension = embeddings.shape[1]
 
-        self.policy_index = faiss.IndexFlatIP(
-            dimension
-        )
+        # self.policy_index = faiss.IndexFlatIP(
+        #     dimension
+        # )
 
-        self.policy_index.add(embeddings)
+        # self.policy_index.add(embeddings)
 
         print(
             "Built Policy Model Index with ",
@@ -92,31 +92,28 @@ Exceptions:
     def retrieve(self, email, top_k=None):
         """
         Retrieve policies for an email.
-
-        Since the current system contains only a small number
-        of policies, retrieve all policies by default.
         """
 
-        email_text = f"""
-From:
-{email["from"]}
+#         email_text = f"""
+# From:
+# {email["from"]}
 
-To:
-{email["to"]}
+# To:
+# {email["to"]}
 
-Subject:
-{email["subject"]}
+# Subject:
+# {email["subject"]}
 
-Body:
-{email["body"]}
-"""
+# Body:
+# {email["body"]}
+# """
 
-        email_embedding = self.model.encode(
-            [email_text],
-            convert_to_numpy=True
-        ).astype("float32")
+        # email_embedding = self.model.encode(
+        #     [email_text],
+        #     convert_to_numpy=True
+        # ).astype("float32")
 
-        faiss.normalize_L2(email_embedding)
+        # faiss.normalize_L2(email_embedding)
 
         # Retrieve all policies unless explicitly specified.
         if top_k is None:
@@ -127,17 +124,18 @@ Body:
             len(self.policies)
         )
 
-        scores, indices = self.policy_index.search(
-            email_embedding,
-            top_k
-        )
+        # scores, indices = self.policy_index.search(
+        #     email_embedding,
+        #     top_k
+        # )
 
         results = []
 
-        for score, index in zip(
-            scores[0],
-            indices[0]
-        ):
+        # for score, index in zip(
+        #     scores[0],
+        #     indices[0]
+        # ):
+        for index in range(len(self.policies)):
             if index < 0:
                 continue
 
@@ -145,7 +143,7 @@ Body:
 
             results.append({
                 "policy": policy,
-                "similarity_score": float(score)
+                # "similarity_score": float(score)
             })
 
         return results

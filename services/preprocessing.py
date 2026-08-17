@@ -15,31 +15,23 @@ class PreprocessingService:
             subject = ""
             body = []
             body_started = False
-
             for line in lines:
                 line = line.strip()
-
                 # Only treat actual "From:" header as sender.
                 # Prevents lines such as:
                 # "from 1:30-2:30/trading floor tour..."
                 # from being interpreted as From.
                 if re.match(r"^from\s*:", line, re.IGNORECASE):
                     sender = line.split(":", 1)[1].strip()
-
                 elif re.match(r"^to\s*:", line, re.IGNORECASE):
                     recipient = line.split(":", 1)[1].strip()
-
                 elif re.match(r"^subject\s*:", line, re.IGNORECASE):
                     subject = line.split(":", 1)[1].strip()
-
                 elif re.match(r"^body\s*:", line, re.IGNORECASE):
                     body_started = True
-
                     body_text = line.split(":", 1)[1].strip()
-
                     if body_text:
                         body.append(body_text)
-
                 elif body_started:
                     body.append(line)
 
@@ -49,17 +41,8 @@ class PreprocessingService:
                 "subject": subject,
                 "body": " ".join(body)
             }
-
         print("PreProcessing Finished")
 
         if export:
-            with open(
-                "preprocessing_ouput.json",
-                "w",
-                encoding="utf-8"
-            ) as f:
-                json.dump(
-                    emails,
-                    f,
-                    indent=4
-                )
+            with open("preprocessing_ouput.json", "w", encoding="utf-8") as f:
+                json.dump(emails, f, indent=4)

@@ -4,6 +4,7 @@ import json
 class EmailIngestionService:
     def __init__(self):
         self.emails_db = {}
+        self.email_b = {}
 
     def execute(self, file_path, export=False):
         print("Starting Email Ingestion...")
@@ -13,6 +14,8 @@ class EmailIngestionService:
             self.emails_db[str(mail_id)] = {
                 "email": row["Email Sample"]
             }
+            if mail_id == 4:
+                self.email_b[str(mail_id)] = self.emails_db[str(mail_id)]
             mail_id += 1
         print("Email Ingestion Finished.")
         # export result
@@ -21,5 +24,5 @@ class EmailIngestionService:
                 json.dump(self.emails_db, f, indent=4)
 
     def get_emails(self):
-        return self.emails_db
+        return self.email_b
         

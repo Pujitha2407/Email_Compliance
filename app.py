@@ -32,6 +32,7 @@ def run():
     preprocessing.execute(email_ingestion.get_emails(), args.export)
     retriever.build_index(policies)
     compliance.execute(email_ingestion.get_emails(), risk_categories, retriever, args.export)
+    # For debugging scoring
     # compliance.results = json.load(open("llm_output.json"))
     compliance_score.execute(
         email_ingestion.get_emails(),

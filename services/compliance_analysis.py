@@ -50,25 +50,25 @@ class ComplianceAnalysisService:
                 top_k=len(retriever.policies)
             )
 
-            print(
-                "number of policies received:",
-                len(retrieved_policies)
-            )
+            # print(
+            #     "number of policies received:",
+            #     len(retrieved_policies)
+            # )
 
-            print(
-                "\n----- retrieved policies -------"
-            )
+            # print(
+            #     "\n----- retrieved policies -------"
+            # )
 
-            for i, item in enumerate(
-                retrieved_policies,
-                1
-            ):
+            # for i, item in enumerate(
+            #     retrieved_policies,
+            #     1
+            # ):
 
-                print(
-                    f"{i}: "
-                    f"{item['policy']['policy_id']}"
-                    f"-{item['similarity_score']}"
-                )
+            #     print(
+            #         f"{i}: "
+            #         f"{item['policy']['policy_id']}"
+            #         f"-{item['similarity_score']}"
+            #     )
 
             # Build prompt
             prompt = build_compliance_prompt(
@@ -110,7 +110,7 @@ class ComplianceAnalysisService:
                         f.write(
                             f"{item['policy']['policy_id']}"
                             f"-score:"
-                            f"{item['similarity_score']}\n"
+                            # f"{item['similarity_score']}\n"
                         )
 
                     f.write("\n")
@@ -120,7 +120,8 @@ class ComplianceAnalysisService:
             # LLM Model Call
             response = self.client.responses.create(
                 model=model_deployment,
-                input=prompt
+                input=prompt,
+                store=False
             )
 
             # Parse LLM response
@@ -212,7 +213,7 @@ class ComplianceAnalysisService:
         )
 
         # Export result
-        if export:
+        if True:
 
             with open(
                 "llm_ouput.json",
