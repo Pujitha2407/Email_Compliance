@@ -3,48 +3,53 @@ import faiss
 
 
 class RAGRetriever:
-
     def __init__(self, model_name="all-MiniLM-L6-v2"):
         self.model = SentenceTransformer(model_name)
         self.policy_index = None
         self.policies = []
 
     def _policy_to_text(self, policy):
+        """
+        Convert policy information into searchable text.
+
+        Examples are intentionally excluded from retrieval
+        so that they do not dominate similarity matching.
+        """
 
         violations = "\n".join(
             f"- {item}"
-            for item in policy["violations"]
+            for item in policy.get("violations", [])
         )
 
         exceptions = "\n".join(
             f"- {item}"
-            for item in policy["exceptions"]
-        )
-
-        examples = "\n".join(
-            f"- {item}"
-            for item in policy["examples"]
+            for item in policy.get("exceptions", [])
         )
 
         return f"""
-Policy ID: {policy["policy_id"]}
-Category: {policy["category"]}
-Title: {policy["title"]}
+Policy ID:
+{policy.get("policy_id", "")}
+
+Category:
+{policy.get("category", "")}
+
+Title:
+{policy.get("title", "")}
 
 Definition:
-{policy["definition"]}
+{policy.get("definition", "")}
 
 Violations:
 {violations}
 
 Exceptions:
 {exceptions}
-
-Examples:
-{examples}
 """
 
     def build_index(self, policies):
+        """
+        Create embeddings for policies and build FAISS index.
+        """
 
         self.policies = policies
 
@@ -61,11 +66,14 @@ Examples:
 
         embeddings = self.model.encode(
             policy_texts,
-            convert_to_numpy=True,
-            normalize_embeddings=True
+            convert_to_numpy=True
         )
 
         embeddings = embeddings.astype("float32")
+
+        # Normalize embeddings so inner product behaves
+        # like cosine similarity.
+        faiss.normalize_L2(embeddings)
 
         dimension = embeddings.shape[1]
 
@@ -81,17 +89,23 @@ Examples:
             " policies."
         )
 
-    def retrieve(
-        self,
-        email,
-        top_k=4,
-        min_similarity=0.20
-    ):
+    def retrieve(self, email, top_k=None):
+        """
+        Retrieve policies for an email.
+
+        Since the current system contains only a small number
+        of policies, retrieve all policies by default.
+        """
 
         email_text = f"""
-From: {email["from"]}
-To: {email["to"]}
-Subject: {email["subject"]}
+From:
+{email["from"]}
+
+To:
+{email["to"]}
+
+Subject:
+{email["subject"]}
 
 Body:
 {email["body"]}
@@ -99,13 +113,23 @@ Body:
 
         email_embedding = self.model.encode(
             [email_text],
-            convert_to_numpy=True,
-            normalize_embeddings=True
+            convert_to_numpy=True
         ).astype("float32")
+
+        faiss.normalize_L2(email_embedding)
+
+        # Retrieve all policies unless explicitly specified.
+        if top_k is None:
+            top_k = len(self.policies)
+
+        top_k = min(
+            top_k,
+            len(self.policies)
+        )
 
         scores, indices = self.policy_index.search(
             email_embedding,
-            len(self.policies)
+            top_k
         )
 
         results = []
@@ -114,29 +138,14 @@ Body:
             scores[0],
             indices[0]
         ):
-
             if index < 0:
                 continue
 
+            policy = self.policies[index]
+
             results.append({
-                "policy": self.policies[index],
+                "policy": policy,
                 "similarity_score": float(score)
             })
 
-        filtered_results = [
-            item
-            for item in results
-            if item["similarity_score"] >= min_similarity
-        ]
-
-        if not filtered_results and results:
-            filtered_results = results[:1]
-
-        filtered_results.sort(
-            key=lambda item: (
-                -item["similarity_score"],
-                item["policy"]["policy_id"]
-            )
-        )
-
-        return filtered_results[:top_k]
+        return results

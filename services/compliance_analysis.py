@@ -24,142 +24,10 @@ model_deployment = os.getenv(
 class ComplianceAnalysisService:
 
     def __init__(self):
-
         self.client = client
         self.results = {}
 
-    def _validate_result(
-        self,
-        result,
-        email,
-        retrieved_policies
-    ):
-
-        valid_categories = {
-            item["policy"]["category"]
-            for item in retrieved_policies
-        }
-
-        valid_policy_ids = {
-            item["policy"]["policy_id"]
-            for item in retrieved_policies
-        }
-
-        decision = result.get(
-            "decision"
-        )
-
-        if decision not in {
-            "COMPLIANT",
-            "NON_COMPLIANT",
-            "HUMAN_REVIEW"
-        }:
-
-            raise ValueError(
-                f"Invalid decision: {decision}"
-            )
-
-        categories = result.get(
-            "categories"
-        )
-
-        if not isinstance(
-            categories,
-            list
-        ):
-
-            raise ValueError(
-                "categories must be a list"
-            )
-
-        confidence = result.get(
-            "confidence"
-        )
-
-        if not isinstance(
-            confidence,
-            (int, float)
-        ):
-
-            raise ValueError(
-                "confidence must be numeric"
-            )
-
-        if not 0 <= confidence <= 1:
-
-            raise ValueError(
-                "confidence must be between 0 and 1"
-            )
-
-        if decision == "COMPLIANT":
-
-            result["violation"] = False
-            result["categories"] = []
-            result["needs_review"] = False
-
-        elif decision == "NON_COMPLIANT":
-
-            if not categories:
-
-                raise ValueError(
-                    "NON_COMPLIANT requires at least one category"
-                )
-
-            for category_result in categories:
-
-                category = category_result.get(
-                    "category",
-                    ""
-                )
-
-                policy_id = category_result.get(
-                    "policy_id",
-                    ""
-                )
-
-                evidence = category_result.get(
-                    "evidence",
-                    ""
-                )
-
-                if category not in valid_categories:
-
-                    raise ValueError(
-                        f"Category '{category}' "
-                        f"was not retrieved by RAG"
-                    )
-
-                if policy_id not in valid_policy_ids:
-
-                    raise ValueError(
-                        f"Policy ID '{policy_id}' "
-                        f"was not retrieved by RAG"
-                    )
-
-                if not evidence:
-
-                    raise ValueError(
-                        "Violation must contain evidence"
-                    )
-
-                if evidence not in email["body"]:
-
-                    raise ValueError(
-                        "Evidence is not an exact "
-                        "quote from the email body"
-                    )
-
-            result["violation"] = True
-            result["needs_review"] = False
-
-        elif decision == "HUMAN_REVIEW":
-
-            result["violation"] = False
-            result["categories"] = []
-            result["needs_review"] = True
-
-        return result
-
+    # Compliance Analysis
     def execute(
         self,
         emails,
@@ -168,27 +36,27 @@ class ComplianceAnalysisService:
         export=True
     ):
 
-        print(
-            "Starting Compliance Analysis..."
-        )
+        print("Starting Compliance Analysis...")
 
         self.results = {}
 
         for mail_id, email in emails.items():
 
+            # Retrieve all available policies.
+            # Current policy set is small, so this prevents
+            # the correct policy from being excluded by top-k.
             retrieved_policies = retriever.retrieve(
                 email,
-                top_k=4,
-                min_similarity=0.20
+                top_k=len(retriever.policies)
             )
 
             print(
-                "number of policies recieved:",
+                "number of policies received:",
                 len(retrieved_policies)
             )
 
             print(
-                "\n-----retrieved policies-------"
+                "\n----- retrieved policies -------"
             )
 
             for i, item in enumerate(
@@ -198,136 +66,152 @@ class ComplianceAnalysisService:
 
                 print(
                     f"{i}: "
-                    f"{item['policy']['policy_id']} - "
-                    f"{item['policy']['category']} - "
-                    f"{item['similarity_score']:.4f}"
+                    f"{item['policy']['policy_id']}"
+                    f"-{item['similarity_score']}"
                 )
 
+            # Build prompt
             prompt = build_compliance_prompt(
                 email,
                 risk_categories,
                 retrieved_policies
             )
 
-            with open(
-                "llm_input",
-                "a",
-                encoding="utf-8"
-            ) as f:
+            # Save LLM input
+            if export:
 
-                f.write(
-                    "\n" + "=" * 100 + "\n"
-                )
-
-                f.write(
-                    f"Mail: {mail_id}\n"
-                )
-
-                f.write(
-                    "=" * 100 + "\n"
-                )
-
-                f.write(
-                    "Retrieved policies:\n"
-                )
-
-                for item in retrieved_policies:
+                with open(
+                    "llm_input",
+                    "a",
+                    encoding="utf-8"
+                ) as f:
 
                     f.write(
-                        f"{item['policy']['policy_id']} "
-                        f"- {item['policy']['category']} "
-                        f"- score:"
-                        f"{item['similarity_score']:.4f}\n"
+                        "\n"
+                        + "=" * 100
+                        + "\n"
                     )
 
-                f.write("\n")
-                f.write(prompt)
-                f.write("\n\n")
+                    f.write(
+                        f"Mail: {mail_id}\n"
+                    )
 
-            output = ""
+                    f.write(
+                        "=" * 100
+                        + "\n"
+                    )
 
+                    f.write(
+                        "Retrieved policies:\n"
+                    )
+
+                    for item in retrieved_policies:
+
+                        f.write(
+                            f"{item['policy']['policy_id']}"
+                            f"-score:"
+                            f"{item['similarity_score']}\n"
+                        )
+
+                    f.write("\n")
+                    f.write(prompt)
+                    f.write("\n\n")
+
+            # LLM Model Call
+            response = self.client.responses.create(
+                model=model_deployment,
+                input=prompt
+            )
+
+            # Parse LLM response
             try:
 
-                response = self.client.responses.create(
-                    model=model_deployment,
-                    input=prompt
+                raw_output = response.output_text.strip()
+
+                # Remove Markdown JSON fences if the model
+                # still returns them.
+                if raw_output.startswith("```"):
+
+                    lines = raw_output.splitlines()
+
+                    # Remove ```json
+                    if (
+                        lines
+                        and lines[0]
+                        .strip()
+                        .startswith("```")
+                    ):
+                        lines = lines[1:]
+
+                    # Remove closing ```
+                    if (
+                        lines
+                        and lines[-1]
+                        .strip() == "```"
+                    ):
+                        lines = lines[:-1]
+
+                    raw_output = "\n".join(
+                        lines
+                    ).strip()
+
+                result = json.loads(
+                    raw_output
                 )
 
-                output = response.output_text.strip()
-
-                print(
-                    f"\nLLM Output - Mail {mail_id}:"
-                )
-
-                print(output)
-
-                result = json.loads(output)
-
-                result = self._validate_result(
+                # Basic validation
+                if not isinstance(
                     result,
-                    email,
-                    retrieved_policies
-                )
-
-                if (
-                    result["decision"] != "HUMAN_REVIEW"
-                    and result["confidence"] < 0.70
+                    dict
                 ):
-
-                    result["decision"] = (
-                        "HUMAN_REVIEW"
+                    raise ValueError(
+                        "LLM response is not a JSON object"
                     )
 
-                    result["needs_review"] = True
+                if "violation" not in result:
+                    raise ValueError(
+                        "Missing violation field"
+                    )
 
-                    result["review_reason"] = (
-                        "Confidence below threshold"
+                if "categories" not in result:
+                    raise ValueError(
+                        "Missing categories field"
                     )
 
                 self.results[mail_id] = result
 
                 print(
-                    f"Mail {mail_id}: "
-                    f"{result['decision']}"
+                    f"{mail_id}: JSON parsed successfully"
                 )
 
-            except json.JSONDecodeError:
+            except (
+                json.JSONDecodeError,
+                ValueError
+            ) as error:
 
                 print(
-                    f"Error decoding JSON for mail_id "
-                    f"{mail_id}: {output}"
+                    f"Error processing JSON for "
+                    f"mail_id {mail_id}: {error}"
+                )
+
+                print(
+                    "Raw LLM output:"
+                )
+
+                print(
+                    response.output_text
                 )
 
                 self.results[mail_id] = {
-                    "decision": "HUMAN_REVIEW",
-                    "violation": False,
-                    "categories": [],
-                    "confidence": 0.0,
-                    "needs_review": True,
-                    "review_reason": "Invalid JSON response",
-                    "raw_output": output
-                }
-
-            except Exception as error:
-
-                print(
-                    f"Error analyzing mail_id "
-                    f"{mail_id}: {error}"
-                )
-
-                self.results[mail_id] = {
-                    "decision": "HUMAN_REVIEW",
-                    "violation": False,
-                    "categories": [],
-                    "confidence": 0.0,
-                    "needs_review": True,
-                    "review_reason": str(error)
+                    "error": "Invalid JSON response",
+                    "raw_output": response.output_text
                 }
 
         print(
             "Compliance Analysis Finished."
         )
 
+        # Export result
         if export:
 
             with open(
@@ -341,8 +225,6 @@ class ComplianceAnalysisService:
                     f,
                     indent=4
                 )
-
-        return self.results
 
     def get_results(self):
         return self.results

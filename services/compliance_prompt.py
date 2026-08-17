@@ -5,29 +5,37 @@ def build_compliance_prompt(
 ) -> str:
 
     categories = "\n".join(
-        f"{i + 1}. {category}"
-        for i, category in enumerate(risk_categories)
+        f"- {category}"
+        for category in risk_categories
     )
 
     policies = "\n\n".join(
         f"""
-Policy ID: {policy['policy']['policy_id']}
-Category: {policy['policy']['category']}
-Title: {policy['policy']['title']}
+Policy ID:
+{item["policy"].get("policy_id", "")}
+
+Category:
+{item["policy"].get("category", "")}
+
+Title:
+{item["policy"].get("title", "")}
 
 Definition:
-{policy['policy']['definition']}
+{item["policy"].get("definition", "")}
 
 Violations:
-{chr(10).join("- " + x for x in policy['policy']['violations'])}
+{chr(10).join(
+    "- " + x
+    for x in item["policy"].get("violations", [])
+)}
 
 Exceptions:
-{chr(10).join("- " + x for x in policy['policy']['exceptions'])}
-
-Examples:
-{chr(10).join("- " + x for x in policy['policy']['examples'])}
+{chr(10).join(
+    "- " + x
+    for x in item["policy"].get("exceptions", [])
+)}
 """
-        for policy in retrieved_policies
+        for item in retrieved_policies
     )
 
     return f"""
@@ -37,37 +45,28 @@ You are an Enterprise Compliance Officer analyzing ONE email.
 ANALYSIS METHOD
 ============================================================
 
-FIRST understand the complete email.
+First understand the complete email.
 
 Determine internally:
+
 - purpose
 - sender and recipients
 - actual intent
 - actual action or behavior
-- whether it is business, personal, or social
+- whether it is business, personal, social,
+  administrative, or informational
 - what the sender is requesting, proposing, suggesting,
-  instructing, arranging, disclosing, or doing
+  instructing, arranging, disclosing, reporting,
+  or actually doing
 
 Do NOT classify yet.
 
-THEN compare the actual behavior against EVERY retrieved
+Then compare the actual behavior against EVERY supplied
 policy.
-
-For each policy:
-1. Understand what behavior the policy is designed to prevent.
-2. Identify the actual behavior in the email.
-3. Determine whether the email expresses the same or materially
-   equivalent behavior described by the policy.
-4. Check the violation conditions.
-5. Check the exceptions.
-6. Identify exact supporting evidence from the email.
 
 ============================================================
 IMPORTANT RULES
 ============================================================
-
-Understand the complete meaning of the email before making
-the compliance decision.
 
 The decision must be based on:
 
@@ -75,52 +74,51 @@ The decision must be based on:
 - context
 - purpose
 - intent supported by the email
-- semantic meaning of the policy
+- policy definition
 - violation conditions
 - exceptions
 
 Do NOT classify from:
+
 - keywords alone
 - individual words
 - topics alone
 - subject lines alone
 - category names alone
-- a single example alone
-
-Keywords are only retrieval signals.
+- similarity score alone
 
 A keyword match by itself is NOT a violation.
 
-Do NOT require the email to use the exact wording of the
-policy.
+Do NOT require exact wording from the policy.
 
-The email may use different, informal, abbreviated, indirect,
-or conversational wording while expressing the same behavior
-covered by the policy.
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
 
-Exact wording match is NOT required.
+Semantic behavior matching is allowed.
 
-Semantic behavior match IS allowed.
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
 
 ============================================================
 POLICY MATCHING
 ============================================================
 
-For each retrieved policy:
+For each supplied policy:
 
-1. Understand the behavior represented by the definition,
-   violations, and examples.
+1. Understand the behavior covered by the policy.
 
 2. Identify the actual behavior in the email.
 
-3. Compare the meaning and behavior, not just the words.
+3. Compare the meaning and behavior.
 
-4. Determine whether the behavior satisfies a violation
-   condition.
+4. Determine whether a violation condition is satisfied.
 
-5. Check all applicable exceptions.
+5. Check applicable exceptions.
 
-6. Use exact evidence from the email.
+6. Identify exact supporting evidence from the email.
 
 A violation requires:
 
@@ -134,28 +132,27 @@ Do NOT classify merely because something sounds suspicious.
 Do NOT classify merely because a keyword appears.
 
 ============================================================
-CONTEXT RULE
+CONTEXT
 ============================================================
-
-The same word can be compliant or non-compliant depending
-on the surrounding context.
 
 Consider the complete communication.
 
 For personal or social content, determine whether it is:
 
 - legitimate business activity
-- normal personal courtesy
+- normal personal communication
 - harmless administrative communication
 - legitimate company activity
-- inappropriate personal/social communication in an official
-  workplace channel
+- inappropriate personal/social communication
+  in an official workplace channel
 
-Do not classify personal or social content automatically.
+Do not automatically classify personal or social content
+as a violation.
 
-For business conduct, determine whether the sender is actually
-requesting, proposing, encouraging, coordinating, facilitating,
-or performing the behavior covered by the policy.
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
 
 ============================================================
 REPORTING VS PERFORMING
@@ -164,11 +161,7 @@ REPORTING VS PERFORMING
 Mentioning, describing, reporting, or discussing misconduct
 does not automatically mean the sender performed the misconduct.
 
-However, do not automatically treat a report or description
-as compliant either.
-
-Determine what the email itself is doing and whether that
-communication satisfies the retrieved policy.
+Determine what the email itself is doing.
 
 ============================================================
 EMAIL
@@ -187,7 +180,7 @@ Body:
 {email["body"]}
 
 ============================================================
-RISK CATEGORIES
+AVAILABLE RISK CATEGORIES
 ============================================================
 
 {categories}
@@ -202,9 +195,7 @@ RETRIEVED POLICIES
 FINAL OUTPUT
 ============================================================
 
-Return ONLY valid JSON.
-
-If violation exists:
+If a violation exists:
 
 {{
     "violation": true,
@@ -217,7 +208,7 @@ If violation exists:
     ]
 }}
 
-If no violation:
+If no violation exists:
 
 {{
     "violation": false,
@@ -225,11 +216,15 @@ If no violation:
 }}
 
 Rules:
-- category must match a retrieved policy.
+
+- category must match a supplied policy category.
 - evidence must be an exact quote from the email.
 - do not invent evidence.
 - do not invent categories.
 - do not return scores.
+- do not return confidence.
 - do not return Need Review.
-- return ONLY JSON.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
 """
