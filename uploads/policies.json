@@ -133,38 +133,31 @@
     ]
   },
 
-  {
+{
     "policy_id": "ETH-001",
     "category": "Employee ethics",
     "title": "Employee Ethical Conduct",
-    "definition": "A violation occurs when official company communication or workplace activity is used for inappropriate personal or social conduct, dishonest conduct, deceptive conduct, improper workplace behavior, or intentional falsification or misrepresentation of business information.",
+    "definition": "A violation occurs when official company communication or workplace activity is used for inappropriate personal or social conduct, improper personal arrangements, dishonest or deceptive conduct, improper workplace behavior, or intentional falsification or misrepresentation of business information.",
     "violations": [
-      "Using official company communication for inappropriate personal or social activity",
-      "Discussing personal drinking or drinks unrelated to legitimate business activity through official communication",
-      "Using company communication for inappropriate personal arrangements",
-      "Engaging in dishonest or deceptive business conduct",
-      "Intentionally changing figures to make results appear more favorable",
-      "Falsifying or misrepresenting business information",
-      "Concealing information for an improper purpose",
-      "Bypassing required workplace controls or review processes"
+        "Using an official company communication channel for personal or social activity that is inappropriate in the workplace context",
+        "Using company communication to arrange or coordinate personal activities that are unrelated to legitimate business purposes",
+        "Engaging in dishonest or deceptive business conduct",
+        "Intentionally changing business figures or information to create a misleading or more favorable impression",
+        "Falsifying or misrepresenting business information",
+        "Concealing relevant information for an improper purpose",
+        "Bypassing required workplace controls, approvals, or review processes"
     ],
     "exceptions": [
-      "Legitimate business communication",
-      "Authorized company event",
-      "Authorized business entertainment",
-      "Legitimate business hospitality",
-      "Accurate correction of information",
-      "Clearly personal communication outside official business channels"
+        "Legitimate business communication",
+        "Authorized company event or activity",
+        "Authorized business entertainment",
+        "Legitimate business hospitality",
+        "Legitimate administrative communication",
+        "Accurate correction or clarification of information",
+        "Clearly personal communication outside official company business channels"
     ],
-    "examples": [
-      "Discussing personal drinks through official company email",
-      "Discussing personal social activities through official business communication",
-      "Adjusting figures so results look more favorable",
-      "Changing a report to create a misleading impression",
-      "Proceeding without the usual compliance review"
-    ]
-  },
-
+    "examples": []
+},
   {
     "policy_id": "DISC-001",
     "category": "Disclaimer",
