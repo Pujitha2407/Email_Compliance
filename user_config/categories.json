@@ -1,16 +1,17 @@
 {
     "categories": {
         "Secrecy": 50,
-        "Market Manipulation/Misconduct": 70,
-        "Market Bribery": 90,
+        "Market manipulation": 70,
+        "Market bribery": 90,
         "Change in communication": 10,
         "Complaints": 20,
-        "Employee ethics": 30
+        "Employee ethics": 30,
+        "Disclaimer": 40
     },
-    "status" : {
-        "Critical" : 85,
-        "High" : 60,
-        "Medium" : 30,
-        "Low" : 0
+    "status": {
+        "Critical": 85,
+        "High": 60,
+        "Medium": 30,
+        "Low": 0
     }
 }

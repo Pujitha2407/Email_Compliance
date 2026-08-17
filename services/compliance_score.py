@@ -1,81 +1,210 @@
 import json
 
+
 class ComplainceScore:
+
     def __init__(self, user_config):
+
         self.risk_categories = {}
+
         for category, weight in user_config["categories"].items():
-            self.risk_categories[category.lower()] = weight
+
+            self.risk_categories[
+                category.lower().strip()
+            ] = weight
+
         self.status = user_config["status"]
+
         self.scores = {}
 
-    def calculate_score(self, emails_results):
+    def calculate_score(
+        self,
+        emails_results
+    ):
+
         print("Calculating Score...")
+
         self.scores = {}
+
         for mail_id, result in emails_results.items():
-            if "error" in result:
+
+            if (
+                "error" in result
+                or result.get("needs_review") is True
+                or result.get("decision") == "HUMAN_REVIEW"
+            ):
+
                 self.scores[mail_id] = {
                     "classification": "Need Review",
                     "score": 0,
                     "status": "Low"
                 }
+
                 continue
+
             score = 0
             high_risk = 0
-            for value in result["categories"]:
-                category = value["category"].lower()
+
+            for value in result.get(
+                "categories",
+                []
+            ):
+
+                category = value[
+                    "category"
+                ].lower().strip()
+
                 if category in self.risk_categories:
-                    category_score = self.risk_categories[category]
+
+                    category_score = (
+                        self.risk_categories[
+                            category
+                        ]
+                    )
+
                     if category_score > high_risk:
+
                         high_risk = category_score
+
                     score += category_score
-            score = high_risk + 0.2 * (score - high_risk)
-            score = min(score, 100)
+
+            score = (
+                high_risk
+                + 0.2 * (
+                    score - high_risk
+                )
+            )
+
+            score = min(
+                score,
+                100
+            )
+
             classification = (
                 "Non Compliant"
-                if result["violation"] == True
+                if result.get("violation") is True
                 else "Compliant"
             )
+
             status = "Low"
+
             if score >= self.status["Critical"]:
+
                 status = "Critical"
+
             elif score >= self.status["High"]:
+
                 status = "High"
+
             elif score >= self.status["Medium"]:
+
                 status = "Medium"
+
             self.scores[mail_id] = {
                 "classification": classification,
                 "score": score,
                 "status": status
             }
 
-    def generate_report(self, emails, emails_results):
+    def generate_report(
+        self,
+        emails,
+        emails_results
+    ):
+
         print("Generating Report...")
+
         report = {}
+
         for mail_id, email in emails.items():
+
+            analysis = emails_results.get(
+                mail_id,
+                {}
+            )
+
             report[mail_id] = {
+
                 "email": email,
-                "risk_categories": emails_results.get(
-                    mail_id,
-                    {}
-                ).get("categories",""),
+
+                "risk_categories": analysis.get(
+                    "categories",
+                    []
+                ),
+
                 "classification": self.scores.get(
                     mail_id,
                     {}
-                ).get("classification", ""),
+                ).get(
+                    "classification",
+                    ""
+                ),
+
                 "score": self.scores.get(
                     mail_id,
                     {}
-                ).get("score", 0),
+                ).get(
+                    "score",
+                    0
+                ),
+
                 "status": self.scores.get(
                     mail_id,
                     {}
-                ).get("status", "")
-            }
-        with open("report.json", "w") as f:
-            json.dump(report, f, indent=4)
-        print("Generate Report Finished.")
+                ).get(
+                    "status",
+                    ""
+                ),
 
-    def execute(self, emails, emails_results):
-        print("Running Compliance Scoring...")
-        self.calculate_score(emails_results)
-        self.generate_report(emails, emails_results)
+                "confidence": analysis.get(
+                    "confidence",
+                    0
+                ),
+
+                "decision": analysis.get(
+                    "decision",
+                    ""
+                ),
+
+                "needs_review": analysis.get(
+                    "needs_review",
+                    False
+                )
+            }
+
+        with open(
+            "report.json",
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            json.dump(
+                report,
+                f,
+                indent=4
+            )
+
+        print(
+            "Generate Report Finished."
+        )
+
+    def execute(
+        self,
+        emails,
+        emails_results
+    ):
+
+        print(
+            "Running Compliance Scoring..."
+        )
+
+        self.calculate_score(
+            emails_results
+        )
+
+        self.generate_report(
+            emails,
+            emails_results
+        )
+
+        return self.scores
