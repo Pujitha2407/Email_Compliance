@@ -1,0 +1,4188 @@
+
+====================================================================================================
+Mail: 1
+====================================================================================================
+Retrieved policies:
+SEC-001-score:0.38280725479125977
+DISC-001-score:0.37914156913757324
+ETH-001-score:0.28531333804130554
+COM-001-score:0.28353506326675415
+MB-001-score:0.21117281913757324
+CMP-001-score:0.20908400416374207
+MM-001-score:0.18711581826210022
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+trey.comiskey@enron.com
+
+To:
+kenneth.cooper@am.sony.com
+
+Subject:
+Agreement of Confidentiality
+
+Body:
+Ken - Thanks again for your time yesterday.  Here is the C.A. per our discussion, signature and faxing back to me at 713.853.0528.  Pls do not disclose the C.A. until it is signed by the appropriate party here, we will have a fully-signed copy faxed to you for your records.  Should you have questions or comments, please Mr. Comiskey.  Thank you.
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+SEC-001
+
+Category:
+Secrecy
+
+Title:
+Confidential Information and Unauthorized Disclosure
+
+Definition:
+A violation occurs when confidential, restricted, proprietary, or material non-public information is disclosed, shared, forwarded, accessed, or provided to an unauthorized person.
+
+Violations:
+- Disclosing confidential information to an unauthorized recipient
+- Sharing restricted or proprietary information without authorization
+- Forwarding protected information to an unauthorized person
+- Providing unauthorized access to protected information
+- Requesting or encouraging unauthorized disclosure
+
+Exceptions:
+- Authorized disclosure
+- Authorized recipient
+- Legitimate confidentiality agreement
+- Instruction to keep information confidential without actually disclosing it
+- Legitimate business communication that does not reveal protected information
+
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+
+Policy ID:
+ETH-001
+
+Category:
+Employee ethics
+
+Title:
+Employee Ethical Conduct
+
+Definition:
+A violation occurs when official company communication or workplace activity is used for inappropriate personal or social conduct, improper personal arrangements, dishonest or deceptive conduct, improper workplace behavior, or intentional falsification or misrepresentation of business information.
+
+Violations:
+- Using an official company communication channel for personal or social activity that is inappropriate in the workplace context
+- Using company communication to arrange or coordinate personal activities that are unrelated to legitimate business purposes
+- Engaging in dishonest or deceptive business conduct
+- Intentionally changing business figures or information to create a misleading or more favorable impression
+- Falsifying or misrepresenting business information
+- Concealing relevant information for an improper purpose
+- Bypassing required workplace controls, approvals, or review processes
+
+Exceptions:
+- Legitimate business communication
+- Authorized company event or activity
+- Authorized business entertainment
+- Legitimate business hospitality
+- Legitimate administrative communication
+- Accurate correction or clarification of information
+- Clearly personal communication outside official company business channels
+
+
+
+Policy ID:
+COM-001
+
+Category:
+Change in communication
+
+Title:
+Unauthorized Communication Channels
+
+Definition:
+A violation occurs when company business communication is moved, redirected, or continued through an unauthorized personal or external communication channel.
+
+Violations:
+- Moving business communication to a personal channel
+- Continuing company business through an unauthorized messaging service
+- Using personal email or accounts for company business
+- Redirecting business communication to an external channel
+- Inviting a business contact to continue work-related communication outside the approved channel
+
+Exceptions:
+- Explicitly authorized external channel
+- Clearly personal communication unrelated to business
+- Company-approved communication method
+- Business process specifically requiring the external channel
+
+
+
+Policy ID:
+MB-001
+
+Category:
+Market bribery
+
+Title:
+Improper Payments, Gifts, and Benefits
+
+Definition:
+A violation occurs when a payment, gift, favor, benefit, gesture, hospitality, or personal advantage is offered, requested, promised, or suggested to improperly influence a business decision, approval, contract, or favorable treatment.
+
+Violations:
+- Offering a payment to influence a business decision
+- Offering a gift or benefit to a decision maker
+- Suggesting a gesture could help obtain approval
+- Offering a favor for favorable treatment
+- Requesting a personal benefit in exchange for a business decision
+- Arranging an improper benefit through another person
+
+Exceptions:
+- Authorized business expense
+- Authorized reasonable hospitality
+- Legitimate business activity without improper influence
+- Benefits explicitly permitted by company policy
+
+
+
+Policy ID:
+CMP-001
+
+Category:
+Complaints
+
+Title:
+Complaint Handling and Reporting
+
+Definition:
+A violation occurs when a legitimate complaint, allegation, concern, or report is suppressed, ignored, concealed, mishandled, discouraged, or prevented from reaching the appropriate reporting or investigation process.
+
+Violations:
+- Suppressing a legitimate complaint
+- Ignoring a complaint requiring investigation
+- Preventing a complaint from reaching compliance or management
+- Discouraging someone from reporting misconduct
+- Concealing a complaint
+- Obstructing a legitimate investigation
+- Retaliating against someone for making a legitimate complaint
+
+Exceptions:
+- Good-faith reporting
+- Authorized complaint handling
+- Proper escalation
+- Legitimate investigation
+- Historical reporting without suppression
+
+
+
+Policy ID:
+MM-001
+
+Category:
+Market manipulation
+
+Title:
+Market Manipulation and Misconduct
+
+Definition:
+A violation occurs when a person proposes, coordinates, facilitates, communicates, or performs activity intended to create an artificial or misleading market reaction, influence trading, influence investors, or create a false impression of market demand, supply, price, or financial condition.
+
+Violations:
+- Coordinating activity to create an artificial market reaction
+- Coordinating transactions to influence market price artificially
+- Creating false or misleading market activity
+- Misleading investors or market participants
+- Communicating false or misleading financial information to influence market perception
+- Creating a false impression of demand or supply
+- Planning activity around an announcement to obtain a desired artificial market reaction
+
+Exceptions:
+- Legitimate market analysis
+- Ordinary legitimate trading
+- Accurate public information
+- Historical reporting that is not itself misleading
+- Legitimate discussion of market conditions without manipulative intent
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 2
+====================================================================================================
+Retrieved policies:
+COM-001-score:0.2129172831773758
+DISC-001-score:0.2043265551328659
+SEC-001-score:0.17462888360023499
+MM-001-score:0.15118589997291565
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+msagel@home.com
+
+To:
+jarnold@enron.com
+
+Subject:
+Agreement
+
+Body:
+John:  Hope you did ok today.  As I said yesterday, the poor close Monday should lead to additional market weakness, which we saw today.  You indicated that you would mail the service agreement back to me. I don't know if you have the mailing address, so here it is:  Psytech Analytics 11604 Greenspring Ave. Lutherville, MD? 21093  Speak to you over phone later during the day once I have decent set-up on my work for natural.  Feel free to ding me on whatsapp anytime. Mark
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+COM-001
+
+Category:
+Change in communication
+
+Title:
+Unauthorized Communication Channels
+
+Definition:
+A violation occurs when company business communication is moved, redirected, or continued through an unauthorized personal or external communication channel.
+
+Violations:
+- Moving business communication to a personal channel
+- Continuing company business through an unauthorized messaging service
+- Using personal email or accounts for company business
+- Redirecting business communication to an external channel
+- Inviting a business contact to continue work-related communication outside the approved channel
+
+Exceptions:
+- Explicitly authorized external channel
+- Clearly personal communication unrelated to business
+- Company-approved communication method
+- Business process specifically requiring the external channel
+
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+
+Policy ID:
+SEC-001
+
+Category:
+Secrecy
+
+Title:
+Confidential Information and Unauthorized Disclosure
+
+Definition:
+A violation occurs when confidential, restricted, proprietary, or material non-public information is disclosed, shared, forwarded, accessed, or provided to an unauthorized person.
+
+Violations:
+- Disclosing confidential information to an unauthorized recipient
+- Sharing restricted or proprietary information without authorization
+- Forwarding protected information to an unauthorized person
+- Providing unauthorized access to protected information
+- Requesting or encouraging unauthorized disclosure
+
+Exceptions:
+- Authorized disclosure
+- Authorized recipient
+- Legitimate confidentiality agreement
+- Instruction to keep information confidential without actually disclosing it
+- Legitimate business communication that does not reveal protected information
+
+
+
+Policy ID:
+MM-001
+
+Category:
+Market manipulation
+
+Title:
+Market Manipulation and Misconduct
+
+Definition:
+A violation occurs when a person proposes, coordinates, facilitates, communicates, or performs activity intended to create an artificial or misleading market reaction, influence trading, influence investors, or create a false impression of market demand, supply, price, or financial condition.
+
+Violations:
+- Coordinating activity to create an artificial market reaction
+- Coordinating transactions to influence market price artificially
+- Creating false or misleading market activity
+- Misleading investors or market participants
+- Communicating false or misleading financial information to influence market perception
+- Creating a false impression of demand or supply
+- Planning activity around an announcement to obtain a desired artificial market reaction
+
+Exceptions:
+- Legitimate market analysis
+- Ordinary legitimate trading
+- Accurate public information
+- Historical reporting that is not itself misleading
+- Legitimate discussion of market conditions without manipulative intent
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 3
+====================================================================================================
+Retrieved policies:
+COM-001-score:0.26050490140914917
+DISC-001-score:0.16346091032028198
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+outlook.team@enron.com
+
+To:
+aimee.shek@enron.com, albino.lopez@enron.com, andrea.williams@enron.com,
+
+Subject:
+URGENT to prevent loss of information
+
+Body:
+Critical Migration Information.  1. Your scheduled Outlook Migration Date is THE EVENING OF: May 15th 2. You need to press the "Save My Data" button (ONLY ONCE) to send us your pre-migration information. 3. You must be connected to the network before you press the button. 4. If a POP-UP BOX appears, prompting you to "ABORT, CANCEL OR TRUST SIGNER" please select TRUST SIGNER. 5. Any information you Add to your Personal Address Book, Journal or calendar after you click on the button will need to be manually re-added into Outlook after you have been migrated. 6. Clicking this button does not complete your migration to Outlook. Your migration will be completed the evening of your migration date.  If you have failed to click on the button means your migration activity will be canceled and WILL NOT get your Calendar, Contacts, Journal and ToDo information imported into Outlook the day of your migration and could result in up to a 2 week delay to restore this information.  If you encounter any errors please contact the resolution center @713-853-1411
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+COM-001
+
+Category:
+Change in communication
+
+Title:
+Unauthorized Communication Channels
+
+Definition:
+A violation occurs when company business communication is moved, redirected, or continued through an unauthorized personal or external communication channel.
+
+Violations:
+- Moving business communication to a personal channel
+- Continuing company business through an unauthorized messaging service
+- Using personal email or accounts for company business
+- Redirecting business communication to an external channel
+- Inviting a business contact to continue work-related communication outside the approved channel
+
+Exceptions:
+- Explicitly authorized external channel
+- Clearly personal communication unrelated to business
+- Company-approved communication method
+- Business process specifically requiring the external channel
+
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 4
+====================================================================================================
+Retrieved policies:
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+sarah-joy.hunter@enron.com
+
+To:
+jeffrey.shankman@enron.com
+
+Subject:
+Continental Briefing for Enron/Continental meeting December 12th
+
+Body:
+Mr. Shankman:  In preparation for the meeting on December 12th with Larry Kellner, CFO, Continental Airlines, I have noted below some background on the Enron/Continental relationship and the purpose for the meeting. Mr. Shankman, please advise if you would like me to distribute this to the attendees.  EXECUTIVE SUMMARY:  Over the past several years Enron has been hedging Continental's crude oil. The relationship has been beneficial to both sides. As a result, since 1999 Enron has earned over $9 million and Continental has saved over $45 million.  The purpose for the December 12th meeting is to address three initiatives in order of economic value: (1) fuel management, (2) weather derivatives, and (3) plastics hedging - VaR analysis.  Several new initiatives being proposed to Continental include the following:  exchanging call options on crude oil for airline tickets (Craig Breslau, Originator) transacting financial swaps on-line (Larry Gagliani, Originator) creating a weather derivative product for the airline industry (Mark Tawney and Gary Taylor, Originators) outsourcing Continental's antifreeze and plastics risks by hedging these products with Enron (Alan Engberg, Originator)  Meeting Attendees from Continental Airlines:  Ron Howard, Vice President, Food Services Larry Kellner, Chief Financial Officer Greg Hartford, Vice President, Fuel Management Company Jeff Misner, Vice President and Treasurer (tentative)
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 5
+====================================================================================================
+Retrieved policies:
+COM-001-score:0.21710669994354248
+SEC-001-score:0.21103587746620178
+DISC-001-score:0.16221113502979279
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+chris.gaskill@enron.com
+
+To:
+john.arnold@enron.com
+
+Subject:
+gas message board access
+
+Body:
+Boyd John, Is, access to the board on a password basis now? If so, when you get a chance could you authorise access for myself and Andrew Hill (a colleague in crude fundamentals) please? A similar board for crude and products should be ready within a couple of weeks. Thanks Chris
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+COM-001
+
+Category:
+Change in communication
+
+Title:
+Unauthorized Communication Channels
+
+Definition:
+A violation occurs when company business communication is moved, redirected, or continued through an unauthorized personal or external communication channel.
+
+Violations:
+- Moving business communication to a personal channel
+- Continuing company business through an unauthorized messaging service
+- Using personal email or accounts for company business
+- Redirecting business communication to an external channel
+- Inviting a business contact to continue work-related communication outside the approved channel
+
+Exceptions:
+- Explicitly authorized external channel
+- Clearly personal communication unrelated to business
+- Company-approved communication method
+- Business process specifically requiring the external channel
+
+
+
+Policy ID:
+SEC-001
+
+Category:
+Secrecy
+
+Title:
+Confidential Information and Unauthorized Disclosure
+
+Definition:
+A violation occurs when confidential, restricted, proprietary, or material non-public information is disclosed, shared, forwarded, accessed, or provided to an unauthorized person.
+
+Violations:
+- Disclosing confidential information to an unauthorized recipient
+- Sharing restricted or proprietary information without authorization
+- Forwarding protected information to an unauthorized person
+- Providing unauthorized access to protected information
+- Requesting or encouraging unauthorized disclosure
+
+Exceptions:
+- Authorized disclosure
+- Authorized recipient
+- Legitimate confidentiality agreement
+- Instruction to keep information confidential without actually disclosing it
+- Legitimate business communication that does not reveal protected information
+
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 6
+====================================================================================================
+Retrieved policies:
+MB-001-score:0.1676427572965622
+ETH-001-score:0.15412642061710358
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+kim.ward@enron.com
+
+To:
+john.arnold@enron.com
+
+Subject:
+RE:
+
+Body:
+so who are the drinks on until I do ???
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+MB-001
+
+Category:
+Market bribery
+
+Title:
+Improper Payments, Gifts, and Benefits
+
+Definition:
+A violation occurs when a payment, gift, favor, benefit, gesture, hospitality, or personal advantage is offered, requested, promised, or suggested to improperly influence a business decision, approval, contract, or favorable treatment.
+
+Violations:
+- Offering a payment to influence a business decision
+- Offering a gift or benefit to a decision maker
+- Suggesting a gesture could help obtain approval
+- Offering a favor for favorable treatment
+- Requesting a personal benefit in exchange for a business decision
+- Arranging an improper benefit through another person
+
+Exceptions:
+- Authorized business expense
+- Authorized reasonable hospitality
+- Legitimate business activity without improper influence
+- Benefits explicitly permitted by company policy
+
+
+
+Policy ID:
+ETH-001
+
+Category:
+Employee ethics
+
+Title:
+Employee Ethical Conduct
+
+Definition:
+A violation occurs when official company communication or workplace activity is used for inappropriate personal or social conduct, improper personal arrangements, dishonest or deceptive conduct, improper workplace behavior, or intentional falsification or misrepresentation of business information.
+
+Violations:
+- Using an official company communication channel for personal or social activity that is inappropriate in the workplace context
+- Using company communication to arrange or coordinate personal activities that are unrelated to legitimate business purposes
+- Engaging in dishonest or deceptive business conduct
+- Intentionally changing business figures or information to create a misleading or more favorable impression
+- Falsifying or misrepresenting business information
+- Concealing relevant information for an improper purpose
+- Bypassing required workplace controls, approvals, or review processes
+
+Exceptions:
+- Legitimate business communication
+- Authorized company event or activity
+- Authorized business entertainment
+- Legitimate business hospitality
+- Legitimate administrative communication
+- Accurate correction or clarification of information
+- Clearly personal communication outside official company business channels
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 7
+====================================================================================================
+Retrieved policies:
+MB-001-score:0.25867265462875366
+ETH-001-score:0.24755503237247467
+COM-001-score:0.22884726524353027
+SEC-001-score:0.19505634903907776
+DISC-001-score:0.18842558562755585
+CMP-001-score:0.15658675134181976
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+kim.ward@enron.com
+
+To:
+john.arnold@enron.com
+
+Subject:
+RE:
+
+Body:
+Perhaps a small gesture for the gesture for the decision maker would help us get the approval though.
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+MB-001
+
+Category:
+Market bribery
+
+Title:
+Improper Payments, Gifts, and Benefits
+
+Definition:
+A violation occurs when a payment, gift, favor, benefit, gesture, hospitality, or personal advantage is offered, requested, promised, or suggested to improperly influence a business decision, approval, contract, or favorable treatment.
+
+Violations:
+- Offering a payment to influence a business decision
+- Offering a gift or benefit to a decision maker
+- Suggesting a gesture could help obtain approval
+- Offering a favor for favorable treatment
+- Requesting a personal benefit in exchange for a business decision
+- Arranging an improper benefit through another person
+
+Exceptions:
+- Authorized business expense
+- Authorized reasonable hospitality
+- Legitimate business activity without improper influence
+- Benefits explicitly permitted by company policy
+
+
+
+Policy ID:
+ETH-001
+
+Category:
+Employee ethics
+
+Title:
+Employee Ethical Conduct
+
+Definition:
+A violation occurs when official company communication or workplace activity is used for inappropriate personal or social conduct, improper personal arrangements, dishonest or deceptive conduct, improper workplace behavior, or intentional falsification or misrepresentation of business information.
+
+Violations:
+- Using an official company communication channel for personal or social activity that is inappropriate in the workplace context
+- Using company communication to arrange or coordinate personal activities that are unrelated to legitimate business purposes
+- Engaging in dishonest or deceptive business conduct
+- Intentionally changing business figures or information to create a misleading or more favorable impression
+- Falsifying or misrepresenting business information
+- Concealing relevant information for an improper purpose
+- Bypassing required workplace controls, approvals, or review processes
+
+Exceptions:
+- Legitimate business communication
+- Authorized company event or activity
+- Authorized business entertainment
+- Legitimate business hospitality
+- Legitimate administrative communication
+- Accurate correction or clarification of information
+- Clearly personal communication outside official company business channels
+
+
+
+Policy ID:
+COM-001
+
+Category:
+Change in communication
+
+Title:
+Unauthorized Communication Channels
+
+Definition:
+A violation occurs when company business communication is moved, redirected, or continued through an unauthorized personal or external communication channel.
+
+Violations:
+- Moving business communication to a personal channel
+- Continuing company business through an unauthorized messaging service
+- Using personal email or accounts for company business
+- Redirecting business communication to an external channel
+- Inviting a business contact to continue work-related communication outside the approved channel
+
+Exceptions:
+- Explicitly authorized external channel
+- Clearly personal communication unrelated to business
+- Company-approved communication method
+- Business process specifically requiring the external channel
+
+
+
+Policy ID:
+SEC-001
+
+Category:
+Secrecy
+
+Title:
+Confidential Information and Unauthorized Disclosure
+
+Definition:
+A violation occurs when confidential, restricted, proprietary, or material non-public information is disclosed, shared, forwarded, accessed, or provided to an unauthorized person.
+
+Violations:
+- Disclosing confidential information to an unauthorized recipient
+- Sharing restricted or proprietary information without authorization
+- Forwarding protected information to an unauthorized person
+- Providing unauthorized access to protected information
+- Requesting or encouraging unauthorized disclosure
+
+Exceptions:
+- Authorized disclosure
+- Authorized recipient
+- Legitimate confidentiality agreement
+- Instruction to keep information confidential without actually disclosing it
+- Legitimate business communication that does not reveal protected information
+
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+
+Policy ID:
+CMP-001
+
+Category:
+Complaints
+
+Title:
+Complaint Handling and Reporting
+
+Definition:
+A violation occurs when a legitimate complaint, allegation, concern, or report is suppressed, ignored, concealed, mishandled, discouraged, or prevented from reaching the appropriate reporting or investigation process.
+
+Violations:
+- Suppressing a legitimate complaint
+- Ignoring a complaint requiring investigation
+- Preventing a complaint from reaching compliance or management
+- Discouraging someone from reporting misconduct
+- Concealing a complaint
+- Obstructing a legitimate investigation
+- Retaliating against someone for making a legitimate complaint
+
+Exceptions:
+- Good-faith reporting
+- Authorized complaint handling
+- Proper escalation
+- Legitimate investigation
+- Historical reporting without suppression
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 8
+====================================================================================================
+Retrieved policies:
+COM-001-score:0.34717199206352234
+DISC-001-score:0.32930368185043335
+ETH-001-score:0.2593621611595154
+SEC-001-score:0.2588080167770386
+CMP-001-score:0.24842697381973267
+MB-001-score:0.23820161819458008
+MM-001-score:0.15761202573776245
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+john@company.com
+
+To:
+alice@company.com
+
+Subject:
+RE:
+
+Body:
+We may be able to move this forward without waiting for the usual compliance review.
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+COM-001
+
+Category:
+Change in communication
+
+Title:
+Unauthorized Communication Channels
+
+Definition:
+A violation occurs when company business communication is moved, redirected, or continued through an unauthorized personal or external communication channel.
+
+Violations:
+- Moving business communication to a personal channel
+- Continuing company business through an unauthorized messaging service
+- Using personal email or accounts for company business
+- Redirecting business communication to an external channel
+- Inviting a business contact to continue work-related communication outside the approved channel
+
+Exceptions:
+- Explicitly authorized external channel
+- Clearly personal communication unrelated to business
+- Company-approved communication method
+- Business process specifically requiring the external channel
+
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+
+Policy ID:
+ETH-001
+
+Category:
+Employee ethics
+
+Title:
+Employee Ethical Conduct
+
+Definition:
+A violation occurs when official company communication or workplace activity is used for inappropriate personal or social conduct, improper personal arrangements, dishonest or deceptive conduct, improper workplace behavior, or intentional falsification or misrepresentation of business information.
+
+Violations:
+- Using an official company communication channel for personal or social activity that is inappropriate in the workplace context
+- Using company communication to arrange or coordinate personal activities that are unrelated to legitimate business purposes
+- Engaging in dishonest or deceptive business conduct
+- Intentionally changing business figures or information to create a misleading or more favorable impression
+- Falsifying or misrepresenting business information
+- Concealing relevant information for an improper purpose
+- Bypassing required workplace controls, approvals, or review processes
+
+Exceptions:
+- Legitimate business communication
+- Authorized company event or activity
+- Authorized business entertainment
+- Legitimate business hospitality
+- Legitimate administrative communication
+- Accurate correction or clarification of information
+- Clearly personal communication outside official company business channels
+
+
+
+Policy ID:
+SEC-001
+
+Category:
+Secrecy
+
+Title:
+Confidential Information and Unauthorized Disclosure
+
+Definition:
+A violation occurs when confidential, restricted, proprietary, or material non-public information is disclosed, shared, forwarded, accessed, or provided to an unauthorized person.
+
+Violations:
+- Disclosing confidential information to an unauthorized recipient
+- Sharing restricted or proprietary information without authorization
+- Forwarding protected information to an unauthorized person
+- Providing unauthorized access to protected information
+- Requesting or encouraging unauthorized disclosure
+
+Exceptions:
+- Authorized disclosure
+- Authorized recipient
+- Legitimate confidentiality agreement
+- Instruction to keep information confidential without actually disclosing it
+- Legitimate business communication that does not reveal protected information
+
+
+
+Policy ID:
+CMP-001
+
+Category:
+Complaints
+
+Title:
+Complaint Handling and Reporting
+
+Definition:
+A violation occurs when a legitimate complaint, allegation, concern, or report is suppressed, ignored, concealed, mishandled, discouraged, or prevented from reaching the appropriate reporting or investigation process.
+
+Violations:
+- Suppressing a legitimate complaint
+- Ignoring a complaint requiring investigation
+- Preventing a complaint from reaching compliance or management
+- Discouraging someone from reporting misconduct
+- Concealing a complaint
+- Obstructing a legitimate investigation
+- Retaliating against someone for making a legitimate complaint
+
+Exceptions:
+- Good-faith reporting
+- Authorized complaint handling
+- Proper escalation
+- Legitimate investigation
+- Historical reporting without suppression
+
+
+
+Policy ID:
+MB-001
+
+Category:
+Market bribery
+
+Title:
+Improper Payments, Gifts, and Benefits
+
+Definition:
+A violation occurs when a payment, gift, favor, benefit, gesture, hospitality, or personal advantage is offered, requested, promised, or suggested to improperly influence a business decision, approval, contract, or favorable treatment.
+
+Violations:
+- Offering a payment to influence a business decision
+- Offering a gift or benefit to a decision maker
+- Suggesting a gesture could help obtain approval
+- Offering a favor for favorable treatment
+- Requesting a personal benefit in exchange for a business decision
+- Arranging an improper benefit through another person
+
+Exceptions:
+- Authorized business expense
+- Authorized reasonable hospitality
+- Legitimate business activity without improper influence
+- Benefits explicitly permitted by company policy
+
+
+
+Policy ID:
+MM-001
+
+Category:
+Market manipulation
+
+Title:
+Market Manipulation and Misconduct
+
+Definition:
+A violation occurs when a person proposes, coordinates, facilitates, communicates, or performs activity intended to create an artificial or misleading market reaction, influence trading, influence investors, or create a false impression of market demand, supply, price, or financial condition.
+
+Violations:
+- Coordinating activity to create an artificial market reaction
+- Coordinating transactions to influence market price artificially
+- Creating false or misleading market activity
+- Misleading investors or market participants
+- Communicating false or misleading financial information to influence market perception
+- Creating a false impression of demand or supply
+- Planning activity around an announcement to obtain a desired artificial market reaction
+
+Exceptions:
+- Legitimate market analysis
+- Ordinary legitimate trading
+- Accurate public information
+- Historical reporting that is not itself misleading
+- Legitimate discussion of market conditions without manipulative intent
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 9
+====================================================================================================
+Retrieved policies:
+MM-001-score:0.3115030527114868
+DISC-001-score:0.2584191560745239
+COM-001-score:0.2367427945137024
+MB-001-score:0.21478590369224548
+SEC-001-score:0.16485726833343506
+ETH-001-score:0.16084212064743042
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+john@company.com
+
+To:
+alice@company.com
+
+Subject:
+RE:
+
+Body:
+If we coordinate the activity around the announcement,market should react the way we are expecting.
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+MM-001
+
+Category:
+Market manipulation
+
+Title:
+Market Manipulation and Misconduct
+
+Definition:
+A violation occurs when a person proposes, coordinates, facilitates, communicates, or performs activity intended to create an artificial or misleading market reaction, influence trading, influence investors, or create a false impression of market demand, supply, price, or financial condition.
+
+Violations:
+- Coordinating activity to create an artificial market reaction
+- Coordinating transactions to influence market price artificially
+- Creating false or misleading market activity
+- Misleading investors or market participants
+- Communicating false or misleading financial information to influence market perception
+- Creating a false impression of demand or supply
+- Planning activity around an announcement to obtain a desired artificial market reaction
+
+Exceptions:
+- Legitimate market analysis
+- Ordinary legitimate trading
+- Accurate public information
+- Historical reporting that is not itself misleading
+- Legitimate discussion of market conditions without manipulative intent
+
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+
+Policy ID:
+COM-001
+
+Category:
+Change in communication
+
+Title:
+Unauthorized Communication Channels
+
+Definition:
+A violation occurs when company business communication is moved, redirected, or continued through an unauthorized personal or external communication channel.
+
+Violations:
+- Moving business communication to a personal channel
+- Continuing company business through an unauthorized messaging service
+- Using personal email or accounts for company business
+- Redirecting business communication to an external channel
+- Inviting a business contact to continue work-related communication outside the approved channel
+
+Exceptions:
+- Explicitly authorized external channel
+- Clearly personal communication unrelated to business
+- Company-approved communication method
+- Business process specifically requiring the external channel
+
+
+
+Policy ID:
+MB-001
+
+Category:
+Market bribery
+
+Title:
+Improper Payments, Gifts, and Benefits
+
+Definition:
+A violation occurs when a payment, gift, favor, benefit, gesture, hospitality, or personal advantage is offered, requested, promised, or suggested to improperly influence a business decision, approval, contract, or favorable treatment.
+
+Violations:
+- Offering a payment to influence a business decision
+- Offering a gift or benefit to a decision maker
+- Suggesting a gesture could help obtain approval
+- Offering a favor for favorable treatment
+- Requesting a personal benefit in exchange for a business decision
+- Arranging an improper benefit through another person
+
+Exceptions:
+- Authorized business expense
+- Authorized reasonable hospitality
+- Legitimate business activity without improper influence
+- Benefits explicitly permitted by company policy
+
+
+
+Policy ID:
+SEC-001
+
+Category:
+Secrecy
+
+Title:
+Confidential Information and Unauthorized Disclosure
+
+Definition:
+A violation occurs when confidential, restricted, proprietary, or material non-public information is disclosed, shared, forwarded, accessed, or provided to an unauthorized person.
+
+Violations:
+- Disclosing confidential information to an unauthorized recipient
+- Sharing restricted or proprietary information without authorization
+- Forwarding protected information to an unauthorized person
+- Providing unauthorized access to protected information
+- Requesting or encouraging unauthorized disclosure
+
+Exceptions:
+- Authorized disclosure
+- Authorized recipient
+- Legitimate confidentiality agreement
+- Instruction to keep information confidential without actually disclosing it
+- Legitimate business communication that does not reveal protected information
+
+
+
+Policy ID:
+ETH-001
+
+Category:
+Employee ethics
+
+Title:
+Employee Ethical Conduct
+
+Definition:
+A violation occurs when official company communication or workplace activity is used for inappropriate personal or social conduct, improper personal arrangements, dishonest or deceptive conduct, improper workplace behavior, or intentional falsification or misrepresentation of business information.
+
+Violations:
+- Using an official company communication channel for personal or social activity that is inappropriate in the workplace context
+- Using company communication to arrange or coordinate personal activities that are unrelated to legitimate business purposes
+- Engaging in dishonest or deceptive business conduct
+- Intentionally changing business figures or information to create a misleading or more favorable impression
+- Falsifying or misrepresenting business information
+- Concealing relevant information for an improper purpose
+- Bypassing required workplace controls, approvals, or review processes
+
+Exceptions:
+- Legitimate business communication
+- Authorized company event or activity
+- Authorized business entertainment
+- Legitimate business hospitality
+- Legitimate administrative communication
+- Accurate correction or clarification of information
+- Clearly personal communication outside official company business channels
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 10
+====================================================================================================
+Retrieved policies:
+DISC-001-score:0.15846428275108337
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+john@company.com
+
+To:
+alice@company.com
+
+Subject:
+RE:
+
+Body:
+Could we adjust a few figures before sharing the report so the results look more favourable.
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 11
+====================================================================================================
+Retrieved policies:
+DISC-001-score:0.40845343470573425
+MM-001-score:0.40571916103363037
+ETH-001-score:0.35309115052223206
+SEC-001-score:0.34069186449050903
+COM-001-score:0.3017573952674866
+MB-001-score:0.27963122725486755
+CMP-001-score:0.2240467369556427
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+kristin.walsh@enron.com
+
+To:
+k..allen@enron.com
+
+Subject:
+RE: Calpine Plants
+
+Body:
+ Thanks for the update. This is very useful. This is FYI. Shareholders of Enron Corporation initiated legal action against the Accounts head and his team, alleging that false statements had been made regarding the company's financial health. The Accounting team's misleading communications led investors to believe that the organization was thriving when, in reality, financial troubles were looming. This case underscored the impact of false statements on investor trust and emphasized the significance of transparent and accurate corporate communication
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+DISC-001
+
+Category:
+Disclaimer
+
+Title:
+Business Communication Disclaimer
+
+Definition:
+A violation occurs when sensitive financial, commercial, transactional, client-related, or strategic business information is distributed, prepared for distribution, or proposed for distribution without a required disclaimer or distribution restriction.
+
+Violations:
+- Distributing sensitive financial information without the required disclaimer
+- Distributing sensitive commercial information without the required disclaimer
+- Distributing sensitive transaction or client information without the required restriction
+- Preparing sensitive business information for distribution without the required disclaimer
+- Proposing distribution of sensitive information without the required disclaimer
+
+Exceptions:
+- Required disclaimer is already present
+- Authorized distribution
+- Required distribution restriction is already present
+- Information is outside the scope of the disclaimer requirement
+- Distribution is explicitly authorized without a disclaimer
+
+
+
+Policy ID:
+MM-001
+
+Category:
+Market manipulation
+
+Title:
+Market Manipulation and Misconduct
+
+Definition:
+A violation occurs when a person proposes, coordinates, facilitates, communicates, or performs activity intended to create an artificial or misleading market reaction, influence trading, influence investors, or create a false impression of market demand, supply, price, or financial condition.
+
+Violations:
+- Coordinating activity to create an artificial market reaction
+- Coordinating transactions to influence market price artificially
+- Creating false or misleading market activity
+- Misleading investors or market participants
+- Communicating false or misleading financial information to influence market perception
+- Creating a false impression of demand or supply
+- Planning activity around an announcement to obtain a desired artificial market reaction
+
+Exceptions:
+- Legitimate market analysis
+- Ordinary legitimate trading
+- Accurate public information
+- Historical reporting that is not itself misleading
+- Legitimate discussion of market conditions without manipulative intent
+
+
+
+Policy ID:
+ETH-001
+
+Category:
+Employee ethics
+
+Title:
+Employee Ethical Conduct
+
+Definition:
+A violation occurs when official company communication or workplace activity is used for inappropriate personal or social conduct, improper personal arrangements, dishonest or deceptive conduct, improper workplace behavior, or intentional falsification or misrepresentation of business information.
+
+Violations:
+- Using an official company communication channel for personal or social activity that is inappropriate in the workplace context
+- Using company communication to arrange or coordinate personal activities that are unrelated to legitimate business purposes
+- Engaging in dishonest or deceptive business conduct
+- Intentionally changing business figures or information to create a misleading or more favorable impression
+- Falsifying or misrepresenting business information
+- Concealing relevant information for an improper purpose
+- Bypassing required workplace controls, approvals, or review processes
+
+Exceptions:
+- Legitimate business communication
+- Authorized company event or activity
+- Authorized business entertainment
+- Legitimate business hospitality
+- Legitimate administrative communication
+- Accurate correction or clarification of information
+- Clearly personal communication outside official company business channels
+
+
+
+Policy ID:
+SEC-001
+
+Category:
+Secrecy
+
+Title:
+Confidential Information and Unauthorized Disclosure
+
+Definition:
+A violation occurs when confidential, restricted, proprietary, or material non-public information is disclosed, shared, forwarded, accessed, or provided to an unauthorized person.
+
+Violations:
+- Disclosing confidential information to an unauthorized recipient
+- Sharing restricted or proprietary information without authorization
+- Forwarding protected information to an unauthorized person
+- Providing unauthorized access to protected information
+- Requesting or encouraging unauthorized disclosure
+
+Exceptions:
+- Authorized disclosure
+- Authorized recipient
+- Legitimate confidentiality agreement
+- Instruction to keep information confidential without actually disclosing it
+- Legitimate business communication that does not reveal protected information
+
+
+
+Policy ID:
+COM-001
+
+Category:
+Change in communication
+
+Title:
+Unauthorized Communication Channels
+
+Definition:
+A violation occurs when company business communication is moved, redirected, or continued through an unauthorized personal or external communication channel.
+
+Violations:
+- Moving business communication to a personal channel
+- Continuing company business through an unauthorized messaging service
+- Using personal email or accounts for company business
+- Redirecting business communication to an external channel
+- Inviting a business contact to continue work-related communication outside the approved channel
+
+Exceptions:
+- Explicitly authorized external channel
+- Clearly personal communication unrelated to business
+- Company-approved communication method
+- Business process specifically requiring the external channel
+
+
+
+Policy ID:
+MB-001
+
+Category:
+Market bribery
+
+Title:
+Improper Payments, Gifts, and Benefits
+
+Definition:
+A violation occurs when a payment, gift, favor, benefit, gesture, hospitality, or personal advantage is offered, requested, promised, or suggested to improperly influence a business decision, approval, contract, or favorable treatment.
+
+Violations:
+- Offering a payment to influence a business decision
+- Offering a gift or benefit to a decision maker
+- Suggesting a gesture could help obtain approval
+- Offering a favor for favorable treatment
+- Requesting a personal benefit in exchange for a business decision
+- Arranging an improper benefit through another person
+
+Exceptions:
+- Authorized business expense
+- Authorized reasonable hospitality
+- Legitimate business activity without improper influence
+- Benefits explicitly permitted by company policy
+
+
+
+Policy ID:
+CMP-001
+
+Category:
+Complaints
+
+Title:
+Complaint Handling and Reporting
+
+Definition:
+A violation occurs when a legitimate complaint, allegation, concern, or report is suppressed, ignored, concealed, mishandled, discouraged, or prevented from reaching the appropriate reporting or investigation process.
+
+Violations:
+- Suppressing a legitimate complaint
+- Ignoring a complaint requiring investigation
+- Preventing a complaint from reaching compliance or management
+- Discouraging someone from reporting misconduct
+- Concealing a complaint
+- Obstructing a legitimate investigation
+- Retaliating against someone for making a legitimate complaint
+
+Exceptions:
+- Good-faith reporting
+- Authorized complaint handling
+- Proper escalation
+- Legitimate investigation
+- Historical reporting without suppression
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 12
+====================================================================================================
+Retrieved policies:
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+stephen.piasio@ssmb.com
+
+To:
+john.arnold@enron.com
+
+Subject:
+Re: credit facility...finally
+
+Body:
+ Did the Palestinians settle with the Israelis? No. Did Dan Reeves settle with John Elway? No. Did Anna Nicole Smith settle with her in-laws? No. But Salomon Smith Barney and Enron have settled all the issues and have agreed to the $50 million credit facility. The documents are in Mary Cook's capable hands and should be completed next week.  In addition, I hope that Jon Davis' cooling demand presentation on Wednesday (3:15) will be valuable for your trading endeavors (bought or sold without affecting its base price). John Galperin (on our desk) will introduce Jon. Try to stay awake during John's introduction.
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 13
+====================================================================================================
+Retrieved policies:
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+[john.arnold@enron.com](mailto:john.arnold@enron.com)
+
+To:
+[wine@bassins.com](mailto:wine@bassins.com)
+
+Subject:
+
+
+Body:
+Hello, I noticed you carried several of the 98 Zoom Zins. Any chance you have the 33 year old vines version?  if yes - need one.  I owe you next time. John
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
+
+====================================================================================================
+Mail: 14
+====================================================================================================
+Retrieved policies:
+SEC-001-score:0.17060627043247223
+
+
+You are an Enterprise Compliance Officer analyzing ONE email.
+
+============================================================
+ANALYSIS METHOD
+============================================================
+
+First understand the complete email.
+
+Determine internally:
+
+- purpose
+- sender and recipients
+- actual intent
+- actual action or behavior
+- whether it is business, personal, social,
+  administrative, or informational
+- what the sender is requesting, proposing, suggesting,
+  instructing, arranging, disclosing, reporting,
+  or actually doing
+
+Do NOT classify yet.
+
+Then compare the actual behavior against EVERY supplied
+policy.
+
+============================================================
+IMPORTANT RULES
+============================================================
+
+The decision must be based on:
+
+- actual behavior
+- context
+- purpose
+- intent supported by the email
+- policy definition
+- violation conditions
+- exceptions
+
+Do NOT classify from:
+
+- keywords alone
+- individual words
+- topics alone
+- subject lines alone
+- category names alone
+- similarity score alone
+
+A keyword match by itself is NOT a violation.
+
+Do NOT require exact wording from the policy.
+
+The email may use different, informal, abbreviated,
+indirect, or conversational wording while expressing
+the same behavior covered by the policy.
+
+Semantic behavior matching is allowed.
+
+However, semantic similarity alone is not sufficient.
+
+The actual behavior must satisfy a policy violation
+condition.
+
+============================================================
+POLICY MATCHING
+============================================================
+
+For each supplied policy:
+
+1. Understand the behavior covered by the policy.
+
+2. Identify the actual behavior in the email.
+
+3. Compare the meaning and behavior.
+
+4. Determine whether a violation condition is satisfied.
+
+5. Check applicable exceptions.
+
+6. Identify exact supporting evidence from the email.
+
+A violation requires:
+
+1. Actual relevant behavior.
+2. A policy violation condition is satisfied.
+3. No applicable exception.
+4. Exact evidence exists in the email.
+
+Do NOT classify merely because something sounds suspicious.
+
+Do NOT classify merely because a keyword appears.
+
+============================================================
+CONTEXT
+============================================================
+
+Consider the complete communication.
+
+For personal or social content, determine whether it is:
+
+- legitimate business activity
+- normal personal communication
+- harmless administrative communication
+- legitimate company activity
+- inappropriate personal/social communication
+  in an official workplace channel
+
+Do not automatically classify personal or social content
+as a violation.
+
+For business conduct, determine whether the sender is
+actually requesting, proposing, encouraging, coordinating,
+facilitating, reporting, or performing behavior covered
+by the policy.
+
+============================================================
+REPORTING VS PERFORMING
+============================================================
+
+Mentioning, describing, reporting, or discussing misconduct
+does not automatically mean the sender performed the misconduct.
+
+Determine what the email itself is doing.
+
+============================================================
+EMAIL
+============================================================
+
+From:
+stephen.piasio@ssmb.com
+
+To:
+john.arnold@enron.com
+
+Subject:
+Re: credit facility...finally
+
+Body:
+tomorrow is chris birthay lets plan his birthday in cafeteria keep it secret
+
+============================================================
+AVAILABLE RISK CATEGORIES
+============================================================
+
+- Secrecy
+- Market manipulation
+- Market bribery
+- Change in communication
+- Complaints
+- Employee ethics
+- Disclaimer
+
+============================================================
+RETRIEVED POLICIES
+============================================================
+
+
+Policy ID:
+SEC-001
+
+Category:
+Secrecy
+
+Title:
+Confidential Information and Unauthorized Disclosure
+
+Definition:
+A violation occurs when confidential, restricted, proprietary, or material non-public information is disclosed, shared, forwarded, accessed, or provided to an unauthorized person.
+
+Violations:
+- Disclosing confidential information to an unauthorized recipient
+- Sharing restricted or proprietary information without authorization
+- Forwarding protected information to an unauthorized person
+- Providing unauthorized access to protected information
+- Requesting or encouraging unauthorized disclosure
+
+Exceptions:
+- Authorized disclosure
+- Authorized recipient
+- Legitimate confidentiality agreement
+- Instruction to keep information confidential without actually disclosing it
+- Legitimate business communication that does not reveal protected information
+
+
+============================================================
+FINAL OUTPUT
+============================================================
+
+If a violation exists:
+
+{
+    "violation": true,
+    "categories": [
+        {
+            "category": "exact policy category",
+            "reason": "why the actual behavior violates the policy",
+            "evidence": "exact quote from the email"
+        }
+    ]
+}
+
+If no violation exists:
+
+{
+    "violation": false,
+    "categories": []
+}
+
+Rules:
+
+- category must match a supplied policy category.
+- evidence must be an exact quote from the email.
+- do not invent evidence.
+- do not invent categories.
+- do not return scores.
+- do not return confidence.
+- do not return Need Review.
+- return ONLY valid JSON.
+- do not return Markdown code fences.
+- do not return any text outside the JSON object.
+
+
