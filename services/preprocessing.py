@@ -17,10 +17,6 @@ class PreprocessingService:
             body_started = False
             for line in lines:
                 line = line.strip()
-                # Only treat actual "From:" header as sender.
-                # Prevents lines such as:
-                # "from 1:30-2:30/trading floor tour..."
-                # from being interpreted as From.
                 if re.match(r"^from\s*:", line, re.IGNORECASE):
                     sender = line.split(":", 1)[1].strip()
                 elif re.match(r"^to\s*:", line, re.IGNORECASE):

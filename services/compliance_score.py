@@ -154,21 +154,6 @@ class ComplainceScore:
                 ).get(
                     "status",
                     ""
-                ),
-
-                "confidence": analysis.get(
-                    "confidence",
-                    0
-                ),
-
-                "decision": analysis.get(
-                    "decision",
-                    ""
-                ),
-
-                "needs_review": analysis.get(
-                    "needs_review",
-                    False
                 )
             }
 

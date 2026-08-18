@@ -9,10 +9,7 @@
         "risk_categories": [],
         "classification": "Compliant",
         "score": 0.0,
-        "status": "Low",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Low"
     },
     "2": {
         "email": {
@@ -35,10 +32,7 @@
         ],
         "classification": "Non Compliant",
         "score": 52.0,
-        "status": "Medium",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Medium"
     },
     "3": {
         "email": {
@@ -50,10 +44,7 @@
         "risk_categories": [],
         "classification": "Compliant",
         "score": 0.0,
-        "status": "Low",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Low"
     },
     "4": {
         "email": {
@@ -65,10 +56,7 @@
         "risk_categories": [],
         "classification": "Compliant",
         "score": 0.0,
-        "status": "Low",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Low"
     },
     "5": {
         "email": {
@@ -86,10 +74,7 @@
         ],
         "classification": "Non Compliant",
         "score": 30.0,
-        "status": "Medium",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Medium"
     },
     "6": {
         "email": {
@@ -107,10 +92,7 @@
         ],
         "classification": "Non Compliant",
         "score": 90.0,
-        "status": "Critical",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Critical"
     },
     "7": {
         "email": {
@@ -128,10 +110,7 @@
         ],
         "classification": "Non Compliant",
         "score": 30.0,
-        "status": "Medium",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Medium"
     },
     "8": {
         "email": {
@@ -149,10 +128,7 @@
         ],
         "classification": "Non Compliant",
         "score": 70.0,
-        "status": "High",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "High"
     },
     "9": {
         "email": {
@@ -170,10 +146,7 @@
         ],
         "classification": "Non Compliant",
         "score": 30.0,
-        "status": "Medium",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Medium"
     },
     "10": {
         "email": {
@@ -191,10 +164,7 @@
         ],
         "classification": "Non Compliant",
         "score": 70.0,
-        "status": "High",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "High"
     },
     "11": {
         "email": {
@@ -206,10 +176,7 @@
         "risk_categories": [],
         "classification": "Compliant",
         "score": 0.0,
-        "status": "Low",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Low"
     },
     "12": {
         "email": {
@@ -227,10 +194,7 @@
         ],
         "classification": "Non Compliant",
         "score": 90.0,
-        "status": "Critical",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Critical"
     },
     "13": {
         "email": {
@@ -242,9 +206,6 @@
         "risk_categories": [],
         "classification": "Compliant",
         "score": 0.0,
-        "status": "Low",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
+        "status": "Low"
     }
 }
