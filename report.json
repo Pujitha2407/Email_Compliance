@@ -24,8 +24,8 @@
         "risk_categories": [
             {
                 "category": "Change in communication",
-                "reason": "The sender uses a personal email address to discuss business-related matters and invites the recipient to continue the communication on WhatsApp, which is an unauthorized external communication channel.",
-                "evidence": "From: msagel@home.com\nFeel free to ding me on whatsapp anytime."
+                "reason": "The sender invites the recipient to continue work-related communication outside the approved channel by suggesting the use of WhatsApp, which is an unauthorized personal messaging service.",
+                "evidence": "Feel free to ding me on whatsapp anytime."
             }
         ],
         "classification": "Non Compliant",
@@ -105,8 +105,8 @@
         "risk_categories": [
             {
                 "category": "Market bribery",
-                "reason": "The email suggests that offering a 'small gesture for the decision maker' could influence the approval of a decision, which aligns with the behavior described in the policy as 'suggesting a gesture could help obtain approval.'",
-                "evidence": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
+                "reason": "The email suggests offering a 'small gesture' to a decision maker to help obtain approval, which aligns with the behavior described in the policy as suggesting a gesture to improperly influence a business decision.",
+                "evidence": "Perhaps a small gesture for the decision maker would help us get the approval though."
             }
         ],
         "classification": "Non Compliant",
@@ -126,7 +126,7 @@
         "risk_categories": [
             {
                 "category": "Employee ethics",
-                "reason": "The email suggests bypassing the required compliance review process, which constitutes bypassing a required workplace control and approval process, as outlined in the Employee Ethical Conduct policy.",
+                "reason": "The email suggests bypassing a required compliance review, which constitutes bypassing required workplace controls, approvals, or review processes as outlined in the policy.",
                 "evidence": "We may be able to move this forward without waiting for the usual compliance review."
             }
         ],
@@ -147,7 +147,7 @@
         "risk_categories": [
             {
                 "category": "Market manipulation",
-                "reason": "The email demonstrates coordination of activity specifically around an announcement to achieve an expected market reaction, which is explicitly covered under the policy as a violation condition.",
+                "reason": "The email suggests coordinating activity around an announcement to influence the market reaction in a specific way, which aligns with the policy violation condition of planning activity to obtain a desired artificial market reaction.",
                 "evidence": "If we coordinate the activity around the announcement, market should react the way we are expecting."
             }
         ],
@@ -167,13 +167,13 @@
         },
         "risk_categories": [
             {
-                "category": "Employee ethics",
-                "reason": "The sender proposes intentionally adjusting business figures to create a misleading impression, which constitutes a falsification or misrepresentation of business information and deceptive conduct.",
+                "category": "Disclaimer",
+                "reason": "The sender is proposing to adjust figures in a report to make the results appear more favorable, which involves preparing sensitive financial information for distribution without mentioning any required disclaimer or distribution restriction.",
                 "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
             }
         ],
         "classification": "Non Compliant",
-        "score": 30.0,
+        "score": 40.0,
         "status": "Medium",
         "confidence": 0,
         "decision": "",
