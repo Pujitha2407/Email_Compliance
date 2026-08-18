@@ -151,7 +151,8 @@ class ComplianceAnalysisService:
             retrieved_policies = retriever.retrieve(
                 email,
                 top_k=len(retriever.policies),
-                min_score=0.15
+                min_score=0.05,
+                min_results=3
             )
 
             print(

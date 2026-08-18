@@ -67,13 +67,20 @@ Exceptions:
             " policies."
         )
 
-    def retrieve(self, email, top_k=None, min_score=0.15):
+    def retrieve(self, email, top_k=None, min_score=0.05, min_results=3):
         """
         Retrieve policies for an email.
 
-        min_score filters out low-relevance policies so the LLM
-        is not asked to weigh in on policies that clearly do not
-        apply. Tune this threshold against known labeled emails.
+        min_score filters out very low-relevance policies so the
+        LLM is not asked to weigh in on policies that clearly do
+        not apply.
+
+        min_results guarantees at least this many policies are
+        always returned (the top-scoring ones), even if none of
+        them clear min_score. This prevents an empty retrieval
+        result, which would leave the LLM with nothing to compare
+        the email against and force a false "no violation" verdict
+        by default.
         """
         email_text = f"""
 From:
@@ -100,15 +107,28 @@ Body:
             top_k
         )
 
-        results = []
+        all_results = []
         for score, index in zip(scores[0], indices[0]):
             if index < 0:
                 continue
-            if score < min_score:
-                continue
             policy = self.policies[index]
-            results.append({
+            all_results.append({
                 "policy": policy,
                 "similarity_score": float(score)
             })
-        return results
+
+        # Keep everything above threshold.
+        filtered = [
+            r for r in all_results
+            if r["similarity_score"] >= min_score
+        ]
+
+        # Safety floor: never return fewer than min_results,
+        # even if that means including below-threshold policies.
+        # all_results is already sorted by score (FAISS returns
+        # results in descending similarity order), so this keeps
+        # the top N regardless of threshold.
+        if len(filtered) < min_results:
+            filtered = all_results[:min_results]
+
+        return filtered
