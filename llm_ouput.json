@@ -1,128 +1,88 @@
 {
     "1": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": false,\n    \"categories\": []\n}\n```"
+        "categories": []
     },
     "2": {
-        "decision": "HUMAN_REVIEW",
-        "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": true,\n    \"categories\": [\n        {\n            \"category\": \"Change in communication\",\n            \"reason\": \"The sender invites the recipient to continue work-related communication about 'natural' through an unauthorized messaging service, specifically WhatsApp, which is not an approved communication channel for company business.\",\n            \"evidence\": \"Feel free to ding me on whatsapp anytime.\"\n        }\n    ]\n}\n```"
+        "violation": true,
+        "categories": [
+            {
+                "category": "Change in communication",
+                "reason": "The sender uses a personal email address to discuss business-related matters and invites the recipient to continue the communication on WhatsApp, which is an unauthorized external communication channel.",
+                "evidence": "From: msagel@home.com\nFeel free to ding me on whatsapp anytime."
+            }
+        ]
     },
     "3": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": false,\n    \"categories\": []\n}\n```"
+        "categories": []
     },
     "4": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": false,\n    \"categories\": []\n}\n```"
+        "categories": []
     },
     "5": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": false,\n    \"categories\": []\n}\n```"
+        "categories": []
     },
     "6": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": true,\n    \"categories\": [\n        {\n            \"category\": \"Employee ethics\",\n            \"reason\": \"The email exhibits inappropriate personal or social activity by discussing drinks, which is unrelated to legitimate business activity, using official company communication channels.\",\n            \"evidence\": \"so who are the drinks on until I do ???\"\n        }\n    ]\n}\n```"
+        "categories": []
     },
     "7": {
-        "decision": "HUMAN_REVIEW",
-        "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": true,\n    \"categories\": [\n        {\n            \"category\": \"Market bribery\",\n            \"reason\": \"The email suggests offering a gesture to a decision maker in order to influence approval, which constitutes improper influence according to the policy.\",\n            \"evidence\": \"Perhaps a small gesture for the decision maker would help us get the approval though.\"\n        }\n    ]\n}\n```"
+        "violation": true,
+        "categories": [
+            {
+                "category": "Market bribery",
+                "reason": "The email suggests that offering a 'small gesture for the decision maker' could influence the approval of a decision, which aligns with the behavior described in the policy as 'suggesting a gesture could help obtain approval.'",
+                "evidence": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
+            }
+        ]
     },
     "8": {
-        "decision": "HUMAN_REVIEW",
-        "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": true,\n    \"categories\": [\n        {\n            \"category\": \"Employee ethics\",\n            \"reason\": \"The email explicitly suggests bypassing the required compliance review process, which constitutes an attempt to bypass required workplace controls or review processes.\",\n            \"evidence\": \"We may be able to move this forward without waiting for the usual compliance review.\"\n        }\n    ]\n}\n```"
+        "violation": true,
+        "categories": [
+            {
+                "category": "Employee ethics",
+                "reason": "The email suggests bypassing the required compliance review process, which constitutes bypassing a required workplace control and approval process, as outlined in the Employee Ethical Conduct policy.",
+                "evidence": "We may be able to move this forward without waiting for the usual compliance review."
+            }
+        ]
     },
     "9": {
-        "decision": "HUMAN_REVIEW",
-        "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": true,\n    \"categories\": [\n        {\n            \"category\": \"Market manipulation\",\n            \"reason\": \"The email expresses coordination around an announcement to create an artificial and expected market reaction, which matches the behavior of planning activity to influence market perception artificially.\",\n            \"evidence\": \"If we coordinate the activity around the announcement, market should react the way we are expecting.\"\n        }\n    ]\n}\n```"
+        "violation": true,
+        "categories": [
+            {
+                "category": "Market manipulation",
+                "reason": "The email demonstrates coordination of activity specifically around an announcement to achieve an expected market reaction, which is explicitly covered under the policy as a violation condition.",
+                "evidence": "If we coordinate the activity around the announcement, market should react the way we are expecting."
+            }
+        ]
     },
     "10": {
-        "decision": "HUMAN_REVIEW",
-        "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": true,\n    \"categories\": [\n        {\n            \"category\": \"Employee ethics\",\n            \"reason\": \"The actual behavior involves suggesting an adjustment of figures in order to make results appear more favorable, which constitutes intentional falsification or misrepresentation of business information. This is clearly in violation of the Employee Ethical Conduct policy, specifically the clause prohibiting dishonest or deceptive business conduct and intentionally changing figures to make results appear more favorable.\",\n            \"evidence\": \"Could we adjust a few figures before sharing the report so the results look more favourable.\"\n        }\n    ]\n}\n```"
+        "violation": true,
+        "categories": [
+            {
+                "category": "Employee ethics",
+                "reason": "The sender proposes intentionally adjusting business figures to create a misleading impression, which constitutes a falsification or misrepresentation of business information and deceptive conduct.",
+                "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
+            }
+        ]
     },
     "11": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": false,\n    \"categories\": []\n}\n```"
+        "categories": []
     },
     "12": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": false,\n    \"categories\": []\n}\n```"
+        "categories": []
     },
     "13": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": false,\n    \"categories\": []\n}\n```"
+        "categories": []
     },
     "14": {
-        "decision": "HUMAN_REVIEW",
         "violation": false,
-        "categories": [],
-        "confidence": 0.0,
-        "needs_review": true,
-        "review_reason": "Invalid JSON response",
-        "raw_output": "```json\n{\n    \"violation\": false,\n    \"categories\": []\n}\n```"
+        "categories": []
     }
 }

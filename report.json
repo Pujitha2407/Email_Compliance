@@ -7,12 +7,12 @@
             "body": "Ken - Thanks again for your time yesterday.  Here is the C.A. per our discussion, signature and faxing back to me at 713.853.0528.  Pls do not disclose the C.A. until it is signed by the appropriate party here, we will have a fully-signed copy faxed to you for your records.  Should you have questions or comments, please Mr. Comiskey.  Thank you."
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "2": {
         "email": {
@@ -21,13 +21,19 @@
             "subject": "Agreement",
             "body": "John:  Hope you did ok today.  As I said yesterday, the poor close Monday should lead to additional market weakness, which we saw today.  You indicated that you would mail the service agreement back to me. I don't know if you have the mailing address, so here it is:  Psytech Analytics 11604 Greenspring Ave. Lutherville, MD? 21093  Speak to you over phone later during the day once I have decent set-up on my work for natural.  Feel free to ding me on whatsapp anytime. Mark"
         },
-        "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "risk_categories": [
+            {
+                "category": "Change in communication",
+                "reason": "The sender uses a personal email address to discuss business-related matters and invites the recipient to continue the communication on WhatsApp, which is an unauthorized external communication channel.",
+                "evidence": "From: msagel@home.com\nFeel free to ding me on whatsapp anytime."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 10.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "3": {
         "email": {
@@ -37,27 +43,27 @@
             "body": "Critical Migration Information.  1. Your scheduled Outlook Migration Date is THE EVENING OF: May 15th 2. You need to press the \"Save My Data\" button (ONLY ONCE) to send us your pre-migration information. 3. You must be connected to the network before you press the button. 4. If a POP-UP BOX appears, prompting you to \"ABORT, CANCEL OR TRUST SIGNER\" please select TRUST SIGNER. 5. Any information you Add to your Personal Address Book, Journal or calendar after you click on the button will need to be manually re-added into Outlook after you have been migrated. 6. Clicking this button does not complete your migration to Outlook. Your migration will be completed the evening of your migration date.  If you have failed to click on the button means your migration activity will be canceled and WILL NOT get your Calendar, Contacts, Journal and ToDo information imported into Outlook the day of your migration and could result in up to a 2 week delay to restore this information.  If you encounter any errors please contact the resolution center @713-853-1411"
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "4": {
         "email": {
-            "from": "30-2:30/trading floor tour 2:30-3:00",
+            "from": "sarah-joy.hunter@enron.com",
             "to": "jeffrey.shankman@enron.com",
             "subject": "Continental Briefing for Enron/Continental meeting December 12th",
             "body": "Mr. Shankman:  In preparation for the meeting on December 12th with Larry Kellner, CFO, Continental Airlines, I have noted below some background on the Enron/Continental relationship and the purpose for the meeting. Mr. Shankman, please advise if you would like me to distribute this to the attendees.  EXECUTIVE SUMMARY:  Over the past several years Enron has been hedging Continental's crude oil. The relationship has been beneficial to both sides. As a result, since 1999 Enron has earned over $9 million and Continental has saved over $45 million.  The purpose for the December 12th meeting is to address three initiatives in order of economic value: (1) fuel management, (2) weather derivatives, and (3) plastics hedging - VaR analysis.  Several new initiatives being proposed to Continental include the following:  exchanging call options on crude oil for airline tickets (Craig Breslau, Originator) transacting financial swaps on-line (Larry Gagliani, Originator) creating a weather derivative product for the airline industry (Mark Tawney and Gary Taylor, Originators) outsourcing Continental's antifreeze and plastics risks by hedging these products with Enron (Alan Engberg, Originator)  Meeting Attendees from Continental Airlines:  Ron Howard, Vice President, Food Services Larry Kellner, Chief Financial Officer Greg Hartford, Vice President, Fuel Management Company Jeff Misner, Vice President and Treasurer (tentative)"
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "5": {
         "email": {
@@ -67,12 +73,12 @@
             "body": "Boyd John, Is, access to the board on a password basis now? If so, when you get a chance could you authorise access for myself and Andrew Hill (a colleague in crude fundamentals) please? A similar board for crude and products should be ready within a couple of weeks. Thanks Chris"
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "6": {
         "email": {
@@ -82,12 +88,12 @@
             "body": "so who are the drinks on until I do ???"
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "7": {
         "email": {
@@ -96,13 +102,19 @@
             "subject": "RE:",
             "body": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
         },
-        "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
-        "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "risk_categories": [
+            {
+                "category": "Market bribery",
+                "reason": "The email suggests that offering a 'small gesture for the decision maker' could influence the approval of a decision, which aligns with the behavior described in the policy as 'suggesting a gesture could help obtain approval.'",
+                "evidence": "Perhaps a small gesture for the gesture for the decision maker would help us get the approval though."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 90.0,
+        "status": "Critical",
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "8": {
         "email": {
@@ -111,13 +123,19 @@
             "subject": "RE:",
             "body": "We may be able to move this forward without waiting for the usual compliance review."
         },
-        "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
-        "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "risk_categories": [
+            {
+                "category": "Employee ethics",
+                "reason": "The email suggests bypassing the required compliance review process, which constitutes bypassing a required workplace control and approval process, as outlined in the Employee Ethical Conduct policy.",
+                "evidence": "We may be able to move this forward without waiting for the usual compliance review."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 30.0,
+        "status": "Medium",
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "9": {
         "email": {
@@ -126,13 +144,19 @@
             "subject": "RE:",
             "body": "If we coordinate the activity around the announcement,market should react the way we are expecting."
         },
-        "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
-        "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "risk_categories": [
+            {
+                "category": "Market manipulation",
+                "reason": "The email demonstrates coordination of activity specifically around an announcement to achieve an expected market reaction, which is explicitly covered under the policy as a violation condition.",
+                "evidence": "If we coordinate the activity around the announcement, market should react the way we are expecting."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 70.0,
+        "status": "High",
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "10": {
         "email": {
@@ -141,13 +165,19 @@
             "subject": "RE:",
             "body": "Could we adjust a few figures before sharing the report so the results look more favourable."
         },
-        "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
-        "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "risk_categories": [
+            {
+                "category": "Employee ethics",
+                "reason": "The sender proposes intentionally adjusting business figures to create a misleading impression, which constitutes a falsification or misrepresentation of business information and deceptive conduct.",
+                "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
+            }
+        ],
+        "classification": "Non Compliant",
+        "score": 30.0,
+        "status": "Medium",
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "11": {
         "email": {
@@ -157,12 +187,12 @@
             "body": " Thanks for the update. This is very useful. This is FYI. Shareholders of Enron Corporation initiated legal action against the Accounts head and his team, alleging that false statements had been made regarding the company's financial health. The Accounting team's misleading communications led investors to believe that the organization was thriving when, in reality, financial troubles were looming. This case underscored the impact of false statements on investor trust and emphasized the significance of transparent and accurate corporate communication"
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "12": {
         "email": {
@@ -172,12 +202,12 @@
             "body": " Did the Palestinians settle with the Israelis? No. Did Dan Reeves settle with John Elway? No. Did Anna Nicole Smith settle with her in-laws? No. But Salomon Smith Barney and Enron have settled all the issues and have agreed to the $50 million credit facility. The documents are in Mary Cook's capable hands and should be completed next week.  In addition, I hope that Jon Davis' cooling demand presentation on Wednesday (3:15) will be valuable for your trading endeavors (bought or sold without affecting its base price). John Galperin (on our desk) will introduce Jon. Try to stay awake during John's introduction."
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "13": {
         "email": {
@@ -187,12 +217,12 @@
             "body": "Hello, I noticed you carried several of the 98 Zoom Zins. Any chance you have the 33 year old vines version?  if yes - need one.  I owe you next time. John"
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     },
     "14": {
         "email": {
@@ -202,11 +232,11 @@
             "body": "tomorrow is chris birthay lets plan his birthday in cafeteria keep it secret"
         },
         "risk_categories": [],
-        "classification": "Need Review",
-        "score": 0,
+        "classification": "Compliant",
+        "score": 0.0,
         "status": "Low",
-        "confidence": 0.0,
-        "decision": "HUMAN_REVIEW",
-        "needs_review": true
+        "confidence": 0,
+        "decision": "",
+        "needs_review": false
     }
 }
