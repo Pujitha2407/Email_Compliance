@@ -57,21 +57,6 @@
     },
     "4": {
         "email": {
-            "from": "sarah-joy.hunter@enron.com",
-            "to": "jeffrey.shankman@enron.com",
-            "subject": "Continental Briefing for Enron/Continental meeting December 12th",
-            "body": "Mr. Shankman:  In preparation for the meeting on December 12th with Larry Kellner, CFO, Continental Airlines, I have noted below some background on the Enron/Continental relationship and the purpose for the meeting. Mr. Shankman, please advise if you would like me to distribute this to the attendees.  EXECUTIVE SUMMARY:  Over the past several years Enron has been hedging Continental's crude oil. The relationship has been beneficial to both sides. As a result, since 1999 Enron has earned over $9 million and Continental has saved over $45 million.  The purpose for the December 12th meeting is to address three initiatives in order of economic value: (1) fuel management, (2) weather derivatives, and (3) plastics hedging - VaR analysis.  Several new initiatives being proposed to Continental include the following:  exchanging call options on crude oil for airline tickets (Craig Breslau, Originator) transacting financial swaps on-line (Larry Gagliani, Originator) creating a weather derivative product for the airline industry (Mark Tawney and Gary Taylor, Originators) outsourcing Continental's antifreeze and plastics risks by hedging these products with Enron (Alan Engberg, Originator)  Meeting Attendees from Continental Airlines:  Ron Howard, Vice President, Food Services Larry Kellner, Chief Financial Officer Greg Hartford, Vice President, Fuel Management Company Jeff Misner, Vice President and Treasurer (tentative)"
-        },
-        "risk_categories": [],
-        "classification": "Compliant",
-        "score": 0.0,
-        "status": "Low",
-        "confidence": 0,
-        "decision": "",
-        "needs_review": false
-    },
-    "5": {
-        "email": {
             "from": "chris.gaskill@enron.com",
             "to": "john.arnold@enron.com",
             "subject": "gas message board access",
@@ -85,7 +70,7 @@
         "decision": "",
         "needs_review": false
     },
-    "6": {
+    "5": {
         "email": {
             "from": "kim.ward@enron.com",
             "to": "john.arnold@enron.com",
@@ -106,7 +91,7 @@
         "decision": "",
         "needs_review": false
     },
-    "7": {
+    "6": {
         "email": {
             "from": "kim.ward@enron.com",
             "to": "john.arnold@enron.com",
@@ -127,7 +112,7 @@
         "decision": "",
         "needs_review": false
     },
-    "8": {
+    "7": {
         "email": {
             "from": "john@company.com",
             "to": "alice@company.com",
@@ -148,7 +133,7 @@
         "decision": "",
         "needs_review": false
     },
-    "9": {
+    "8": {
         "email": {
             "from": "john@company.com",
             "to": "alice@company.com",
@@ -169,7 +154,7 @@
         "decision": "",
         "needs_review": false
     },
-    "10": {
+    "9": {
         "email": {
             "from": "john@company.com",
             "to": "alice@company.com",
@@ -190,7 +175,7 @@
         "decision": "",
         "needs_review": false
     },
-    "11": {
+    "10": {
         "email": {
             "from": "kristin.walsh@enron.com",
             "to": "k..allen@enron.com",
@@ -211,7 +196,7 @@
         "decision": "",
         "needs_review": false
     },
-    "12": {
+    "11": {
         "email": {
             "from": "stephen.piasio@ssmb.com",
             "to": "john.arnold@enron.com",
@@ -226,7 +211,7 @@
         "decision": "",
         "needs_review": false
     },
-    "13": {
+    "12": {
         "email": {
             "from": "[john.arnold@enron.com](mailto:john.arnold@enron.com)",
             "to": "[wine@bassins.com](mailto:wine@bassins.com)",
@@ -247,7 +232,7 @@
         "decision": "",
         "needs_review": false
     },
-    "14": {
+    "13": {
         "email": {
             "from": "stephen.piasio@ssmb.com",
             "to": "john.arnold@enron.com",

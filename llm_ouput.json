@@ -27,10 +27,6 @@
         "categories": []
     },
     "5": {
-        "violation": false,
-        "categories": []
-    },
-    "6": {
         "violation": true,
         "categories": [
             {
@@ -40,7 +36,7 @@
             }
         ]
     },
-    "7": {
+    "6": {
         "violation": true,
         "categories": [
             {
@@ -50,7 +46,7 @@
             }
         ]
     },
-    "8": {
+    "7": {
         "violation": true,
         "categories": [
             {
@@ -60,7 +56,7 @@
             }
         ]
     },
-    "9": {
+    "8": {
         "violation": true,
         "categories": [
             {
@@ -70,7 +66,7 @@
             }
         ]
     },
-    "10": {
+    "9": {
         "violation": true,
         "categories": [
             {
@@ -80,7 +76,7 @@
             }
         ]
     },
-    "11": {
+    "10": {
         "violation": true,
         "categories": [
             {
@@ -90,11 +86,11 @@
             }
         ]
     },
-    "12": {
+    "11": {
         "violation": false,
         "categories": []
     },
-    "13": {
+    "12": {
         "violation": true,
         "categories": [
             {
@@ -104,7 +100,7 @@
             }
         ]
     },
-    "14": {
+    "13": {
         "violation": false,
         "categories": []
     }
