@@ -24,7 +24,7 @@
         "risk_categories": [
             {
                 "category": "Change in communication",
-                "reason": "The sender invited the recipient to continue work-related communication through an unauthorized messaging service (WhatsApp), which constitutes moving business communication to a personal channel.",
+                "reason": "The sender is inviting the recipient to continue work-related communication outside the approved company channels by suggesting the use of WhatsApp, which is an unauthorized external communication channel.",
                 "evidence": "Feel free to ding me on whatsapp anytime."
             }
         ],
@@ -105,7 +105,7 @@
         "risk_categories": [
             {
                 "category": "Market bribery",
-                "reason": "The email suggests that offering a 'small gesture' to the decision maker could help in obtaining approval, which aligns with the behavior covered under the policy MB-001 as suggesting a gesture to improperly influence a business decision.",
+                "reason": "The email suggests that offering a 'small gesture' to the decision maker could help in obtaining approval, which aligns with the behavior described in the policy as 'suggesting a gesture could help obtain approval.' This constitutes an attempt to improperly influence a business decision.",
                 "evidence": "Perhaps a small gesture for the decision maker would help us get the approval though."
             }
         ],
@@ -126,7 +126,7 @@
         "risk_categories": [
             {
                 "category": "Employee ethics",
-                "reason": "The email suggests bypassing a required compliance review process, which constitutes bypassing required workplace controls, approvals, or review processes as defined in the policy.",
+                "reason": "The email suggests bypassing the required compliance review process, which constitutes bypassing required workplace controls, approvals, or review processes as defined in the policy.",
                 "evidence": "We may be able to move this forward without waiting for the usual compliance review."
             }
         ],
@@ -147,7 +147,7 @@
         "risk_categories": [
             {
                 "category": "Market manipulation",
-                "reason": "The email discusses coordinating activity around an announcement to influence the market reaction in a specific way, which aligns with the policy's definition of planning activity to obtain a desired artificial market reaction.",
+                "reason": "The email suggests coordinating activity around an announcement to influence the market's reaction, which aligns with the policy violation condition of 'Planning activity around an announcement to obtain a desired artificial market reaction.'",
                 "evidence": "If we coordinate the activity around the announcement, market should react the way we are expecting."
             }
         ],
@@ -167,13 +167,13 @@
         },
         "risk_categories": [
             {
-                "category": "Disclaimer",
-                "reason": "The email proposes adjusting figures in a report to make the results appear more favorable, which involves preparing sensitive financial information for distribution without mentioning any required disclaimer or restriction.",
+                "category": "Employee ethics",
+                "reason": "The sender is proposing to intentionally change business figures to create a misleading or more favorable impression, which constitutes dishonest or deceptive business conduct and intentional falsification or misrepresentation of business information.",
                 "evidence": "Could we adjust a few figures before sharing the report so the results look more favourable."
             }
         ],
         "classification": "Non Compliant",
-        "score": 40.0,
+        "score": 30.0,
         "status": "Medium",
         "confidence": 0,
         "decision": "",
